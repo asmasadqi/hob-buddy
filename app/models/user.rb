@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  has_many :user_preferences, dependent :destroy
+  has_many :user_preferences
   has_many :matches
   has_many :messages
   has_many :bookings

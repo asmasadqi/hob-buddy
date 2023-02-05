@@ -1,7 +1,7 @@
 # TODO: find solution for avatar: "https://source.unsplash.com/random/?profile?male"
-puts "Cleaning up database..."
+puts "Cleaning up Users..."
 User.destroy_all
-puts "Database cleaned"
+puts "Users cleaned"
 
 puts 'Creating 12 fake users...'
 
@@ -107,7 +107,7 @@ id9 = User.create(
   email: "kao_martin@gmail.com",
   password: "123456",
   about_me: "I speak english :gb:, japonese :jp:, spanish :es: and french :flag-mf:, I am here for holidays, would be super happy to meet new people for activities of all kind, I love surfing :woman-surfing: and climbing :woman_climbing: and i am trying to improve my tennis skills, ready for a match?",
-  gender: "Male",
+  gender: "Female",
   location: "Mexico",
   date_of_birth: "1995-01-01"
 )

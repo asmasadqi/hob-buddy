@@ -1,5 +1,4 @@
 class Booking < ApplicationRecord
-  belongs_to :users
-  belongs_to :activities
-  has_many :chatrooms
+  belongs_to :user
+  belongs_to :activity
 end

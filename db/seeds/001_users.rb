@@ -1,3 +1,4 @@
+require 'open-uri'
 # TODO: find solution for avatar: "https://source.unsplash.com/random/?profile?male"
 puts "Cleaning up Users..."
 User.destroy_all
@@ -5,7 +6,7 @@ puts "Users cleaned"
 
 puts 'Creating 12 fake users...'
 
-id1 = User.create(
+id1 = User.new(
   first_name: "julia",
   last_name: "thierry",
   email: "julia.thierry@gmail.com",
@@ -15,9 +16,12 @@ id1 = User.create(
   location: "Biarritz",
   date_of_birth: "1988-09-17"
 )
+file = URI.open('https://source.unsplash.com/random/?profile?female')
+id1.avatar.attach(io: file, filename: 'julia_t.png', content_type: 'image/png')
+id1.save
 puts "User with id #{id1.id}"
 
-id2 = User.create(
+id2 = User.new(
   first_name: "antoine",
   last_name: "ramon",
   email: "antoine.ramon@gmail.com",
@@ -27,9 +31,12 @@ id2 = User.create(
   location: "Paris",
   date_of_birth: "1986-02-11"
 )
+file = URI.open('https://source.unsplash.com/random/?profile?male')
+id2.avatar.attach(io: file, filename: 'antoine_r.png', content_type: 'image/png')
+id2.save
 puts "User with id #{id2.id}"
 
-id3 = User.create(
+id3 = User.new(
   first_name: "roxane",
   last_name: "deloche",
   email: "roxane.deloche@hotmail.com",
@@ -39,9 +46,12 @@ id3 = User.create(
   location: "Paris",
   date_of_birth: "1985-04-10"
 )
+file = URI.open('https://source.unsplash.com/random/?profile?female')
+id3.avatar.attach(io: file, filename: 'roxane_d.png', content_type: 'image/png')
+id3.save
 puts "User with id #{id3.id}"
 
-id4 = User.create(
+id4 = User.new(
   first_name: "victoria",
   last_name: "semblat",
   email: "victoria.semblat@gmail.com",
@@ -51,9 +61,12 @@ id4 = User.create(
   location: "Sydney",
   date_of_birth: "1989-07-21"
 )
+file = URI.open('https://source.unsplash.com/random/?profile?female')
+id4.avatar.attach(io: file, filename: 'victoria_s.png', content_type: 'image/png')
+id4.save
 puts "User with id #{id4.id}"
 
-id5 = User.create(
+id5 = User.new(
   first_name: "Ayla",
   last_name: "Moon",
   email: "ayla.moon@gmail.com",
@@ -63,9 +76,12 @@ id5 = User.create(
   location: "Seoul",
   date_of_birth: "1985-07-30"
 )
+file = URI.open('https://source.unsplash.com/random/?profile?female')
+id5.avatar.attach(io: file, filename: 'ayla_m.png', content_type: 'image/png')
+id5.save
 puts "User with id #{id5.id}"
 
-id6 = User.create(
+id6 = User.new(
   first_name: "mathilde",
   last_name: "frances",
   email: "mathildefrances@hiphip.com",
@@ -75,9 +91,12 @@ id6 = User.create(
   location: "Sydney",
   date_of_birth: "1990-07-21"
 )
+file = URI.open('https://source.unsplash.com/random/?profile?female')
+id6.avatar.attach(io: file, filename: 'mathilde_f.png', content_type: 'image/png')
+id6.save
 puts "User with id #{id6.id}"
 
-id7 = User.create(
+id7 = User.new(
   first_name: "paul",
   last_name: "volle",
   email: "paulvolle@gmail.com",
@@ -87,9 +106,12 @@ id7 = User.create(
   location: "New York",
   date_of_birth: "1996-01-22"
 )
+file = URI.open('https://source.unsplash.com/random/?profile?male')
+id7.avatar.attach(io: file, filename: 'paul_v.png', content_type: 'image/png')
+id7.save
 puts "User with id #{id7.id}"
 
-id8 = User.create(
+id8 = User.new(
   first_name: "alexis",
   last_name: "brun",
   email: "alex_brun@hotmail.com",
@@ -99,9 +121,12 @@ id8 = User.create(
   location: "Mexico",
   date_of_birth: "1999-04-04"
 )
+file = URI.open('https://source.unsplash.com/random/?profile?male')
+id8.avatar.attach(io: file, filename: 'alex_b.png', content_type: 'image/png')
+id8.save
 puts "User with id #{id8.id}"
 
-id9 = User.create(
+id9 = User.new(
   first_name: "kaori",
   last_name: "martin",
   email: "kao_martin@gmail.com",
@@ -111,9 +136,12 @@ id9 = User.create(
   location: "Mexico",
   date_of_birth: "1995-01-01"
 )
+file = URI.open('https://source.unsplash.com/random/?profile?female')
+id9.avatar.attach(io: file, filename: '"kao_m.png', content_type: 'image/png')
+id9.save
 puts "User with id #{id9.id}"
 
-id10 = User.create(
+id10 = User.new(
   first_name: "paul",
   last_name: "portier",
   email: "paul-portier@gmail.com",
@@ -123,9 +151,12 @@ id10 = User.create(
   location: "Berlin",
   date_of_birth: "1990-03-04"
 )
+file = URI.open('https://source.unsplash.com/random/?profile?male')
+id10.avatar.attach(io: file, filename: 'paul_p.png', content_type: 'image/png')
+id10.save
 puts "User with id #{id10.id}"
 
-id11 = User.create(
+id11 = User.new(
   first_name: "britney",
   last_name: "spears",
   email: "britney@leavemealone.com",
@@ -135,16 +166,52 @@ id11 = User.create(
   location: "Los angeles",
   date_of_birth: "1978-10-19"
 )
+file = URI.open('https://source.unsplash.com/random/?profile?female')
+id11.avatar.attach(io: file, filename: 'britney.png', content_type: 'image/png')
+id11.save
 puts "User with id #{id11.id}"
 
-id12 = User.create(
+id12 = User.new(
   first_name: "emmanuel",
   last_name: "macron",
-  email: "manu.macron@elysée.fr",
+  email: "manu.macron@elysee.fr",
   password: "123456",
   about_me: "Soon unemployed, I will have a lot of free time to travel around. I would be happy to make new friends since I don't know a lot of people (I'm super shy). I love football and running and I have a personal fitness room, feel free to join!",
   gender: "Male",
   location: "Paris",
   date_of_birth: "1979-02-04"
 )
+file = URI.open('https://source.unsplash.com/random/?profile?male')
+id12.avatar.attach(io: file, filename: 'manu_m.png', content_type: 'image/png')
+id12.save
 puts "User with id #{id12.id}"
+
+id13 = User.new(
+  first_name: "Werner",
+  last_name: "Schmidt",
+  email: "werner.schmidt@gmail.com",
+  password: "123456",
+  about_me: "I love traveling and cooking and I frequently plan trips where i can do both. I love cooking for other people and making new friends wherever I go",
+  gender: "Male",
+  location: "Berlin",
+  date_of_birth: "1990-03-04"
+)
+file = URI.open('https://source.unsplash.com/random/?profile?male')
+id13.avatar.attach(io: file, filename: 'manu_m.png', content_type: 'image/png')
+id13.save
+puts "User with id #{id13.id}"
+
+id14 = User.new(
+  first_name: "Tommy",
+  last_name: "Reece",
+  email: "tommy.reece@gmail.com",
+  password: "123456",
+  about_me: "I'm a professional volleyball player, fashion model and actor",
+  gender: "Male",
+  location: "Paris",
+  date_of_birth: "1985-03-04"
+)
+file = URI.open('https://source.unsplash.com/random/?profile?male')
+id14.avatar.attach(io: file, filename: 'manu_m.png', content_type: 'image/png')
+id14.save
+puts "User with id #{id14.id}"

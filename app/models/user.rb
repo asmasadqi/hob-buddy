@@ -11,13 +11,14 @@ class User < ApplicationRecord
 
   has_many :activities, dependent: :destroy
   
-  has_many :activity_messages
+  has_many :activity_messages, dependent: :destroy
   has_many :activity_chatrooms, through: :activity_messages
 
-  has_many :chatrooms
+  has_many :chatrooms, class_name: 'Chatroom', foreign_key: :user1_id
+  has_many :chatrooms, class_name: 'Chatroom', foreign_key: :user2_id
   has_many :messages, through: :chatrooms
 
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   
   # As a user I can create many match requests with other users
   has_many :requests_as_requestor, foreign_key: :user_requester_id, class_name: 'Match', dependent: :destroy

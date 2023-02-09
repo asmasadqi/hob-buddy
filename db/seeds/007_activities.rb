@@ -2,15 +2,16 @@ puts "Cleaning up Activities..."
 Activity.destroy_all
 puts "Activities cleaned"
 
+puts "Creating activities"
 ac1 = Activity.create(
   title: "Diving",
   description: "Join the best of the best in scuba diving and live the dive life with a super motivated buddy who know the spots by heart",
   useful_information: "I can lend you the material if needed",
   age_range: (22..35),
-  gender: "Male",
+  gender: "Not specified",
   preference_id: Preference.find_by(name: "Water sports").id,
   user_id: User.find_by(email: "victoria.semblat@gmail.com").id,
-  location: "Sidney",
+  location: "Sydney",
   min_persons: 3,
   max_persons: 6,
   total_price: 10,
@@ -95,7 +96,7 @@ ac6 = Activity.create(
   gender: "Male",
   preference_id: Preference.find_by(name: "Water sports").id,
   user_id: User.find_by(email: "victoria.semblat@gmail.com").id,
-  location: "Sidney",
+  location: "Sydney",
   min_persons: 1,
   max_persons: 6,
   total_price: 0,
@@ -122,7 +123,7 @@ puts "Activity with id #{ac7.id}"
 
 ac8 = Activity.create(
   title: "Surfing",
-  description: "¡Hola! my name is Sam and I’m currently in Costa Rica practicing my surfing skills in March I’m traveling up north to Mexico, a real surfer’s paradise and I would love for you to join me! This town filled with good vibes is therefore perfect to practice our surfing. After our daily surf classes, we can either relax by the beach/pool or we can try one of the many other activities that the region offers. Do not hesitate, join for great fun!",
+  description: "¡Hola! my name is Sam and I'm currently in Costa Rica practicing my surfing skills in March I'm traveling up north to Mexico, a real surfer's paradise and I would love for you to join me! This town filled with good vibes is therefore perfect to practice our surfing. After our daily surf classes, we can either relax by the beach/pool or we can try one of the many other activities that the region offers. Do not hesitate, join for great fun!",
   useful_information: "I take real waves, beginners abstain",
   age_range: (25..45),
   gender: "Female",

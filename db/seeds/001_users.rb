@@ -71,7 +71,7 @@ id5 = User.new(
   last_name: "Moon",
   email: "ayla.moon@gmail.com",
   password: "123456",
-  about_me: "I love travelling and learning new languages, I have been learning Korean for a year and I came to Korea because the culture and the music. I would love to meet new friends here and go to K-Pop Concerts together!",
+  about_me: "I love travelling and learning new languages, I have been learning Korean for a year and I came to Korea because the culture and the music. I am game to try anything new at least once. I would love to meet new friends here and go to K-Pop Concerts together!",
   gender: "Female",
   location: "Seoul",
   date_of_birth: "1985-07-30"

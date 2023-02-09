@@ -10,16 +10,17 @@ $body-bg:                 $light-gray;
 $font-size-base: 1rem;
 
 // Colors
-$body-color: $gray;
-$primary:    $blue;
-$success:    $green;
-$info:       $yellow;
-$danger:     $red;
-$warning:    $orange;
+$body-color: $black-olive;
+$primary:    $japanese-indigo;
+$success:    $jungle-green;
+$info:       $arylide-yellow;
+$danger:     $burnt-sienna;
+$warning:    $sandy-brown;
 
 // Buttons & inputs' radius
-$border-radius:    2px;
+$border-radius:    6px;
 $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+// customization of bootstrap button with bootstrap's mixins

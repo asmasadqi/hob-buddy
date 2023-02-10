@@ -1,2 +1,17 @@
-<h1>Chatrooms#index</h1>
-<p>Find me in app/views/chatrooms/index.html.erb</p>
+<div class="container-fluid">
+<div class="pt-2">
+  <h1 class="text-danger">New matches</h1>
+</div>
+  <div class="row">
+    <ul class="d-flex justify-content-start align-items-center hbuddy-matches-list position-sticky">
+      <% @matches_list.each do |match| %>
+        <li>
+          <%= link_to chatroom_path(Chatroom.find_by("user1_id = ? OR user2_id = ?", match, match).id) do %>
+            <%= image_tag User.find(match).avatar, class: "hbuddy-match-avatar", width:50, height:50 %>
+          <% end %>
+        </li>
+      <% end %>      
+    </ul>
+  </div>
+</div>
+

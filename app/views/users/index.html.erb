@@ -16,6 +16,32 @@
   Launch demo modal
 </button>
 
+<ul id="slides">
+  <% @users.each do |user| %>
+    <div class="slide" data-id="<%=user.id %>">
+      <li>
+        <div>
+          <%= image_tag user.avatar, height: 200, width: 200, crop: :fill %>
+        </div>
+        <div>
+          <%= user.full_name %> -
+          <%= user.age %>
+        </div>
+        <div>
+          <%= user.location %>
+        </div>
+      </li>
+    </div>
+  <% end %>
+</ul>
+
+<div>
+  <button class="controls btn btn-primary">x</button>
+  <button class="controls btn btn-warning">LIKE</button>
+</div>
+
+<%# add showing on slide css later%>
+
 <%# ---------------------------------------------------------------------------------------------------------------------------------------------------------- %>
 
 <style>

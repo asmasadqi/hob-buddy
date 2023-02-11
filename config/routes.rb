@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'chatrooms/index'
+  get 'chatrooms/show'
   devise_for :users
   root to: "pages#home"
   get "/profile", to: "pages#user"

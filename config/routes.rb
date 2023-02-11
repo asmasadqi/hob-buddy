@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "/profile", to: "pages#user"
 
+  get "/components", to: "pages#components"
+
   resources :users, only: %i[index show]
 
   resources :matches, only: %i[create update]

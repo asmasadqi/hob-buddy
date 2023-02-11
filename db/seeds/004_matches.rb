@@ -12,9 +12,9 @@ match1 = Match.create(
 )
 puts "match created with ID#{match1.id}"
 
-puts "Ayla requested to match Koari"
+puts "Ayla matched with Koari"
 match2 = Match.create(
-  status: 0,
+  status: 1,
   user_requester_id: User.find_by(email: "ayla.moon@gmail.com").id ,
   user_receiver_id: User.find_by(email: "kao_martin@gmail.com").id
 )
@@ -43,3 +43,11 @@ match5 = Match.create(
   user_receiver_id: User.find_by(email: "britney@leavemealone.com").id
 )
 puts "match created with ID#{match5.id}"
+
+puts "Kaori requested to match Paul"
+match6 = Match.create(
+  status: 0,
+  user_requester_id: User.find_by(email: "kao_martin@gmail.com").id ,
+  user_receiver_id: User.find_by(email: "paul-portier@gmail.com").id
+)
+puts "match created with ID#{match6.id}"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_09_014637) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_08_153509) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -160,8 +160,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_014637) do
   add_foreign_key "activity_messages", "users"
   add_foreign_key "bookings", "activities"
   add_foreign_key "bookings", "users"
-  add_foreign_key "chatrooms", "chatrooms", column: "user1_id"
-  add_foreign_key "chatrooms", "chatrooms", column: "user2_id"
+  add_foreign_key "chatrooms", "users", column: "user1_id"
+  add_foreign_key "chatrooms", "users", column: "user2_id"
   add_foreign_key "matches", "users", column: "user_receiver_id"
   add_foreign_key "matches", "users", column: "user_requester_id"
   add_foreign_key "messages", "chatrooms"

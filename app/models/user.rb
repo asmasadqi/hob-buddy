@@ -6,6 +6,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # geocoder to localize people and find in the users index for match
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_address?
+
   has_one_attached :avatar
 
   has_many :user_preferences, dependent: :destroy

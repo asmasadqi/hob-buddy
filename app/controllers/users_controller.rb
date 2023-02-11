@@ -2,10 +2,11 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    if current_user
-      preferences = current_user&.preferences&.map(&:id)
+    if user_signed_in?
+      preferences = current_user.preferences.pluck(:id)
+      #geocoder sur les utilisater avec near
       location = current_user.location
-      mutualize = User.joins("JOIN user_preferences ON user_preferences.user_id = users.id").where.not(id: current_user.id).where(location: location)
+      mutualize = User.joins(:user_preferences).where.not(id: current_user.id)#.where(location: location)　> geocoder
       @first_batch_users = mutualize.where(user_preferences: UserPreference.where(preference_id: preferences))
       @second_batch_users = mutualize.where.not(user_preferences: UserPreference.where(preference_id: preferences))
       @users = @first_batch_users + @second_batch_users
@@ -14,3 +15,5 @@ class UsersController < ApplicationController
     end
   end
 end
+
+# supprimer les gens qui sont déjà passés

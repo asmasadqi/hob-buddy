@@ -1,72 +1,149 @@
 <div class="container-fluid bg-secondary">
-<h1>Test page for HTML/CSS components</h1>
-<p>Bootstrap btn with custom btn</p>
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-success text-light">Success</button>
-<button type="button" class="btn btn-danger text-light">Danger</button>
-<button type="button" class="btn btn-warning text-light">Warning</button>
-<button type="button" class="btn btn-info text-light">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-dark">Dark</button>
-
-<button type="button" class="btn btn-link">Link</button>
-<hr>
-<div>
-<h2>Disabled buttons</h2>
-  <button type="button" class="btn btn-primary" disabled>Primary button</button>
-  <button type="button" class="btn btn-success text-light" disabled>Success</button>
-  <button type="button" class="btn btn-danger text-light" disabled>Danger</button>
-  <button type="button" class="btn btn-warning text-light" disabled>Warning</button>
-  <button type="button" class="btn btn-info text-light" disabled>Info</button>
-  <button type="button" class="btn btn-light" disabled>Light</button>
-  <button type="button" class="btn btn-secondary" disabled>Secondary</button>
-  <button type="button" class="btn btn-dark" disabled>Dark</button>
-</div>
-<hr>
-<div>
-<h2>Outline buttons</h2>
-  <button type="button" class="btn btn-outline-primary btn-rounded">Primary</button>
-  <button type="button" class="btn btn-outline-success btn-rounded">Success</button>
-  <button type="button" class="btn btn-outline-danger btn-rounded">Danger</button>
-  <button type="button" class="btn btn-outline-warning btn-rounded">Warning</button>
-  <button type="button" class="btn btn-outline-info btn-rounded">Info</button>
-  <button type="button" class="btn btn-outline-secondary btn-rounded">Secondary</button>
-  <button type="button" class="btn btn-outline-dark btn-rounded">Dark</button>
-</div>
-<hr>
-<div>
-  <button type="button" class="btn btn-primary rounded-pill">Primary</button>
-  <button type="button" class="btn btn-success rounded-pill text-light">Success</button>
-  <button type="button" class="btn btn-danger rounded-pill text-light">Danger</button>
-  <button type="button" class="btn btn-warning rounded-pill text-light">Warning</button>
-  <button type="button" class="btn btn-info rounded-pill text-light">Info</button>
-  <button type="button" class="btn btn-light rounded-pill">Light</button>
-  <button type="button" class="btn btn-secondary rounded-pill">Secondary</button>
-  <button type="button" class="btn btn-dark rounded-pill">Dark</button>
-</div>
-<hr>
-<p>Bootstrap badges</p>
-<span class="badge text-bg-primary">Primary</span>
-<span class="badge text-bg-success text-light">Success</span>
-<span class="badge text-bg-danger text-light">Danger</span>
-<span class="badge text-bg-warning text-light">Warning</span>
-<span class="badge text-bg-info text-light">Info</span>
-<span class="badge text-bg-secondary">Secondary</span>
-<span class="badge text-bg-light">Light</span>
-<span class="badge text-bg-dark">Dark</span>
-<hr>
-<p>Material Icons</p>
-<div>
-  <span class="material-symbols-outlined">search</span>
-  <span class="material-symbols-outlined">home</span>
-  <span class="material-symbols-outlined">settings</span>
-  <span class="material-symbols-outlined">favorite</span>
-  <span class="material-symbols-outlined">swipe_left</span>
-  <span class="material-symbols-outlined">add_box</span>
-  <span class="material-symbols-outlined">chat_bubble</span>
-</div>
-<hr>
-<p>Big bordered avatar for match pages</p>
-<%= image_tag current_user.avatar, class: "hbuddy-match-avatar big", width:160, height:160 %>
+  <h1>Test page for HTML/CSS components</h1>
+  <p>Bootstrap btn with custom btn</p>
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-success text-light">Success</button>
+  <button type="button" class="btn btn-danger text-light">Danger</button>
+  <button type="button" class="btn btn-warning text-light">Warning</button>
+  <button type="button" class="btn btn-info text-light">Info</button>
+  <button type="button" class="btn btn-light">Light</button>
+  <button type="button" class="btn btn-secondary">Secondary</button>
+  <button type="button" class="btn btn-dark">Dark</button>
+  <button type="button" class="btn btn-link">Link</button>
+  <hr>
+  <div>
+    <h2>Disabled buttons</h2>
+    <button type="button" class="btn btn-primary" disabled>Primary button</button>
+    <button type="button" class="btn btn-success text-light" disabled>Success</button>
+    <button type="button" class="btn btn-danger text-light" disabled>Danger</button>
+    <button type="button" class="btn btn-warning text-light" disabled>Warning</button>
+    <button type="button" class="btn btn-info text-light" disabled>Info</button>
+    <button type="button" class="btn btn-light" disabled>Light</button>
+    <button type="button" class="btn btn-secondary" disabled>Secondary</button>
+    <button type="button" class="btn btn-dark" disabled>Dark</button>
+  </div>
+  <hr>
+  <div>
+    <h2>Outline buttons</h2>
+    <button type="button" class="btn btn-outline-primary btn-rounded">Primary</button>
+    <button type="button" class="btn btn-outline-success btn-rounded">Success</button>
+    <button type="button" class="btn btn-outline-danger btn-rounded">Danger</button>
+    <button type="button" class="btn btn-outline-warning btn-rounded">Warning</button>
+    <button type="button" class="btn btn-outline-info btn-rounded">Info</button>
+    <button type="button" class="btn btn-outline-secondary btn-rounded">Secondary</button>
+    <button type="button" class="btn btn-outline-dark btn-rounded">Dark</button>
+  </div>
+  <hr>
+  <div>
+    <button type="button" class="btn btn-primary rounded-pill">Primary</button>
+    <button type="button" class="btn btn-success rounded-pill text-light">Success</button>
+    <button type="button" class="btn btn-danger rounded-pill text-light">Danger</button>
+    <button type="button" class="btn btn-warning rounded-pill text-light">Warning</button>
+    <button type="button" class="btn btn-info rounded-pill text-light">Info</button>
+    <button type="button" class="btn btn-light rounded-pill">Light</button>
+    <button type="button" class="btn btn-secondary rounded-pill">Secondary</button>
+    <button type="button" class="btn btn-dark rounded-pill">Dark</button>
+  </div>
+  <hr>
+  <p>Bootstrap badges</p>
+  <span class="badge text-bg-primary">Primary</span>
+  <span class="badge text-bg-success text-light">Success</span>
+  <span class="badge text-bg-danger text-light">Danger</span>
+  <span class="badge text-bg-warning text-light">Warning</span>
+  <span class="badge text-bg-info text-light">Info</span>
+  <span class="badge text-bg-secondary">Secondary</span>
+  <span class="badge text-bg-light">Light</span>
+  <span class="badge text-bg-dark">Dark</span>
+  <hr>
+  <p>Material Icons</p>
+  <div>
+    <span class="material-symbols-outlined">search</span>
+    <span class="material-symbols-outlined">home</span>
+    <span class="material-symbols-outlined">settings</span>
+    <span class="material-symbols-outlined">favorite</span>
+    <span class="material-symbols-outlined">swipe_left</span>
+    <span class="material-symbols-outlined">add_box</span>
+    <span class="material-symbols-outlined">chat_bubble</span>
+  </div>
+  <hr>
+  <p>Big bordered avatar for match pages</p>
+  <%= image_tag current_user.avatar, class: "hbuddy-match-avatar big", width:160, height:160 %>
+  <p>Card for carousel</p>
+  <div id="hbuddyCardCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#hbuddyCardCarouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#hbuddyCardCarouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#hbuddyCardCarouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card hbuddy-card">
+          <%= image_tag Activity.first.photo, class: "card-img-top" %>
+          <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+          <div class="card-body">
+            <span class="badge text-bg-warning text-light">Warning</span>
+            <p class="card-text">J-F Kennedy Cinema with Yann</p>
+            <p class="hbuddy-card-location">New-York</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card hbuddy-card">
+          <%= image_tag Activity.second.photo, class: "card-img-top" %>
+          <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+          <div class="card-body">
+            <span class="badge text-bg-warning text-light">Warning</span>
+            <p class="card-text">J-F Kennedy Cinema with Yann</p>
+            <p class="hbuddy-card-location">New-York</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card hbuddy-card">
+          <%= image_tag Activity.third.photo, class: "card-img-top" %>
+          <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+          <div class="card-body">
+            <span class="badge text-bg-warning text-light">Warning</span>
+            <p class="card-text">J-F Kennedy Cinema with Yann</p>
+            <p class="hbuddy-card-location">New-York</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <hr>
+  <ul class="hbuddy-card-container d-flex justify-content-start align-items-center">
+    <li>
+      <div class="card hbuddy-card small-size">
+        <%= image_tag Activity.fourth.photo, class: "card-img-top" %>
+        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+        <div class="card-body">
+          <span class="badge text-bg-warning text-light">Warning</span>
+          <p class="card-text">J-F Kennedy Cinema with Yann</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="card hbuddy-card small-size">
+        <%= image_tag Activity.fifth.photo, class: "card-img-top" %>
+        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+        <div class="card-body">
+          <span class="badge text-bg-warning text-light">Warning</span>
+          <p class="card-text">J-F Kennedy Cinema with Yann</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="card hbuddy-card small-size">
+        <%= image_tag Activity.last.photo, class: "card-img-top" %>
+        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+        <div class="card-body">
+          <span class="badge text-bg-warning text-light">Warning</span>
+          <p class="card-text">J-F Kennedy Cinema with Yann</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <br><br>
 </div>

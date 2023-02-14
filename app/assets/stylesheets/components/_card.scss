@@ -1,0 +1,79 @@
+.hbuddy-card {
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  &.small-size {
+    width: 160px;
+    height: 160px;
+    .card-img-top {
+      height: 110px;
+    }
+    .hbuddy-match-avatar {
+      right: 4px;
+      top: 4px;
+      width: 26px;
+      height: 26px;
+    }
+    .card-body p{
+      font-size: 12px;
+      line-height: 12px;
+    }  
+  }
+  .card-img-top {
+    height: 230px;
+    object-fit: cover;
+  }
+  .hbuddy-match-avatar {
+    position: absolute;
+    right: var(--bs-card-spacer-x);
+    top: var(--bs-card-spacer-y);
+  }
+  .card-body {
+    position: relative;
+    p {
+      min-width: 0;
+      white-space: initial;
+      margin-bottom: 0;
+      line-height: 16px;
+    }
+    .badge {
+      position: absolute;
+      top: -10px;
+    }
+  }
+  .hbuddy-card-location {
+    font-weight: 700;
+  }
+}
+
+#hbuddyCardCarousel {
+  .carousel-indicators {
+    margin-bottom: 0;
+    bottom: -30px;
+  }
+  .carousel-indicators [data-bs-target] {
+    height: 8px;
+    width: 8px;
+    background-color: $japanese-indigo;
+    border-radius: 50%;
+    &.active {
+      scale: 1.5;
+    }
+  }  
+}
+
+.hbuddy-card-container {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: none;
+  touch-action: pan-x;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  li{
+    margin-right: 15px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

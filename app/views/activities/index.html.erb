@@ -1,1 +1,125 @@
 <h1> INDEX</h1>
+
+<h1>Welcome <%=current_user.first_name.capitalize %></h1>
+<br>
+<h3>Your matches's activity</h3>
+<br>
+<div id="hbuddyCardCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#hbuddyCardCarouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#hbuddyCardCarouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#hbuddyCardCarouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card hbuddy-card">
+          <%= image_tag Activity.first.photo, class: "card-img-top" %>
+          <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+          <div class="card-body">
+            <span class="badge text-bg-warning text-light">Warning</span>
+            <p class="card-text">J-F Kennedy Cinema with Yann</p>
+            <p class="hbuddy-card-location">New-York</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card hbuddy-card">
+          <%= image_tag Activity.second.photo, class: "card-img-top" %>
+          <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+          <div class="card-body">
+            <span class="badge text-bg-warning text-light">Warning</span>
+            <p class="card-text">J-F Kennedy Cinema with Yann</p>
+            <p class="hbuddy-card-location">New-York</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card hbuddy-card">
+          <%= image_tag Activity.third.photo, class: "card-img-top" %>
+          <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+          <div class="card-body">
+            <span class="badge text-bg-warning text-light">Warning</span>
+            <p class="card-text">J-F Kennedy Cinema with Yann</p>
+            <p class="hbuddy-card-location">New-York</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+
+<h3>Recommended activities in <%= current_user.location %></h3>
+<%# slider of card of your activities in your city %>
+<br>
+
+<ul class="hbuddy-card-container d-flex justify-content-start align-items-center">
+    <li>
+      <div class="card hbuddy-card small-size">
+        <%= image_tag Activity.fourth.photo, class: "card-img-top" %>
+        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+        <div class="card-body">
+          <span class="badge text-bg-warning text-light">Warning</span>
+          <p class="card-text">J-F Kennedy Cinema with Yann</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="card hbuddy-card small-size">
+        <%= image_tag Activity.fifth.photo, class: "card-img-top" %>
+        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+        <div class="card-body">
+          <span class="badge text-bg-warning text-light">Warning</span>
+          <p class="card-text">J-F Kennedy Cinema with Yann</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="card hbuddy-card small-size">
+        <%= image_tag Activity.last.photo, class: "card-img-top" %>
+        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+        <div class="card-body">
+          <span class="badge text-bg-warning text-light">Warning</span>
+          <p class="card-text">J-F Kennedy Cinema with Yann</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+<br>
+
+<h3>Explore other activities</h3>
+<%# slider of random cardsin DB %>
+<br>
+
+<ul class="hbuddy-card-container d-flex justify-content-start align-items-center">
+    <li>
+      <div class="card hbuddy-card small-size">
+        <%= image_tag Activity.fourth.photo, class: "card-img-top" %>
+        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+        <div class="card-body">
+          <span class="badge text-bg-warning text-light">Warning</span>
+          <p class="card-text">J-F Kennedy Cinema with Yann</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="card hbuddy-card small-size">
+        <%= image_tag Activity.fifth.photo, class: "card-img-top" %>
+        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+        <div class="card-body">
+          <span class="badge text-bg-warning text-light">Warning</span>
+          <p class="card-text">J-F Kennedy Cinema with Yann</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="card hbuddy-card small-size">
+        <%= image_tag Activity.last.photo, class: "card-img-top" %>
+        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+        <div class="card-body">
+          <span class="badge text-bg-warning text-light">Warning</span>
+          <p class="card-text">J-F Kennedy Cinema with Yann</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+<br>

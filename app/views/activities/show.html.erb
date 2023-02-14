@@ -1,0 +1,35 @@
+<h1>Show</h1>
+<div>
+  <div>
+    <h2><%= @activity.title %> with <%=User.find(@activity.user_id).first_name.capitalize%></h2>
+  </div>
+  <div class="card hbuddy-card">
+    <%= image_tag Activity.first.photo, class: "card-img-top" %>
+    <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+    <div class="card-body">
+      <span class="badge text-bg-warning text-light">activity category</span>
+      <p class="hbuddy-card-location"><%= @activity.location %></p>
+      <p class="card-text"><%= @activity.start_date %> ~ <%= @activity.end_date %></p>
+      <p class="card-text"><%= @activity.total_price %>€</p>
+    </div>
+  </div>
+  <div class="d-grid gap-2">
+    <button type="button" class="btn btn-danger ">Join</button>
+  </div>
+  <div>
+    <div>
+      <span class="badge text-bg-warning text-light"><%= @activity.min_persons %> ~ <%= @activity.max_persons %> buddies</span>
+      <span class="badge text-bg-warning text-light"><%= @activity.gender %></span>
+      <span class="badge text-bg-warning text-light"><%= @activity.age_range %> years-old</span>
+    </div>
+    <div>
+      <p><%= @activity.description %></p>
+    </div>
+    <div>
+      <p>Additional info:</p>
+      <p><%= @activity.useful_information %></p>
+    </div>
+  </div>
+</div>
+
+<%# add map with geocode %>

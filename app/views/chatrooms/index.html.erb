@@ -13,5 +13,40 @@
       <% end %>      
     </ul>
   </div>
+  <section>
+  <ul class="nav nav-tabs hbuddy-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link py-2 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Messages</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link py-2" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Group</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active pt-3" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+      <ul class="hbuddy-message-list">
+        <% @chatrooms.each do |chatroom| %>
+          <li>
+            <div class="d-flex py-3 align-items-center">
+              <%= link_to chatroom_path(chatroom) do %>
+                <%= image_tag User.find(chatroom.user2_id).avatar, class: "hbuddy-match-avatar", width:50, height:50 %>
+              <% end %>
+              <div class="hbuddy-message-preview">
+                <% last_message = Message.where(chatroom_id: chatroom.id).last %>
+                <% if last_message != nil %>
+                  <p class="first_name my-auto"><%= User.find(last_message.user_id).first_name %></p>
+                  <p class="message my-auto"><%= last_message.content %></p>
+                <% else %>
+                  <p class="my-auto">No messages exchanged</p>
+                <% end %>
+              </div>
+            </div>
+          </li>
+        <% end %>      
+      </ul>
+    </div>
+    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">second</div>
+  </div>
+  </section>
 </div>
 

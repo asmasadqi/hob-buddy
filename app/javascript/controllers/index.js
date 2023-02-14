@@ -7,5 +7,5 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import Swiper2Controller from "./swiper2_controller"
-application.register("swiper2", Swiper2Controller)
+import SwipeController from "./swipe_controller"
+application.register("swipe", SwipeController)

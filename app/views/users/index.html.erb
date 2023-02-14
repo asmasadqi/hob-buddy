@@ -25,6 +25,7 @@
     </div>
 
     <div class="slide" data-id="<%=user.id %>">
+    <%= @markers %>
       <li>
         <div>
           <%# <%= image_tag user.avatar, height: 200, width: 200, crop: :fill %>
@@ -47,3 +48,9 @@
 </div>
 
 <%# add showing on slide css later%>
+
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>

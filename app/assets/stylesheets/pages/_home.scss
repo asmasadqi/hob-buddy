@@ -4,10 +4,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-image: url("https://zupimages.net/up/23/06/4zue.jpg");
 }
 
-html, body {
-    height: 100%;
+body {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hbuddy-home-bg {

@@ -118,7 +118,7 @@ id8 = User.new(
   password: "123456",
   about_me: "Here for holidays to meet family and staying for 3 months, would love to meet new buddies to escape dinners with my Grandma! I play football and tennis quite well and would be up to go surfing :man-surfing: ",
   gender: "Male",
-  location: "Mexico",
+  location: "Paris",
   date_of_birth: "1999-04-04"
 )
 file = URI.open('https://source.unsplash.com/random/?profile?male')
@@ -133,7 +133,7 @@ id9 = User.new(
   password: "123456",
   about_me: "I speak english :gb:, japonese :jp:, spanish :es: and french :flag-mf:, I am here for holidays, would be super happy to meet new people for activities of all kind, I love surfing :woman-surfing: and climbing :woman_climbing: and i am trying to improve my tennis skills, ready for a match?",
   gender: "Female",
-  location: "Mexico",
+  location: "Eiffel Tower",
   date_of_birth: "1995-01-01"
 )
 file = URI.open('https://source.unsplash.com/random/?profile?female')
@@ -163,7 +163,7 @@ id11 = User.new(
   password: "123456",
   about_me: "love dancing and singing half naked and would be happy to go out with buddies (female only) who shares the same passion I have for lap dancing! Don't leave me alone this time, match me!",
   gender: "Female",
-  location: "Los angeles",
+  location: "Los Angeles",
   date_of_birth: "1978-10-19"
 )
 file = URI.open('https://source.unsplash.com/random/?profile?female')

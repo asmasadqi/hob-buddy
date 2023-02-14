@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     if current_user
+      raise
       preferences = current_user&.preferences&.map(&:id)
       location = current_user.location
       mutualize = User.joins("JOIN user_preferences ON user_preferences.user_id = users.id").where.not(id: current_user.id).where(location: location)

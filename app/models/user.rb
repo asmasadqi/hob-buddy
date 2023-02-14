@@ -6,6 +6,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # geocoder to localize people and find in the users index for match
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   has_one_attached :avatar
 
   has_many :user_preferences, dependent: :destroy
@@ -44,6 +48,7 @@ class User < ApplicationRecord
     "#{self.first_name.capitalize} #{self.last_name[0].capitalize}."
   end
 
+  # Compute age from date of birth to display
   def age
     Time.zone.now.year - date_of_birth.year
   end

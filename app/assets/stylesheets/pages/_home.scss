@@ -4,10 +4,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-image: url("https://zupimages.net/up/23/06/4zue.jpg");
 }
 
-html, body {
-    height: 100%;
+body {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hbuddy-home-bg {
@@ -18,7 +21,7 @@ html, body {
   padding: 100px 20px 0;
 }
 
-p {
+.hbuddy-home-text {
   text-transform: uppercase;
   color: white;
   font-weight: 900;
@@ -26,14 +29,14 @@ p {
   font-size: 0px;
 }
 
-p span {
+.hbuddy-home-text span {
   display: inline-block;
   position: relative;
   overflow: hidden;
   font-size: clamp(20px, 8vw, 120px);
 }
 
-p span::after {
+.hbuddy-home-text span::after {
   content: "";
   display: block;
   position: absolute;
@@ -44,22 +47,23 @@ p span::after {
   transform: translateX(20%);
 }
 
-p:nth-child(1) {
+.hbuddy-home-text:nth-child(1) {
   font-weight: 300;
   animation: txt-appearance 1s 1.25s forwards;
 }
 
-p:nth-child(2) {
+.hbuddy-home-text:nth-child(2) {
   animation: txt-appearance 1s 1.25s forwards;
 }
 
-p:nth-child(1) span::after{
+.hbuddy-home-text:nth-child(1) span::after{
   background: #E76F51;
   animation: slide-in 0s 0s ease-out forwards,
   slide-out 1.5s 1.3s ease-out forwards;
   }
 
-p:nth-child(2) span::after {
+
+.hbuddy-home-text:nth-child(2) span::after {
   background: #E9C46A;
   animation: slide-in 0s 0s ease-out forwards,
   slide-out 1.5s 1.3s ease-out forwards;

@@ -3,7 +3,7 @@ Activity.destroy_all
 puts "Activities cleaned"
 
 puts "Creating activities"
-ac1 = Activity.create(
+ac1 = Activity.new(
   title: "Diving",
   description: "Join the best of the best in scuba diving and live the dive life with a super motivated buddy who know the spots by heart",
   useful_information: "I can lend you the material if needed",
@@ -18,9 +18,12 @@ ac1 = Activity.create(
   start_date: Date.today + 2.days,
   end_date: Date.today + 4.days
 )
+file = URI.open('https://source.unsplash.com/random/?diving')
+ac1.photo.attach(io: file, filename: 'diving.png', content_type: 'image/png')
+ac1.save
 puts "Activity with id #{ac1.id}"
 
-ac2 = Activity.create(
+ac2 = Activity.new(
   title: "Fishing",
   description: "Let's meet in St-Jean de Luz for crazy fish tour, if you like squids and you would like to have it for lunch come on the boat and learn with the fisher team Rob and Alex",
   useful_information: "Bring your fishing net with you",
@@ -35,9 +38,12 @@ ac2 = Activity.create(
   start_date: Date.today + 20.days,
   end_date: Date.today + 40.days
 )
+file = URI.open('https://source.unsplash.com/random/?fishing')
+ac2.photo.attach(io: file, filename: 'fishing.png', content_type: 'image/png')
+ac2.save
 puts "Activity with id #{ac2.id}"
 
-ac3 = Activity.create(
+ac3 = Activity.new(
   title: "Fortnite",
   description: "I am a Fortnite expert player looking for a duo, trio, squad or clan to play with. Available at night from 9pm to 4pm (extra possible if passionate). Looking forward to meeting you. My gamer name is 'Kraken'",
   useful_information: "",
@@ -52,9 +58,12 @@ ac3 = Activity.create(
   start_date: Date.today + 10.days,
   end_date: Date.today + 40.days
 )
+file = URI.open('https://source.unsplash.com/random/?gaming')
+ac3.photo.attach(io: file, filename: 'gaming.png', content_type: 'image/png')
+ac3.save
 puts "Activity with id #{ac3.id}"
 
-ac4 = Activity.create(
+ac4 = Activity.new(
   title: "Tennis",
   description: "Meet new friends and competitors over the net!, my group is all about meeting other players, improving our skills and technique and having fun and enjoying good games!",
   useful_information: "",
@@ -69,6 +78,9 @@ ac4 = Activity.create(
   start_date: Date.today + 5.days,
   end_date: Date.today + 6.days
 )
+file = URI.open('https://source.unsplash.com/random/?tennis')
+ac4.photo.attach(io: file, filename: 'tennis.png', content_type: 'image/png')
+ac4.save
 puts "Activity with id #{ac4.id}"
 
 ac5 = Activity.create(
@@ -86,9 +98,12 @@ ac5 = Activity.create(
   start_date: Date.today + 8.days,
   end_date: Date.today + 10.days
 )
+file = URI.open('https://source.unsplash.com/random/?seoul')
+ac5.photo.attach(io: file, filename: 'seoul.png', content_type: 'image/png')
+ac5.save
 puts "Activity with id #{ac5.id}"
 
-ac6 = Activity.create(
+ac6 = Activity.new(
   title: "Water polo",
   description: "Let's build a water polo team and train twice a week, I have been practicing for 10 years and I am looking for motivated buddies",
   useful_information: "only for good players (pro league)",
@@ -103,9 +118,12 @@ ac6 = Activity.create(
   start_date: Date.today + 14.days,
   end_date: Date.today + 74.days
 )
+file = URI.open('https://source.unsplash.com/random/?water-polo')
+ac6.photo.attach(io: file, filename: 'polo.png', content_type: 'image/png')
+ac6.save
 puts "Activity with id #{ac6.id}"
 
-ac7 = Activity.create(
+ac7 = Activity.new(
   title: "Ashtanga yoga zen",
   description: "Hey zen yogis! I am looking for buddies who would like to learn and practice with me the ancient art of traditional Yoga. It has changed my life (I am an former banker from Manhattan) and I swear it will change yours. Available on Saturdays in Buttes Chaumont to teach you",
   useful_information: "bring your mat",
@@ -119,9 +137,12 @@ ac7 = Activity.create(
   total_price: 0,
   start_date: Date.today + 80.days
 )
+file = URI.open('https://source.unsplash.com/random/?yoga')
+ac7.photo.attach(io: file, filename: 'yoga.png', content_type: 'image/png')
+ac7.save
 puts "Activity with id #{ac7.id}"
 
-ac8 = Activity.create(
+ac8 = Activity.new(
   title: "Surfing",
   description: "¡Hola! my name is Sam and I'm currently in Costa Rica practicing my surfing skills in March I'm traveling up north to Mexico, a real surfer's paradise and I would love for you to join me! This town filled with good vibes is therefore perfect to practice our surfing. After our daily surf classes, we can either relax by the beach/pool or we can try one of the many other activities that the region offers. Do not hesitate, join for great fun!",
   useful_information: "I take real waves, beginners abstain",
@@ -136,9 +157,12 @@ ac8 = Activity.create(
   start_date: Date.today + 30.days,
   end_date: Date.today + 40.days
 )
+file = URI.open('https://source.unsplash.com/random/?surfing')
+ac8.photo.attach(io: file, filename: 'surfing.png', content_type: 'image/png')
+ac8.save
 puts "Activity with id #{ac8.id}"
 
-ac9 = Activity.create(
+ac9 = Activity.new(
   title: "Fitness / Dynamo",
   description: "Hello I'm Dyno and I have founded the Dynamo circle, a cycling studio in Paris that may just be the coolest way to workout. I'd like to invite 4 to 5 buddies to test the new fitness room that just opened on the Perchoir rooftop",
   useful_information: "Limited free entrance to 5 buddies so be quick, first booked first served",
@@ -153,9 +177,12 @@ ac9 = Activity.create(
   start_date: Date.today + 23.days,
   end_date: Date.today + 24.days
 )
+file = URI.open('https://source.unsplash.com/random/?fitness')
+ac9.photo.attach(io: file, filename: 'fitness.png', content_type: 'image/png')
+ac9.save
 puts "Activity with id #{ac9.id}"
 
-ac10 = Activity.create(
+ac10 = Activity.new(
   title: "Cooking asian food",
   description: "Hi there I'm Werner and i come back from 3 years abroad (Cambodia, China and Thailand) I've learn many recipes that I would like to share. If you are available for a cooking class and eat together what we have cooked afterwards, this group is made for you! If you join, let me know what you can't eat so i adapt the menu",
   useful_information: "I provide all the ingredients and material, the lesson takes place in my kitchen",
@@ -170,9 +197,12 @@ ac10 = Activity.create(
   start_date: Date.today + 3.days,
   end_date: Date.today + 4.days
 )
+file = URI.open('https://source.unsplash.com/random/?asian-food')
+ac10.photo.attach(io: file, filename: 'asian-food.png', content_type: 'image/png')
+ac10.save
 puts "Activity with id #{ac10.id}"
 
-ac11 = Activity.create(
+ac11 = Activity.new(
   title: "Travel with me in Egypt",
   description: "Hi everyone., I'm 45 and have just booked my very first solo trip, to Egypt at the beginning of May.. as I hit the pay now button on the booking screen, I went into a panic. What the heck am I going to do alone in Egypt for 10 whole days? I don't even go for coffee on my own in my own country! Do you wanna join?",
   useful_information: "from 1st to 18th of may, landing in Cairo no hotel booked yet",
@@ -187,9 +217,12 @@ ac11 = Activity.create(
   start_date: Date.today + 60.days,
   end_date: Date.today + 78.days
 )
+file = URI.open('https://source.unsplash.com/random/?egypt')
+ac11.photo.attach(io: file, filename: 'egypt.png', content_type: 'image/png')
+ac11.save
 puts "Activity with id #{ac11.id}"
 
-ac12 = Activity.create(
+ac12 = Activity.new(
   title: "Cycling with Tommy",
   description: "Hi all ! I'm Tom, passionate about cycling! I'm organizing a group training on March 4th around the woods in Fontainebleau.I'm thinking about a 4h session starting at Bois-Le-Roi station.
     Looking forward to seeing you all !!",
@@ -205,4 +238,7 @@ ac12 = Activity.create(
   start_date: Date.today + 30.days,
   end_date: Date.today + 30.days
 )
+file = URI.open('https://source.unsplash.com/random/?cycling')
+ac12.photo.attach(io: file, filename: 'cycling.png', content_type: 'image/png')
+ac12.save
 puts "Activity with id #{ac12.id}"

@@ -1,0 +1,49 @@
+
+<ul id="slides">
+  <% @users.each do |user| %>
+    <button type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <div>
+        <%= image_tag user.avatar, height: 200, width: 200, crop: :fill %>
+      </div>
+    </button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel"><%= user.full_name %></h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= user.about_me %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary text-center" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" data-id="<%=user.id %>">
+      <li>
+        <div>
+          <%# <%= image_tag user.avatar, height: 200, width: 200, crop: :fill %>
+        </div>
+        <div>
+          <%= user.full_name %> -
+          <%= user.age %>
+        </div>
+        <div>
+          <%= user.location %>
+        </div>
+      </li>
+    </div>
+  <% end %>
+</ul>
+
+<div>
+  <button class="controls btn btn-primary">x</button>
+  <button class="controls btn btn-warning">LIKE</button>
+</div>
+
+<%# add showing on slide css later%>

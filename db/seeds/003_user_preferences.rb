@@ -45,9 +45,20 @@ up8 = UserPreference.create(
 )
 puts "Created preference for roxane.d with id#{up8.id}"
 
-
 up9 = UserPreference.create(
   user_id: User.find_by(email: "victoria.semblat@gmail.com").id,
   preference_id: Preference.find_by(name: "Water sports").id
 )
 puts "Created preference for victoria.s with id#{up9.id}"
+
+up10 = UserPreference.create(
+  user_id: User.find_by(email: "kao_martin@gmail.com").id,
+  preference_id: Preference.find_by(name: "Water sports").id
+)
+puts "Created preference for victoria.s with id#{up10.id}"
+
+up11 = UserPreference.create(
+  user_id: User.find_by(email: "alex_brun@hotmail.com").id,
+  preference_id: Preference.find_by(name: "Water sports").id
+)
+puts "Created preference for victoria.s with id#{up11.id}"

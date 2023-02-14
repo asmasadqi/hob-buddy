@@ -1,15 +1,15 @@
 class ActivitiesController < ApplicationController
-  skip_before_action :authenticate_user!
+  before_action :authenticate_user!
 
-  def index
-    if params[:query].present?
-      @activities = Activity.search_by_title_description_category(params[:query])
-    elsif params[:mine].present?
-      all_activities
-    else
-      @activities = Activity.all
-    end
-  end
+  # def index
+  #   if params[:query].present?
+  #     @activities = Activity.search_by_title_description_category(params[:query])
+  #   elsif params[:mine].present?
+  #     all_activities
+  #   else
+  #     @activities = Activity.all
+  #   end
+  # end
 
   def show
     set_activity
@@ -21,11 +21,11 @@ class ActivitiesController < ApplicationController
 
   def create
     @user = current_user
-    @activity = Activity.new(activity_params)
-    @activity.user = @user
+    @activity = Activity.new(activity_params) #create a new activity from the filled form
+    @activity.user = @user #associate the created activity to the current user
     # To finish because it does not save
     if @activity.save
-      redirect_to activity_path(@activity)
+      redirect_to user_activity_path(@user)
     else
       render :new, status: :unprocessable_entity
     end
@@ -47,10 +47,10 @@ class ActivitiesController < ApplicationController
     redirect_to activities_path
   end
 
-  def all_activities
-    @user = current_user
-    @activities = @user.activities
-  end
+  # def all_activities
+  #   @user = current_user
+  #   @activities = @user.activities
+  # end
 
   private
 
@@ -59,7 +59,7 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:title, :description, :useful_information, :age_range, :gender, :preference_id, :location, :min_persons, :max_persons, :total_price, :start_date, :end_date)
+    params.require(:activity).permit(:title, :description, :useful_information, :age_range, :gender, :preference_id, :location, :min_persons, :max_persons, :total_price, :start_date, :end_date, :photo)
   end
 end
 

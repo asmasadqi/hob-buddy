@@ -133,7 +133,7 @@ id9 = User.new(
   password: "123456",
   about_me: "I speak english :gb:, japonese :jp:, spanish :es: and french :flag-mf:, I am here for holidays, would be super happy to meet new people for activities of all kind, I love surfing :woman-surfing: and climbing :woman_climbing: and i am trying to improve my tennis skills, ready for a match?",
   gender: "Female",
-  location: "Eiffel Tower",
+  location: "Paris",
   date_of_birth: "1995-01-01"
 )
 file = URI.open('https://source.unsplash.com/random/?profile?female')

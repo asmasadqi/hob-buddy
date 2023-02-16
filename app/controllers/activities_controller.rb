@@ -12,7 +12,14 @@ class ActivitiesController < ApplicationController
   # end
 
   def show
-    set_activity
+    # The `geocoded` scope filters only activities with coordinates
+    @activity = Activity.find(params[:id])
+    @markers = @activity.geocoded.map do |item|
+      {
+        lat: item.latitude,
+        lng: item.longitude
+      }
+    end
   end
 
   def new

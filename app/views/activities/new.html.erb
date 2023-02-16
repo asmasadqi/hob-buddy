@@ -3,7 +3,7 @@
   <%= simple_form_for @activity do |f| %>
     <%= f.input :photo, as: :file %>
     <%= f.input :title, placeholder: 'ex: Walk in Manhattan' %>
-    <%= f.association :preference %>
+    <%= f.association :preference, label: 'Category' %>
     <%= f.input :description, placeholder: 'ex: Try out our best sandwiches in town' %>
     <%= f.input :location, placeholder: 'ex: Manhattan, NYC' %>
     <%= f.input :gender, collection: ["Female", "Male", "Not specified"], :label => "It's group of" %>

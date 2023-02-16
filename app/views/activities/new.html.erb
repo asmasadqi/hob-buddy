@@ -1,8 +1,9 @@
 <h1 class="p-3">Create a new activity</h1>
 <div class="d-flex p-3 bd-highlight">
   <%= simple_form_for @activity do |f| %>
-    <%= f.input :image, as: :file %>
+    <%= f.input :photo, as: :file %>
     <%= f.input :title, placeholder: 'ex: Walk in Manhattan' %>
+    <%= f.association :preference %>
     <%= f.input :description, placeholder: 'ex: Try out our best sandwiches in town' %>
     <%= f.input :location, placeholder: 'ex: Manhattan, NYC' %>
     <%= f.input :gender, collection: ["Female", "Male", "No preference"], :label => "It's group of" %>

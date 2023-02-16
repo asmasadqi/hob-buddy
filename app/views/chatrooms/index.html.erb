@@ -29,13 +29,17 @@
           <li>
             <div class="d-flex py-3 align-items-center">
               <%= link_to chatroom_path(chatroom) do %>
-                <%= image_tag User.find(chatroom.user2_id).avatar, class: "hbuddy-match-avatar", width:50, height:50 %>
+                <% if chatroom.user1_id == @user.id %>
+                  <%= image_tag User.find(chatroom.user2_id).avatar, class: "hbuddy-match-avatar", width:50, height:50 %>
+                <% else %>
+                   <%= image_tag User.find(chatroom.user1_id).avatar, class: "hbuddy-match-avatar", width:50, height:50 %>
+                <% end %>
               <% end %>
               <div class="hbuddy-message-preview">
                 <% last_message = Message.where(chatroom_id: chatroom.id).last %>
                 <% if last_message != nil %>
-                  <p class="first_name my-auto"><%= User.find(last_message.user_id).first_name %></p>
-                  <p class="message my-auto"><%= last_message.content %></p>
+                  <p class="first-name"><%= User.find(last_message.user_id).first_name %></p>
+                  <p class="message"><%= last_message.content %></p>
                 <% else %>
                   <p class="my-auto">No messages exchanged</p>
                 <% end %>

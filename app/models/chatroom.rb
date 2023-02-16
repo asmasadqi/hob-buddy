@@ -5,4 +5,9 @@ class Chatroom < ApplicationRecord
   has_many :messages
 
   validates_uniqueness_of :user1_id, scope: :user2_id
+
+  def other_user?(a_user)
+    user.id == a_user.id
+  end
+
 end

@@ -1,2 +1,24 @@
-<h1>Chatrooms#show</h1>
-<p>Find me in app/views/chatrooms/show.html.erb</p>
+<div class="container-fluid chatroom"
+  data-controller="chatroom-subscription"
+  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+  data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+
+  <h1>#<%= @chatroom.id %></h1>
+
+  <div class="messages" data-chatroom-subscription-target="messages">
+    <% @chatroom.messages.each do |message| %>
+      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+          <%= render "messages/message", message: message %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= simple_form_for [@chatroom, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex hbuddy-message-input" } do |f| %>
+    <%= f.input :content, label: false, placeholder: "Send message", wrapper_html: {class: "flex-grow-1"} %>
+    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+      <span class="material-symbols-outlined">send</span>
+    <% end %>
+  <% end %>
+</div>

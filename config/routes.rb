@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :matches, only: %i[create update]
 
-  resources :chatrooms, only: %i[index show]
+  resources :chatrooms, only: %i[index show] do
+    resources :messages, only: :create
+  end
 
   resources :activities do
     resources :bookings, only: %i[new create]

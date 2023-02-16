@@ -1,56 +1,46 @@
+<div class="swiper" data-controller="swipe">
+    <div class="swiper__content">
+      <div class="swiper__card-cont">
+        <% @users.each do |user| %>
 
-<ul id="slides">
-  <% @users.each do |user| %>
-    <button type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <div>
-        <%= image_tag user.avatar, height: 200, width: 200, crop: :fill %>
+          <div class="swiper__card"
+               data-swipe-target="card"
+               data-id="<%= user.id %>">
+            <%= link_to 'Profile', user_path(user), class: 'profile-link hidden' %>
+            <div class="swiper__card__content">
+
+              <div class="swiper__card__content_top">
+                <%# La partie du haut de la carte %>
+              </div>
+
+              <% if user.avatar%>
+                <%= image_tag user.avatar, class: 'swiper__card__img' %>
+              <% end %>
+
+              <div class="swiper__card__content_bottom">
+                <p class="swiper__card__name">
+                  <strong><%= user.full_name %></strong>, <span class="profile-age"><%= user.age %></span>
+                </p>
+                <p class="swiper__card__distance">
+                  <%# <i class="fa-solid fa-location-dot"></i><%= " #{Geocode.haversine_distance(current_user, user).round} km" %>
+                </p>
+              </div>
+
+            </div>
+            <div class="swiper__card__choice m--reject"></div>
+            <div class="swiper__card__choice m--like"></div>
+            <div class="swiper__card__drag"></div>
+          </div>
+
+        <% end %>
       </div>
-    </button>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel"><%= user.full_name %></h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <%= user.about_me %>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary text-center" data-bs-dismiss="modal">Close</button>
-          </div>
+    </div>
+    <div class="modal fade" data-swipe-target="modal" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="">
+      <div class="modal-dialog success-modal-dialog">
+        <div class="modal-content success-modal-content">
+          <div class="modal-body success-modal-body" data-swipe-target="modalBody"></div>
         </div>
       </div>
     </div>
-
-    <div class="slide" data-id="<%=user.id %>">
-    <%= @markers %>
-      <li>
-        <div>
-          <%# <%= image_tag user.avatar, height: 200, width: 200, crop: :fill %>
-        </div>
-        <div>
-          <%= user.full_name %> -
-          <%= user.age %>
-        </div>
-        <div>
-          <%= user.location %>
-        </div>
-      </li>
-    </div>
-  <% end %>
-</ul>
-
-<div>
-  <button class="controls btn btn-primary">x</button>
-  <button class="controls btn btn-warning">LIKE</button>
-</div>
-
-<%# add showing on slide css later%>
-
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>

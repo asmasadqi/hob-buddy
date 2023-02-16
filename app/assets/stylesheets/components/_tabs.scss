@@ -1,0 +1,28 @@
+.hbuddy-tabs {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  .nav-item {
+    margin-top: 10px;
+    flex: 1 1 50%;    
+    border: 0;
+    position: relative;
+    /*+.nav-item::before{
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: -25px;
+      content: "";
+      width: 50px;
+      height: 2px;
+      background-color: $japanese-indigo;
+    }*/
+  }
+  .nav-link {
+    border: 0;
+    width: 100%;
+    &.active {
+      border-bottom: 2px solid $burnt-sienna;
+      background-color: transparent;
+    }
+  }
+}

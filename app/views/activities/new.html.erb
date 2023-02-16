@@ -1,0 +1,20 @@
+<h1 class="p-3">Create a new activity</h1>
+<div class="d-flex p-3 bd-highlight">
+  <%= simple_form_for @activity do |f| %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :title, placeholder: 'ex: Walk in Manhattan' %>
+    <%= f.association :preference, label: 'Category' %>
+    <%= f.input :description, placeholder: 'ex: Try out our best sandwiches in town' %>
+    <%= f.input :location, placeholder: 'ex: Manhattan, NYC' %>
+    <%= f.input :gender, collection: ["Female", "Male", "Not specified"], :label => "It's group of" %>
+    <%= f.input :total_price, label: 'How much will it cost?', placeholder: 'ex: 10€' %>
+    <p>How many people can join?</p>
+    <%= f.input :min_persons, label: false, placeholder: 'min' %>
+    <%= f.input :max_persons, label: false, placeholder: 'max' %>
+    <%= f.input :useful_information, placeholder: 'ex: bring your lunch, come with a car...' %>
+    <p>Date</p>
+    <%= f.input :start_date, label: false%>
+    <%= f.input :end_date, label: false %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>

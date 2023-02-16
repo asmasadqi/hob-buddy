@@ -11,8 +11,12 @@ class ChatroomsController < ApplicationController
         @matches_list << match.user_requester_id
       end
     end
+
+    @chatrooms = Chatroom.where("user1_id = ? OR user2_id = ?", @user.id, @user.id)
   end
 
   def show
+    @chatroom = Chatroom.find(params[:id])
+    @message = Message.new
   end
 end

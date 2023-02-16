@@ -13,8 +13,7 @@ class ActivitiesController < ApplicationController
 
   def show
     set_activity
-    # The `geocoded` scope filters only activities with coordinates
-    @markers = { lat: @activity.latitude, lng: @activity.longitude }
+    @markers = [{ lat: @activity.latitude, lng: @activity.longitude }]
   end
 
   def new
@@ -25,7 +24,6 @@ class ActivitiesController < ApplicationController
     @user = current_user
     @activity = Activity.new(activity_params) #create a new activity from the filled form
     @activity.user = @user #associate the created activity to the current user
-    # To finish because it does not save
     if @activity.save
       redirect_to activity_path(@activity)
     else

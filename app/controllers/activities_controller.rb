@@ -12,14 +12,9 @@ class ActivitiesController < ApplicationController
   # end
 
   def show
+    set_activity
     # The `geocoded` scope filters only activities with coordinates
-    @activity = Activity.find(params[:id])
-    @markers = @activity.geocoded.map do |item|
-      {
-        lat: item.latitude,
-        lng: item.longitude
-      }
-    end
+    @markers = { lat: @activity.latitude, lng: @activity.longitude }
   end
 
   def new
@@ -32,7 +27,7 @@ class ActivitiesController < ApplicationController
     @activity.user = @user #associate the created activity to the current user
     # To finish because it does not save
     if @activity.save
-      redirect_to user_activity_path(@user)
+      redirect_to activity_path(@activity)
     else
       render :new, status: :unprocessable_entity
     end

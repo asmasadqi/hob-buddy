@@ -1,11 +1,18 @@
-<div class="container-fluid chatroom"
+<div class="container-fluid hbuddy-chatroom"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
 
-  <h1>#<%= @chatroom.id %></h1>
+  <div class="hbuddy-chatroom-header">
+    <%= link_to chatrooms_path, class: "d-flex justify-content-start align-items-center" do %>
+      <span class="ico material-symbols-outlined">arrow_back_ios_new</span>    
+      <% other_user = User.find(@chatroom.other_user(current_user)) %>
+      <%= image_tag other_user.avatar, class: "hbuddy-match-avatar", width:50, height:50 %>
+      <p class="mb-0"><%= other_user.first_name %></p>
+    <% end %>
+  </div>
 
-  <div class="messages" data-chatroom-subscription-target="messages">
+  <div class="hbuddy-messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
         <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">

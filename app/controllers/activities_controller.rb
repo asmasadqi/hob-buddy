@@ -1,15 +1,9 @@
 class ActivitiesController < ApplicationController
   before_action :authenticate_user!
 
-  # def index
-  #   if params[:query].present?
-  #     @activities = Activity.search_by_title_description_category(params[:query])
-  #   elsif params[:mine].present?
-  #     all_activities
-  #   else
-  #     @activities = Activity.all
-  #   end
-  # end
+  def index
+    @activities = Activity.all
+  end
 
   def show
     # The `geocoded` scope filters only activities with coordinates

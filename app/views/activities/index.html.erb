@@ -1,9 +1,7 @@
-<h1> INDEX</h1>
-
-<h1>Welcome <%=current_user.first_name.capitalize %></h1>
-<br>
+<div class="container-fluid">
+<h1>Welcome <%= current_user.first_name.capitalize %></h1>
 <h3>Your matches's activity</h3>
-<br>
+
 <div id="hbuddyCardCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#hbuddyCardCarouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -122,4 +120,5 @@
       </div>
     </li>
   </ul>
-<br>
+</div>
+

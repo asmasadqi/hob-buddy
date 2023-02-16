@@ -1,14 +1,13 @@
-<h1>Show</h1>
 <div>
   <div>
-    <h2><%= @activity.title %> with <%=User.find(@activity.user_id).first_name.capitalize%></h2>
+    <h1><%= @activity.title.capitalize %> with <%=User.find(@activity.user_id).first_name.capitalize%></h1>
   </div>
   <div class="card hbuddy-card">
-    <%= image_tag Activity.first.photo, class: "card-img-top" %>
+    <%= image_tag @activity.photo, class: "card-img-top" %>
     <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
     <div class="card-body">
-      <span class="badge text-bg-warning text-light">activity category</span>
-      <p class="hbuddy-card-location"><%= @activity.location %></p>
+      <span class="badge text-bg-warning text-light"> <%= @activity.preference.category %></span>
+      <p class="hbuddy-card-location"><%= @activity.location.capitalize %></p>
       <p class="card-text"><%= @activity.start_date %> ~ <%= @activity.end_date %></p>
       <p class="card-text"><%= @activity.total_price %>€</p>
     </div>
@@ -18,9 +17,25 @@
   </div>
   <div>
     <div>
-      <span class="badge text-bg-warning text-light"><%= @activity.min_persons %> ~ <%= @activity.max_persons %> buddies</span>
-      <span class="badge text-bg-warning text-light"><%= @activity.gender %></span>
-      <span class="badge text-bg-warning text-light"><%= @activity.age_range %> years-old</span>
+      <div>
+        <% if @activity.min_persons == nil %>
+          <span class="badge text-bg-warning text-light">No buddy limit</span>
+        <% else %>
+          <span class="badge text-bg-warning text-light"><%= @activity.min_persons %> ~ <%= @activity.max_persons %> buddies</span>
+        <% end %>
+      </div>
+      <div>
+        <% if @activity.gender == "Not specified" %>
+          <span class="badge text-bg-warning text-light">Mixed group</span>
+        <% else %>
+          <span class="badge text-bg-warning text-light">Group of <%= @activity.gender %></span>
+        <% end %>
+      </div>
+      <div>
+        <% if @activity.age_range != nil %>
+          <span class="badge text-bg-warning text-light"><%= @activity.age_range %> years-old</span>
+        <% end %>
+      </div>
     </div>
     <div>
       <p><%= @activity.description %></p>
@@ -33,3 +48,8 @@
 </div>
 
 <%# add map with geocode %>
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>

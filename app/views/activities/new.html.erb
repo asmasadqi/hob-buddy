@@ -6,7 +6,7 @@
     <%= f.association :preference %>
     <%= f.input :description, placeholder: 'ex: Try out our best sandwiches in town' %>
     <%= f.input :location, placeholder: 'ex: Manhattan, NYC' %>
-    <%= f.input :gender, collection: ["Female", "Male", "No preference"], :label => "It's group of" %>
+    <%= f.input :gender, collection: ["Female", "Male", "Not specified"], :label => "It's group of" %>
     <%= f.input :total_price, label: 'How much will it cost?', placeholder: 'ex: 10€' %>
     <p>How many people can join?</p>
     <%= f.input :min_persons, label: false, placeholder: 'min' %>

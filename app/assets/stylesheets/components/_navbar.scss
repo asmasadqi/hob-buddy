@@ -1,15 +1,22 @@
-.hbuddy-navbar {
-  justify-content: space-between;
-  align-items: end;
-  position: fixed;
-  bottom: 10;
+.navbar {
   background: white;
+  height: 60px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  z-index: 1;
+  padding-left: 20px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+// @media screen and (min-width:600px) {
+//   .navbar {
+//     background: #F4F4F4;
+//     height: 50%;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     position: fixed;
+// }
+// }

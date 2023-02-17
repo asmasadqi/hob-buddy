@@ -3,9 +3,10 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   &.small-size {
     width: 160px;
-    height: 160px;
+    height: 160px;    
     .card-img-top {
       height: 110px;
+      min-height: 110px;
     }
     .hbuddy-match-avatar {
       right: 4px;
@@ -14,12 +15,13 @@
       height: 26px;
     }
     .card-body p{
-      font-size: 12px;
-      line-height: 12px;
+      font-size: 0.75rem;
+      line-height: 0.875rem;
     }  
   }
   .card-img-top {
     height: 230px;
+    min-height: 230px;
     object-fit: cover;
   }
   .hbuddy-match-avatar {

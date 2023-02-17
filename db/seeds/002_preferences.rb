@@ -105,7 +105,7 @@ puts "Preference id #{p16.id}"
 
 # Food Category with 5 seeds
 p17 = Preference.create(
-  category: "Food and drinks",
+  category: "Food",
   name: "Cooking classes"
 )
 puts "Preference id #{p17.id}"

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[index show]
 
   resources :matches, only: %i[create update]
-  post '/create_denied_match', to: 'matches#create_denied_match', as: 'create_denied_match'
+  post '/matches/swipe', to: 'matches#swipe', as: 'swipe_match'
 
   resources :chatrooms, only: %i[index show] do
     resources :messages, only: :create

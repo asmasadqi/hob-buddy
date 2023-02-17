@@ -29,21 +29,21 @@ export default class extends Controller {
   }
 
   swipeLeft(id){
-    const url     = `/create_denied_match`
+    const url     = `/matches/swipe`
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({"id": id})
+      body: JSON.stringify({"id": id, "liked": false})
     }
     fetchWithToken(url, options)
   }
 
   swipeRight(id){
-    const url     = "/matches"
+    const url     = "/matches/swipe"
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({"id": id})
+      body: JSON.stringify({"id": id, "liked": true})
     }
 
     fetchWithToken(url, options)

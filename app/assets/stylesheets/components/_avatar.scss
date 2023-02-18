@@ -37,4 +37,10 @@
   &:hover, &:active {
     border: 1px solid #D9D9D9;
   }
+
+  &.small {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+  }
 }

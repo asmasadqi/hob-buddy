@@ -7,11 +7,12 @@
     </p>
   <div class="">
     <% @users.each do |user| %>
-        <div class="users">
-          <%= image_tag user.avatar, :class => "bla" %>
+      <div class="users">
+        <% if user.avatar.attached? %>
+          <%= cl_image_tag user.avatar.key, :class => "bla" %>
           <%# <%= image_tag match.user_receiver.avatar, :class => "bla"%>
-        </div>
-
+        <% end %>
+      </div>
     <% end %>
   </div>
     <%= link_to chatrooms_path(@chatroom),

@@ -5,8 +5,12 @@
   </div>
   <%# card %>
   <div class="card hbuddy-card">
-    <%= image_tag @activity.photo, class: "card-img-top" %>
-    <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+      <% if @activity.photo.attached? %>
+        <%= cl_image_tag @activity.photo.key, class: "card-img-top" %>
+      <% end %>
+      <% if current_user.avatar.attached? %>
+        <%= cl_image_tag current_user.avatar.key, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+      <% end %>
     <div class="card-body">
       <span class="badge text-bg-warning text-light"> <%= @activity.preference.category %></span>
       <div class="hbuddy-card-location d-flex p-2">

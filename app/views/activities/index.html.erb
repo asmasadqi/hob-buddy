@@ -13,8 +13,12 @@
         <% @matches_activities.each_with_index do |activity, n| %>
           <div class="carousel-item <%= 'active' if n == 0 %>">
             <div class="card hbuddy-card">
-              <%= image_tag activity.photo, class: "card-img-top" %>
-              <%= image_tag User.find(activity.user_id).avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+              <% if activity.photo.attached? %>
+                <%= cl_image_tag activity.photo, class: "card-img-top" %>
+              <% end %>
+              <% if activity.user.avatar.attached? %>
+                <%= cl_image_tag activity.user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+              <% end %>
               <div class="card-body">
                 <%= render "shared/badges", activity: activity %>
                 <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>
@@ -44,8 +48,12 @@
     <% @activities_location.each do |activity| %>
       <li>
         <div class="card hbuddy-card small-size">
-          <%= image_tag activity.photo, class: "card-img-top" %>
-          <%= image_tag User.find(activity.user_id).avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+          <% if activity.photo.attached? %>
+            <%= cl_image_tag activity.photo, class: "card-img-top" %>
+          <% end %>
+          <% if activity.user.avatar.attached? %>
+            <%= cl_image_tag activity.user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+          <% end %>
           <div class="card-body">
             <%= render "shared/badges", activity: activity %>
             <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>
@@ -61,8 +69,12 @@
     <% @activities.each do |activity| %>
       <li>
         <div class="card hbuddy-card small-size">
-          <%= image_tag activity.photo, class: "card-img-top" %>
-          <%= image_tag User.find(activity.user_id).avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+        <% if activity.photo.attached? %>
+          <%= cl_image_tag activity.photo, class: "card-img-top" %>
+        <% end %>
+        <% if activity.user.avatar.attached? %>
+          <%= cl_image_tag activity.user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+        <% end %>
           <div class="card-body">
             <%= render "shared/badges", activity: activity %>
             <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>

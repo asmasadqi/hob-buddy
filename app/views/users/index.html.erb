@@ -12,8 +12,8 @@
                 <%# La partie du haut de la carte %>
               </div>
 
-              <% if user.avatar %>
-                <%= image_tag user.avatar, class: 'swiper__card__img' %>
+              <% if user.avatar.attached? %>
+                <%= cl_image_tag user.avatar.key, class: 'swiper__card__img' %>
               <% end %>
 
               <div class="swiper__card__content_bottom">

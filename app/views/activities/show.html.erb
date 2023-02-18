@@ -1,35 +1,81 @@
-<h1>Show</h1>
-<div>
+<div class="container">
+  <%# welcome with name %>
   <div>
-    <h2><%= @activity.title %> with <%=User.find(@activity.user_id).first_name.capitalize%></h2>
+    <h1><%= @activity.title.capitalize %> with <%=User.find(@activity.user_id).first_name.capitalize%></h1>
   </div>
+  <%# card %>
   <div class="card hbuddy-card">
-    <%= image_tag Activity.first.photo, class: "card-img-top" %>
+    <%= image_tag @activity.photo, class: "card-img-top" %>
     <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
     <div class="card-body">
-      <span class="badge text-bg-warning text-light">activity category</span>
-      <p class="hbuddy-card-location"><%= @activity.location %></p>
-      <p class="card-text"><%= @activity.start_date %> ~ <%= @activity.end_date %></p>
-      <p class="card-text"><%= @activity.total_price %>€</p>
+      <span class="badge text-bg-warning text-light"> <%= @activity.preference.category %></span>
+      <div class="hbuddy-card-location d-flex p-2">
+        <span class="material-symbols-outlined">location_on</span>
+        <p><%= @activity.location.capitalize %></p>
+      </div>
+      <div class="d-flex p-2">
+        <span class="material-symbols-outlined">today</span>
+        <p class="card-text"><%= @activity.start_date %> ~ <%= @activity.end_date %></p>
+      </div>
+      <div class="d-flex p-2">
+        <span class="material-symbols-outlined">payments</span>
+        <% if @activity.total_price == nil || 0 %>
+          <p>FREE</p>
+        <% else %>
+          <p class="card-text"><%= @activity.total_price %>€</p>
+        <% end %>
+      </div>
     </div>
   </div>
+  <br>
+  <%# join button %>
   <div class="d-grid gap-2">
-    <button type="button" class="btn btn-danger ">Join</button>
+        <button type="button" class="btn btn-outline-danger btn-rounded">Join</button>
   </div>
-  <div>
-    <div>
-      <span class="badge text-bg-warning text-light"><%= @activity.min_persons %> ~ <%= @activity.max_persons %> buddies</span>
-      <span class="badge text-bg-warning text-light"><%= @activity.gender %></span>
-      <span class="badge text-bg-warning text-light"><%= @activity.age_range %> years-old</span>
+  <br>
+  <%# description %>
+  <div class="card-body">
+  <%# small pill %>
+    <div class="d-flex justify-content-between">
+      <div>
+        <% if @activity.min_persons == nil %>
+          <span class="badge text-bg-success text-light">No buddy limit</span>
+        <% else %>
+          <span class="badge text-bg-success text-light"><%= @activity.min_persons %> ~ <%= @activity.max_persons %> buddies</span>
+        <% end %>
+      </div>
+      <div>
+        <% if @activity.gender == "Not specified" %>
+          <span class="badge text-bg-success text-light">Mixed group</span>
+        <% else %>
+          <span class="badge text-bg-success text-light">Group of <%= @activity.gender %></span>
+        <% end %>
+      </div>
+      <div>
+        <% if @activity.age_range != nil %>
+          <span class="badge text-bg-success text-light"><%= @activity.age_range %> years-old</span>
+        <% end %>
+      </div>
     </div>
-    <div>
+    <br>
+    <%# description %>
+    <div class="card-body">
+      <p>Description:</p>
       <p><%= @activity.description %></p>
     </div>
-    <div>
+    <br>
+    <%# additional info %>
+    <div class="card-body">
       <p>Additional info:</p>
       <p><%= @activity.useful_information %></p>
     </div>
   </div>
-</div>
 
-<%# add map with geocode %>
+  <%# map %>
+  <div class="border rounded" style="width: 100%; height: 250px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
+</div>

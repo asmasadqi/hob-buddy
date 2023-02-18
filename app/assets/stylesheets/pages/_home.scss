@@ -1,25 +1,43 @@
-// Specific CSS for your home-page
+Specific CSS for your home-page
+
+html, body{
+height: 100%; min-height:100%;
+}
 
 .hbuddy-home-bg {
-  height: 100vh;
-  align-items: center;
+  background-image: url("https://www.zupimages.net/up/23/07/6nl3.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   justify-content: center;
-  max-width: 1600px;
-  padding: 100px 20px 0;
+  text-align: center;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.hbuddy-home-card {
+  position: absolute;
+  top: 170px;
 }
 
 .hbuddy-home-text {
   text-transform: uppercase;
   color: white;
   font-weight: 900;
-  color: transparent;
-  font-size: 0px;
+  font-size: 21px;
+    animation: 1000ms ease 0s 1 normal backwards running gisjuz;
+
 }
 
 .hbuddy-home-text span {
   display: inline-block;
   position: relative;
   overflow: hidden;
+  width: 400px;
   font-size: clamp(20px, 8vw, 120px);
 }
 
@@ -27,33 +45,25 @@
   content: "";
   display: block;
   position: absolute;
-  width: 100%;
+  width: 400px;
   height: 100%;
   top: 0;
   left: 0;
   transform: translateX(20%);
 }
 
-.hbuddy-home-text:nth-child(1) {
-  font-weight: 300;
-  animation: txt-appearance 1s 1.25s forwards;
-}
+
 
 .hbuddy-home-text:nth-child(2) {
   animation: txt-appearance 1s 1.25s forwards;
-}
 
-.hbuddy-home-text:nth-child(1) span::after{
-  background: #E76F51;
-  animation: slide-in 0s 0s ease-out forwards,
-  slide-out 1.5s 1.3s ease-out forwards;
-  }
+}
 
 
 .hbuddy-home-text:nth-child(2) span::after {
-  background: #E9C46A;
+  background:#FFFFFF80;
   animation: slide-in 0s 0s ease-out forwards,
-  slide-out 1.5s 1.3s ease-out forwards;
+  slide-out 1s 1.3s ease-out forwards;
   }
 
 @keyframes slide-in {
@@ -72,4 +82,28 @@
   100% {
 color:white
   }
+}
+
+
+
+@media screen and (min-width:600px) {
+  .hbuddy-home-text span {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    width: 1200px;
+    font-size: clamp(20px, 8vw, 120px);
+  }
+
+  .hbuddy-home-text span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1200px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(20%);
+  }
+
 }

@@ -2,8 +2,8 @@ class MatchesController < ApplicationController
   def swipe
     @user_receiver = User.find(params[:id])
     @liked = params[:liked]
-    users = [@user_receiver, current_user]
-    @match = Match.find_by(user_requester: users, user_receiver: users)
+    @users = [@user_receiver, current_user]
+    @match = Match.find_by(user_requester: @users, user_receiver: @users)
     if @match
       if @liked
         @match.update(status: :confirmed)

@@ -51,6 +51,9 @@ gem "sassc-rails"
 # geocoding
 gem "geocoder"
 
+# search gem
+gem "pg_search"
+
 gem "devise"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"

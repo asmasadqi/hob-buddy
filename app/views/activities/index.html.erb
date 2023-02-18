@@ -1,4 +1,14 @@
 <div class="container-fluid">
+  <!-- Searchbar -->
+  <%= form_with url: activities_path, method: :get, class:"hbuddy-search-bar mb-3" do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class:"form-control search-input",
+    placeholder:"Search"  %>
+    <%= button_tag class: "search-btn", type: "submit" do %>
+      <span class="material-symbols-outlined">search</span>
+    <% end %>
+  <% end %>
   <h1 class="fs-1 text-danger fw-bold">Welcome <%= current_user.first_name.capitalize %></h1>
 
   <% if @matches != [] %>

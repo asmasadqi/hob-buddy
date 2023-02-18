@@ -16,7 +16,7 @@
               <%= image_tag activity.photo, class: "card-img-top" %>
               <%= image_tag User.find(activity.user_id).avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
               <div class="card-body">
-                <%= render "shared/badges", activity: activity %>
+                <%= render "shared/badges", activity: activity, user: nil %>
                 <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>
                 <p class="hbuddy-card-location"><%= activity.location %></p>
               </div>

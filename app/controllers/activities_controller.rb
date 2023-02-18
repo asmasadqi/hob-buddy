@@ -21,14 +21,8 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    # The `geocoded` scope filters only activities with coordinates
-    @activity = Activity.find(params[:id])
-    @markers = @activity.geocoded.map do |item|
-      {
-        lat: item.latitude,
-        lng: item.longitude
-      }
-    end
+    set_activity
+    @markers = [{ lat: @activity.latitude, lng: @activity.longitude }]
   end
 
   def new
@@ -39,9 +33,8 @@ class ActivitiesController < ApplicationController
     @user = current_user
     @activity = Activity.new(activity_params) #create a new activity from the filled form
     @activity.user = @user #associate the created activity to the current user
-    # To finish because it does not save
     if @activity.save
-      redirect_to user_activity_path(@user)
+      redirect_to activity_path(@activity)
     else
       render :new, status: :unprocessable_entity
     end
@@ -78,23 +71,3 @@ class ActivitiesController < ApplicationController
     params.require(:activity).permit(:title, :description, :useful_information, :age_range, :gender, :preference_id, :location, :min_persons, :max_persons, :total_price, :start_date, :end_date, :photo)
   end
 end
-
-# create_table "activities", force: :cascade do |t|
-#   t.bigint "user_id", null: false
-#   t.string "title"
-#   t.text "description"
-#   t.text "useful_information"
-#   t.int4range "age_range"
-#   t.string "gender"
-#   t.bigint "preference_id", null: false
-#   t.string "location"
-#   t.integer "min_persons"
-#   t.integer "max_persons"
-#   t.integer "total_price"
-#   t.datetime "start_date", precision: nil
-#   t.datetime "end_date", precision: nil
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-#   t.index ["preference_id"], name: "index_activities_on_preference_id"
-#   t.index ["user_id"], name: "index_activities_on_user_id"
-# end

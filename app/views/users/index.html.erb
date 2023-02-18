@@ -2,18 +2,17 @@
     <div class="swiper__content">
       <div class="swiper__card-cont">
         <% @users.each do |user| %>
-
           <div class="swiper__card"
                data-swipe-target="card"
                data-id="<%= user.id %>">
-            <%= link_to 'Profile', user_path(user), class: 'profile-link hidden' %>
-            <div class="swiper__card__content">
-
+            <button type="button" class="btn btn-unstyled w-100" data-bs-toggle="modal" data-bs-target="#modal-<%= user.id %>">
+            <%#= link_to 'Profile', user_path(user), class: 'profile-link hidden' %>
+            <div class="swiper__card__content text-center">
               <div class="swiper__card__content_top">
                 <%# La partie du haut de la carte %>
               </div>
 
-              <% if user.avatar%>
+              <% if user.avatar %>
                 <%= image_tag user.avatar, class: 'swiper__card__img' %>
               <% end %>
 
@@ -21,17 +20,40 @@
                 <p class="swiper__card__name">
                   <strong><%= user.full_name %></strong>, <span class="profile-age"><%= user.age %></span>
                 </p>
+                <!-- Button trigger modal -->
+                  <i class="fa-light fa-plus"></i>
+
                 <p class="swiper__card__distance">
                   <%# <i class="fa-solid fa-location-dot"></i><%= " #{Geocode.haversine_distance(current_user, user).round} km" %>
                 </p>
               </div>
-
             </div>
+
             <div class="swiper__card__choice m--reject"></div>
             <div class="swiper__card__choice m--like"></div>
             <div class="swiper__card__drag"></div>
+            </button>
           </div>
 
+          <!-- Modal -->
+          <div class="modal fade" id="modal-<%= user.id %>" tabindex="-1" aria-labelledby="modal-<%= user.id %>Label" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="modal-<%= user.id %>Label"><%= user.full_name %></h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <%= user.about_me %>
+                </div>
+                <div class="modal-footer">
+                  <span class="badge text-bg-warning text-light">Warning</span>
+                  <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> %>
+                  <%# <button type="button" class="btn btn-primary">Save changes</button> %>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>

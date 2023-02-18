@@ -7,10 +7,11 @@
     </p>
   <div class="d-flex justify-content-around pb-3">
     <% @users.each do |user| %>
-        <div class="users">
-          <%= image_tag user.avatar, :class => "bla" %>
-        </div>
-
+      <div class="users">
+        <% if user.avatar.attached? %>
+          <%= cl_image_tag user.avatar.key, :class => "bla" %>
+        <% end %>
+      </div>
     <% end %>
   </div>
     <%= link_to chatrooms_path(@chatroom),

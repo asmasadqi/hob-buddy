@@ -21,16 +21,14 @@
       </div>
       <div class="carousel-inner">
         <% @matches_activities.each_with_index do |activity, n| %>
-          <%= link_to activity_path(activity) do %>
-            <div class="carousel-item <%= 'active' if n == 0 %>">
-              <div class="card hbuddy-card">
-                <%= image_tag activity.photo, class: "card-img-top" %>
-                <%= image_tag User.find(activity.user_id).avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
-                <div class="card-body">
-                  <%= render "shared/badges", activity: activity %>
-                  <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>
-                  <p class="hbuddy-card-location"><%= activity.location %></p>
-                </div>
+          <div class="carousel-item <%= 'active' if n == 0 %>">
+            <div class="card hbuddy-card">
+              <%= image_tag activity.photo, class: "card-img-top" %>
+              <%= image_tag User.find(activity.user_id).avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+              <div class="card-body">
+                <%= render "shared/badges", activity: activity, user: nil %>
+                <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>
+                <p class="hbuddy-card-location"><%= activity.location %></p>
               </div>
             </div>
           <% end %>

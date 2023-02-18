@@ -1,16 +1,6 @@
 <!--["Culture", "Entertainment", "Food", "Sports", "Wellness", "Sightseeing", "Outdoors"]-->
-<% if activity.preference.category == "Culture" %>
-  <span class="badge text-bg-warning text-light"><%= activity.preference.name %></span>
-<% elsif activity.preference.category == "Entertainment" %>
-  <span class="badge text-bg-warning text-light"><%= activity.preference.name %></span>
-<% elsif activity.preference.category == "Food" %>
-  <span class="badge text-bg-primary text-light"><%= activity.preference.name %></span>
-<% elsif activity.preference.category == "Sports" %>
-  <span class="badge text-bg-success text-light"><%= activity.preference.name %></span>
-<% elsif activity.preference.category == "Wellness" %>
-  <span class="badge text-bg-danger text-light"><%= activity.preference.name %></span>
-<% elsif activity.preference.category == "Sightseeing" %>
-  <span class="badge text-bg-info text-light"><%= activity.preference.name %></span>
-<% elsif activity.preference.category == "Outdoors" %>
-  <span class="badge text-bg-secondary text-light"><%= activity.preference.name %></span>
+<% if activity %>
+  <%= render activity.preference %>
+<% else %>
+  <%= render user.preferences %>
 <% end %>

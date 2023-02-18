@@ -16,7 +16,7 @@
       <% if user_signed_in? %>
         <%= image_tag current_user.avatar, class: "hbuddy-match-avatar small bordered" %>
       <% else %>
-        <%= image_tag "logo_black.svg" , class: "hbuddy-match-avatar small bordered" %>
+        <span class="material-symbols-outlined">account_circle</span>
       <% end %>
     <% end %>
   </div>

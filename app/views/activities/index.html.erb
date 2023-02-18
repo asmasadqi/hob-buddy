@@ -1,125 +1,74 @@
-<h1> INDEX</h1>
+<div class="container-fluid">
+  <h1 class="fs-1 text-danger fw-bold">Welcome <%= current_user.first_name.capitalize %></h1>
 
-<h1>Welcome <%=current_user.first_name.capitalize %></h1>
-<br>
-<h3>Your matches's activity</h3>
-<br>
-<div id="hbuddyCardCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#hbuddyCardCarouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#hbuddyCardCarouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#hbuddyCardCarouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="card hbuddy-card">
-          <%= image_tag Activity.first.photo, class: "card-img-top" %>
-          <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
-          <div class="card-body">
-            <span class="badge text-bg-warning text-light">Warning</span>
-            <p class="card-text">J-F Kennedy Cinema with Yann</p>
-            <p class="hbuddy-card-location">New-York</p>
-          </div>
-        </div>
+  <% if @matches != [] %>
+    <h2 class="text-primary fs-6 fw-bold lh-sm mb-3">Your matches's activity</h2>
+    <div id="hbuddyCardCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <% @matches_activities.each_with_index do |activity, n| %>
+          <button type="button" data-bs-target="#hbuddyCardCarouselIndicators" data-bs-slide-to="<%= n %>" class="<%= 'active' if n == 0 %>" aria-current="<%= 'true' if n == 0 %>" aria-label="Slide <%= n+1 %>"></button>
+        <% end %>
       </div>
-      <div class="carousel-item">
-        <div class="card hbuddy-card">
-          <%= image_tag Activity.second.photo, class: "card-img-top" %>
-          <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
-          <div class="card-body">
-            <span class="badge text-bg-warning text-light">Warning</span>
-            <p class="card-text">J-F Kennedy Cinema with Yann</p>
-            <p class="hbuddy-card-location">New-York</p>
+      <div class="carousel-inner">
+        <% @matches_activities.each_with_index do |activity, n| %>
+          <div class="carousel-item <%= 'active' if n == 0 %>">
+            <div class="card hbuddy-card">
+              <%= image_tag activity.photo, class: "card-img-top" %>
+              <%= image_tag User.find(activity.user_id).avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+              <div class="card-body">
+                <%= render "shared/badges", activity: activity %>
+                <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>
+                <p class="hbuddy-card-location"><%= activity.location %></p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card hbuddy-card">
-          <%= image_tag Activity.third.photo, class: "card-img-top" %>
-          <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
-          <div class="card-body">
-            <span class="badge text-bg-warning text-light">Warning</span>
-            <p class="card-text">J-F Kennedy Cinema with Yann</p>
-            <p class="hbuddy-card-location">New-York</p>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
-  </div>
-  <br>
+  <% else %>
+    <div class="border rounded p-3">
+      <p class="fs-5 text-center fw-semibold mb-2">You have no matches..</p>
+      <p class="text-center">Add some preferences to your profile:</p>
+      <div class="d-flex d-flex justify-content-center">
+        <span class="badge text-bg-success text-light ms-2">Sports</span>
+        <span class="badge text-bg-info text-light ms-2">Food</span>
+        <span class="badge text-bg-primary text-light ms-2">Sightseeing</span>
+        <span class="badge text-bg-warning text-light ms-2">Entertainment</span>
+      </div>
+    </div>
+  <% end %>
 
-<h3>Recommended activities in <%= current_user.location %></h3>
-<%# slider of card of your activities in your city %>
-<br>
-
-<ul class="hbuddy-card-container d-flex justify-content-start align-items-center">
-    <li>
-      <div class="card hbuddy-card small-size">
-        <%= image_tag Activity.fourth.photo, class: "card-img-top" %>
-        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
-        <div class="card-body">
-          <span class="badge text-bg-warning text-light">Warning</span>
-          <p class="card-text">J-F Kennedy Cinema with Yann</p>
+  <h2 class="text-primary fs-6 fw-bold lh-sm mb-3 mt-2">Recommended activities in <%= current_user.location %></h2>
+  <%# slider of card of your activities in your city %>
+  <ul class="hbuddy-card-container d-flex justify-content-start align-items-center">
+    <% @activities_location.each do |activity| %>
+      <li>
+        <div class="card hbuddy-card small-size">
+          <%= image_tag activity.photo, class: "card-img-top" %>
+          <%= image_tag User.find(activity.user_id).avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+          <div class="card-body">
+            <%= render "shared/badges", activity: activity %>
+            <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>
+          </div>
         </div>
-      </div>
-    </li>
-    <li>
-      <div class="card hbuddy-card small-size">
-        <%= image_tag Activity.fifth.photo, class: "card-img-top" %>
-        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
-        <div class="card-body">
-          <span class="badge text-bg-warning text-light">Warning</span>
-          <p class="card-text">J-F Kennedy Cinema with Yann</p>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="card hbuddy-card small-size">
-        <%= image_tag Activity.last.photo, class: "card-img-top" %>
-        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
-        <div class="card-body">
-          <span class="badge text-bg-warning text-light">Warning</span>
-          <p class="card-text">J-F Kennedy Cinema with Yann</p>
-        </div>
-      </div>
-    </li>
+      </li>
+    <% end %>
   </ul>
-<br>
 
-<h3>Explore other activities</h3>
-<%# slider of random cardsin DB %>
-<br>
-
-<ul class="hbuddy-card-container d-flex justify-content-start align-items-center">
-    <li>
-      <div class="card hbuddy-card small-size">
-        <%= image_tag Activity.fourth.photo, class: "card-img-top" %>
-        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
-        <div class="card-body">
-          <span class="badge text-bg-warning text-light">Warning</span>
-          <p class="card-text">J-F Kennedy Cinema with Yann</p>
+  <h2 class="text-primary fs-6 fw-bold lh-sm mb-3 mt-2">Explore other activities</h2>
+  <%# slider of random cardsin DB %>
+  <ul class="hbuddy-card-container d-flex justify-content-start align-items-center mb-4">
+    <% @activities.each do |activity| %>
+      <li>
+        <div class="card hbuddy-card small-size">
+          <%= image_tag activity.photo, class: "card-img-top" %>
+          <%= image_tag User.find(activity.user_id).avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+          <div class="card-body">
+            <%= render "shared/badges", activity: activity %>
+            <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>
+          </div>
         </div>
-      </div>
-    </li>
-    <li>
-      <div class="card hbuddy-card small-size">
-        <%= image_tag Activity.fifth.photo, class: "card-img-top" %>
-        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
-        <div class="card-body">
-          <span class="badge text-bg-warning text-light">Warning</span>
-          <p class="card-text">J-F Kennedy Cinema with Yann</p>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="card hbuddy-card small-size">
-        <%= image_tag Activity.last.photo, class: "card-img-top" %>
-        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
-        <div class="card-body">
-          <span class="badge text-bg-warning text-light">Warning</span>
-          <p class="card-text">J-F Kennedy Cinema with Yann</p>
-        </div>
-      </div>
-    </li>
+      </li>
+    <% end %>
   </ul>
-<br>
+</div>

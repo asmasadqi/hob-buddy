@@ -1,16 +1,19 @@
-<% @users.each do |user| %>
-  <div class="success-modal-inner-content">
+<div class="success-modal-inner-content">
     <p class="upper-title">
       It's a
     </p>
     <p class="title">
       Match!
     </p>
-    <div class="users">
-      <%= image_tag user.avatar %>
-      <%= image_tag match.user_receiver.avatar %>
-    </div>
+  <div class="">
+    <% @users.each do |user| %>
+        <div class="users">
+          <%= image_tag user.avatar, :class => "bla" %>
+          <%# <%= image_tag match.user_receiver.avatar, :class => "bla"%>
+        </div>
 
+    <% end %>
+  </div>
     <%= link_to chatrooms_path(@chatroom),
                 class:"btn-chatroom",
                 data: { action: "click->swipe#hideModal" } do %>
@@ -19,5 +22,12 @@
     <span class="btn-continue" data-action="click->swipe#hideModal">
       Continuer d'explorer
     </span>
-  </div>
-<% end %>
+</div>
+
+<style>
+  .bla {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+</style>

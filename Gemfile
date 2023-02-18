@@ -51,6 +51,9 @@ gem "sassc-rails"
 # geocoding
 gem "geocoder"
 
+#cloudinary
+gem "cloudinary"
+
 gem "devise"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"

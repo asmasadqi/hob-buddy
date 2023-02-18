@@ -1,4 +1,14 @@
 <div class="container-fluid">
+  <!-- Searchbar -->
+  <%= form_with url: activities_path, method: :get, class:"hbuddy-search-bar mb-3" do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class:"form-control search-input",
+    placeholder:"Search"  %>
+    <%= button_tag class: "search-btn", type: "submit" do %>
+      <span class="material-symbols-outlined">search</span>
+    <% end %>
+  <% end %>
   <h1 class="fs-1 text-danger fw-bold">Welcome <%= current_user.first_name.capitalize %></h1>
 
   <% if @matches != [] %>
@@ -21,7 +31,7 @@
                 <p class="hbuddy-card-location"><%= activity.location %></p>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -43,14 +53,16 @@
   <ul class="hbuddy-card-container d-flex justify-content-start align-items-center">
     <% @activities_location.each do |activity| %>
       <li>
-        <div class="card hbuddy-card small-size">
-          <%= image_tag activity.photo, class: "card-img-top" %>
-          <%= image_tag User.find(activity.user_id).avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
-          <div class="card-body">
-            <%= render "shared/badges", activity: activity %>
-            <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>
+        <%= link_to activity_path(activity) do %>
+          <div class="card hbuddy-card small-size">
+            <%= image_tag activity.photo, class: "card-img-top" %>
+            <%= image_tag User.find(activity.user_id).avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+            <div class="card-body">
+              <%= render "shared/badges", activity: activity %>
+              <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       </li>
     <% end %>
   </ul>
@@ -60,14 +72,16 @@
   <ul class="hbuddy-card-container d-flex justify-content-start align-items-center mb-4">
     <% @activities.each do |activity| %>
       <li>
-        <div class="card hbuddy-card small-size">
-          <%= image_tag activity.photo, class: "card-img-top" %>
-          <%= image_tag User.find(activity.user_id).avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
-          <div class="card-body">
-            <%= render "shared/badges", activity: activity %>
-            <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>
+        <%= link_to activity_path(activity) do %>
+          <div class="card hbuddy-card small-size">
+            <%= image_tag activity.photo, class: "card-img-top" %>
+            <%= image_tag User.find(activity.user_id).avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+            <div class="card-body">
+              <%= render "shared/badges", activity: activity %>
+              <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       </li>
     <% end %>
   </ul>

@@ -17,4 +17,12 @@ class Activity < ApplicationRecord
   validates :description, presence: true
   validates :location, presence: true
   validates :gender, presence: true, inclusion: { in: ["Female", "Male", "Not specified"] }
+
+  include PgSearch::Model
+
+  pg_search_scope :search_by_title_description_category,
+    against: [ :title, :description ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

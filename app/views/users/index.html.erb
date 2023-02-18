@@ -5,7 +5,7 @@
           <div class="swiper__card"
                data-swipe-target="card"
                data-id="<%= user.id %>">
-            <button type="button" class="btn btn-unstyled w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-unstyled w-100" data-bs-toggle="modal" data-bs-target="#modal-<%= user.id %>">
             <%#= link_to 'Profile', user_path(user), class: 'profile-link hidden' %>
             <div class="swiper__card__content text-center">
               <div class="swiper__card__content_top">
@@ -36,17 +36,18 @@
           </div>
 
           <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="modal-<%= user.id %>" tabindex="-1" aria-labelledby="modal-<%= user.id %>Label" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel"><%= user.full_name %></h1>
+                  <h1 class="modal-title fs-5" id="modal-<%= user.id %>Label"><%= user.full_name %></h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <%= user.about_me %>
                 </div>
                 <div class="modal-footer">
+                  <span class="badge text-bg-warning text-light">Warning</span>
                   <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> %>
                   <%# <button type="button" class="btn btn-primary">Save changes</button> %>
                 </div>

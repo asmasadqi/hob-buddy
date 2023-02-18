@@ -7,13 +7,13 @@ class MatchesController < ApplicationController
     if @match
       if @liked
         @match.update(status: :confirmed)
+        @chatroom = Chatroom.create(user1: current_user, user2: @user_receiver)
       else
         @match.update(status: :denied)
       end
     else
       if @liked
         @match = Match.create(user_receiver: @user_receiver, user_requester: current_user, status: :pending)
-        @chatroom = Chatroom.create(user1: current_user, user2: @user_receiver)
       else
         @match = Match.create(user_receiver: @user_receiver, user_requester: current_user, status: :denied)
       end

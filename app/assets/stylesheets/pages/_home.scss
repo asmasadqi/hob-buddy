@@ -2,10 +2,12 @@ Specific CSS for your home-page
 
 html, body{
 height: 100%; min-height:100%;
+margin-bottom: 70px;
+margin-top: 50px;
 }
 
 .hbuddy-home-bg {
-  background-image: url("https://www.zupimages.net/up/23/07/6nl3.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://www.zupimages.net/up/23/07/6nl3.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -21,7 +23,7 @@ height: 100%; min-height:100%;
 
 .hbuddy-home-card {
   position: absolute;
-  top: 170px;
+  top: 120px;
 }
 
 .hbuddy-home-text {
@@ -37,7 +39,7 @@ height: 100%; min-height:100%;
   display: inline-block;
   position: relative;
   overflow: hidden;
-  width: 400px;
+  width: 350px;
   font-size: clamp(20px, 8vw, 120px);
 }
 
@@ -45,7 +47,7 @@ height: 100%; min-height:100%;
   content: "";
   display: block;
   position: absolute;
-  width: 400px;
+  width: 350px;
   height: 100%;
   top: 0;
   left: 0;

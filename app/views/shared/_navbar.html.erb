@@ -1,19 +1,19 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-fixed-bottom">
   <div class="container-fluid navbar-brand">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "/activities", class: "navbar-brand" do %>
       <span class="material-symbols-outlined">home</span>
     <% end %>
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "/users", class: "navbar-brand" do %>
       <span class="material-symbols-outlined">swipe_left</span>
     <% end %>
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "/activities/new", class: "navbar-brand" do %>
       <span class="material-symbols-outlined">add_box</span>
     <% end %>
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "/chatrooms", class: "navbar-brand" do %>
       <span class="material-symbols-outlined">chat_bubble</span>
     <% end %>
     <%= link_to "#", class: "navbar-brand" do %>
-      <span class="material-symbols-outlined">favorite</span>
+      <%= image_tag current_user.avatar, class: "hbuddy-match-avatar small bordered" %>
     <% end %>
   </div>
 </div>

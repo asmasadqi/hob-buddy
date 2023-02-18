@@ -34,9 +34,9 @@
   </div>
   <br>
   <%# description %>
-  <div class="information">
+  <div class="card-body">
   <%# small pill %>
-    <div class="d-flex p-2">
+    <div class="d-flex justify-content-between">
       <div>
         <% if @activity.min_persons == nil %>
           <span class="badge text-bg-success text-light">No buddy limit</span>
@@ -59,20 +59,20 @@
     </div>
     <br>
     <%# description %>
-    <div>
+    <div class="card-body">
       <p>Description:</p>
       <p><%= @activity.description %></p>
     </div>
     <br>
     <%# additional info %>
-    <div>
+    <div class="card-body">
       <p>Additional info:</p>
       <p><%= @activity.useful_information %></p>
     </div>
   </div>
 
   <%# map %>
-  <div class="border rounded" style="width: 100%; height: 600px;"
+  <div class="border rounded" style="width: 100%; height: 250px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">

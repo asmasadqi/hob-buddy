@@ -13,8 +13,11 @@
       <span class="material-symbols-outlined">chat_bubble</span>
     <% end %>
     <%= link_to "#", class: "navbar-brand" do %>
-      <%# correction %>
-      <%# <%= image_tag current_user.avatar, class: "hbuddy-match-avatar small bordered" %>
+      <% if user_signed_in? %>
+        <%= image_tag current_user.avatar, class: "hbuddy-match-avatar small bordered" %>
+      <% else %>
+        <span class="material-symbols-outlined">account_circle</span>
+      <% end %>
     <% end %>
   </div>
 </div>

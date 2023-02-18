@@ -1,5 +1,4 @@
 class MatchesController < ApplicationController
-
   def swipe
     @user_receiver = User.find(params[:id])
     @liked = params[:liked]
@@ -21,7 +20,7 @@ class MatchesController < ApplicationController
     end
 
     json_response = {}
-    json_response.merge!({content: render_to_string(partial: 'modal/success', locals: { match: @match })}) if @match.confirmed?
+    json_response.merge!({ content: render_to_string(partial: 'modal/success', locals: { match: @match }) }) if @match.confirmed?
 
     respond_to do |format|
       format.json { render(json: json_response) }

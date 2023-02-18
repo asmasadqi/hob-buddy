@@ -1,0 +1,23 @@
+<% @users.each do |user| %>
+  <div class="success-modal-inner-content">
+    <p class="upper-title">
+      It's a
+    </p>
+    <p class="title">
+      Match!
+    </p>
+    <div class="users">
+      <%= image_tag user.avatar %>
+      <%= image_tag match.user_receiver_for(current_user).avatar %>
+    </div>
+
+    <%= link_to chatrooms_path(la chatroom des deux users),
+                class:"btn-chatroom",
+                data: { action: "click->swipe#hideModal" } do %>
+      <i class="fa-regular fa-comment-dots"></i> Commencer à discuter
+    <% end %>
+    <span class="btn-continue" data-action="click->swipe#hideModal">
+      Continuer d'explorer
+    </span>
+  </div>
+<% end %>

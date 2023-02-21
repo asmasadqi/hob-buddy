@@ -5,4 +5,8 @@ class Preference < ApplicationRecord
 
   validates :name, presence: true
   validates :category, presence: true, inclusion: { in: ["Culture", "Entertainment", "Food", "Sports", "Wellness", "Sightseeing", "Outdoors"] }
+
+  def self.categories
+    Preference.all.select(:category).distinct.map(&:category)
+  end
 end

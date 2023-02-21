@@ -21,19 +21,20 @@
       </div>
       <div class="carousel-inner">
         <% @matches_activities.each_with_index do |activity, n| %>
-         <%= link_to activity_path(activity) do %>
-          <div class="carousel-item <%= 'active' if n == 0 %>">
-            <div class="card hbuddy-card">
-              <% if activity.photo.attached? %>
-                <%= cl_image_tag activity.photo.key, class: "card-img-top" %>
-              <% end %>
-              <% if activity.user.avatar.attached? %>
-                <%= cl_image_tag activity.user.avatar.key, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
-              <% end %>
-              <div class="card-body">
-                <%= render "shared/badges", activity: activity %>
-                <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>
-                <p class="hbuddy-card-location"><%= activity.location %></p>
+          <%= link_to activity_path(activity) do %>
+            <div class="carousel-item <%= 'active' if n == 0 %>">
+              <div class="card hbuddy-card">
+                <% if activity.photo.attached? %>
+                  <%= cl_image_tag activity.photo.key, class: "card-img-top" %>
+                <% end %>
+                <% if activity.user.avatar.attached? %>
+                  <%= cl_image_tag activity.user.avatar.key, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+                <% end %>
+                <div class="card-body">
+                  <%= render "shared/badges", activity: activity %>
+                  <p class="card-text"><%= activity.title %> with <%= User.find(activity.user_id).first_name %></p>
+                  <p class="hbuddy-card-location"><%= activity.location %></p>
+                </div>
               </div>
             </div>
           <% end %>

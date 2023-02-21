@@ -7,7 +7,7 @@
       <% @matches_list.each do |match| %>
         <li>
           <%= link_to chatroom_path(Chatroom.find_by("user1_id = ? OR user2_id = ?", match, match).id) do %>
-            <% if user.avatar.attached %>
+            <% if user.avatar.attached? %>
               <%= cl_image_tag User.find(match).avatar.key, class: "hbuddy-match-avatar", width:50, height:50 %>
             <% end %>
           <% end %>

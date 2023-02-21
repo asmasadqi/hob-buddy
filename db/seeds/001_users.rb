@@ -1,5 +1,5 @@
 require 'open-uri'
-# TODO: find solution for avatar: "https://source.unsplash.com/random/?profile?male"
+
 puts "Cleaning up Users..."
 User.destroy_all
 puts "Users cleaned"
@@ -16,7 +16,7 @@ id1 = User.new(
   location: "Biarritz",
   date_of_birth: "1988-09-17"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676729178/Hobbuddy/avatar_photo/julia_t.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732483/development/k6auef021ox5dc3nboa6u6h69sds.jpg')
 id1.save!
 id1.avatar.attach(io: file, filename: 'julia_t.jpg', content_type: 'image/jpg')
 puts "User with id #{id1.id}"
@@ -26,12 +26,12 @@ id2 = User.new(
   last_name: "Ramon",
   email: "antoine.ramon@gmail.com",
   password: "123456",
-  about_me: "I'm a UI designer but my passion is cooking and video games, I do my own pasta and love japonese food, you want to cook together or meet virtually, match me!",
+  about_me: "I'm a UI designer but my passion is cooking and video games, I do my own pasta and love Japanese food, you want to cook together or meet virtually, match me!",
   gender: "Male",
   location: "Paris",
   date_of_birth: "1986-02-11"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676729317/Hobbuddy/avatar_photo/antoine_r.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732487/development/rnh2vr3hr2lov33ruybeqettspsm.jpg')
 id2.save!
 id2.avatar.attach(io: file, filename: 'antoine_r.jpg', content_type: 'image/jpg')
 puts "User with id #{id2.id}"
@@ -46,7 +46,7 @@ id3 = User.new(
   location: "Paris",
   date_of_birth: "1985-04-10"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676729047/Hobbuddy/avatar_photo/roxanne_d.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732506/development/rmqig9ss0qmge8xmckhvskwfnhy7.jpg')
 id3.save!
 id3.avatar.attach(io: file, filename: 'roxane_d.jpg', content_type: 'image/jpg')
 puts "User with id #{id3.id}"
@@ -61,7 +61,7 @@ id4 = User.new(
   location: "Sydney",
   date_of_birth: "1989-07-21"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676729616/Hobbuddy/avatar_photo/victoria_s.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732503/development/7sfqh2v9mixvfqj7ad4o5cxhrhrb.jpg')
 id4.save!
 id4.avatar.attach(io: file, filename: 'victoria_s.jpg', content_type: 'image/jpg')
 puts "User with id #{id4.id}"
@@ -76,7 +76,7 @@ id5 = User.new(
   location: "Seoul",
   date_of_birth: "1985-07-30"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676729031/Hobbuddy/avatar_photo/ayla_m.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732499/development/n0ywj0e708zjgms77fg3bzluzjxu.jpg')
 id5.save!
 id5.avatar.attach(io: file, filename: 'ayla_m.jpg', content_type: 'image/jpg')
 puts "User with id #{id5.id}"
@@ -91,7 +91,7 @@ id6 = User.new(
   location: "Sydney",
   date_of_birth: "1990-07-21"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676729060/Hobbuddy/avatar_photo/mathilde_f.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732511/development/xalt2vyhema8hua0lr4a8c4nvxse.jpg')
 id6.save!
 id6.avatar.attach(io: file, filename: 'mathilde_f.jpg', content_type: 'image/jpg')
 puts "User with id #{id6.id}"
@@ -106,7 +106,7 @@ id7 = User.new(
   location: "New York",
   date_of_birth: "1996-01-22"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676729963/Hobbuddy/avatar_photo/paul_v.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732515/development/uvsj28bcc02bcut36c57b31rjo2a.jpg')
 id7.save!
 id7.avatar.attach(io: file, filename: 'paul_v.jpg', content_type: 'image/jpg')
 puts "User with id #{id7.id}"
@@ -121,7 +121,7 @@ id8 = User.new(
   location: "Paris",
   date_of_birth: "1998-04-04"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676730118/Hobbuddy/avatar_photo/alexis_b.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732518/development/kt3trui9qsm3ojexpelgnhvkixd1.jpg')
 id8.save!
 id8.avatar.attach(io: file, filename: 'alex_b.jpg', content_type: 'image/jpg')
 puts "User with id #{id8.id}"
@@ -136,7 +136,7 @@ id9 = User.new(
   location: "Paris",
   date_of_birth: "1994-01-01"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676730209/Hobbuddy/avatar_photo/kao_m.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732522/development/cp57vlxmzab4ab7ppj3lru8ngda7.jpg')
 id9.save!
 id9.avatar.attach(io: file, filename: '"kao_m.jpg', content_type: 'image/jpg')
 puts "User with id #{id9.id}"
@@ -151,7 +151,7 @@ id10 = User.new(
   location: "Berlin",
   date_of_birth: "1990-03-04"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676729047/Hobbuddy/avatar_photo/paul_p.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732526/development/xrg30vgz4r5zng8mbn56qghb7zw6.jpg')
 id10.save!
 id10.avatar.attach(io: file, filename: 'paul_p.png', content_type: 'image/png')
 puts "User with id #{id10.id}"
@@ -166,7 +166,7 @@ id11 = User.new(
   location: "Los Angeles",
   date_of_birth: "1978-10-19"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676729025/Hobbuddy/avatar_photo/britney_s.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732530/development/0hutf424lq1fslmcbua4uheq0hpy.jpg')
 id11.save!
 id11.avatar.attach(io: file, filename: 'britney.jpg', content_type: 'image/jpg')
 puts "User with id #{id11.id}"
@@ -181,7 +181,7 @@ id12 = User.new(
   location: "Paris",
   date_of_birth: "1979-02-04"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676729025/Hobbuddy/avatar_photo/emmanuel_m.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732537/development/jrfta96wq5qmg78lvm1x2otb6k4y.jpg')
 id12.save!
 id12.avatar.attach(io: file, filename: 'emmanuel_m.jpg', content_type: 'image/jpg')
 puts "User with id #{id12.id}"
@@ -196,7 +196,7 @@ id13 = User.new(
   location: "Berlin",
   date_of_birth: "1990-03-04"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676729013/Hobbuddy/avatar_photo/werner_s.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732533/development/i1t5ypwsj5yv2smpkfch5vn56fl6.jpg')
 id13.save!
 id13.avatar.attach(io: file, filename: 'werner_s.jpg', content_type: 'image/jpg')
 puts "User with id #{id13.id}"
@@ -211,7 +211,7 @@ id14 = User.new(
   location: "Paris",
   date_of_birth: "1985-03-04"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676729010/Hobbuddy/avatar_photo/tommy_r.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732540/development/hbge14u97r3i2a5aflc441giwyvi.jpg')
 id14.save!
 id14.avatar.attach(io: file, filename: 'tommy_r.jpg', content_type: 'image/jpg')
 puts "User with id #{id14.id}"

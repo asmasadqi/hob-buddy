@@ -25,10 +25,10 @@
           <div class="carousel-item <%= 'active' if n == 0 %>">
             <div class="card hbuddy-card">
               <% if activity.photo.attached? %>
-                <%= cl_image_tag activity.photo, class: "card-img-top" %>
+                <%= cl_image_tag activity.photo.key, class: "card-img-top" %>
               <% end %>
               <% if activity.user.avatar.attached? %>
-                <%= cl_image_tag activity.user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+                <%= cl_image_tag activity.user.avatar.key, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
               <% end %>
               <div class="card-body">
                 <%= render "shared/badges", activity: activity %>
@@ -61,10 +61,10 @@
         <%= link_to activity_path(activity) do %>
         <div class="card hbuddy-card small-size">
           <% if activity.photo.attached? %>
-            <%= cl_image_tag activity.photo, class: "card-img-top" %>
+            <%= cl_image_tag activity.photo.key, class: "card-img-top" %>
           <% end %>
           <% if activity.user.avatar.attached? %>
-            <%= cl_image_tag activity.user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+            <%= cl_image_tag activity.user.avatar.key, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
           <% end %>
           <div class="card-body">
             <%= render "shared/badges", activity: activity %>
@@ -83,10 +83,10 @@
         <%= link_to activity_path(activity) do %>
         <div class="card hbuddy-card small-size">
         <% if activity.photo.attached? %>
-          <%= cl_image_tag activity.photo, class: "card-img-top" %>
+          <%= cl_image_tag activity.photo.key, class: "card-img-top" %>
         <% end %>
         <% if activity.user.avatar.attached? %>
-          <%= cl_image_tag activity.user.avatar, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+          <%= cl_image_tag activity.user.avatar.key, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
         <% end %>
           <div class="card-body">
             <%= render "shared/badges", activity: activity %>

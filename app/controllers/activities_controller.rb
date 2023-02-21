@@ -18,9 +18,6 @@ class ActivitiesController < ApplicationController
       end
     end
 
-    # all activities unfiltered
-    @activities = Activity.all
-
     # all activities in User's location
     @activities_location = []
     @activities.each do |activity|

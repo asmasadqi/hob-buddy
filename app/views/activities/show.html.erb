@@ -36,11 +36,11 @@
   <br>
   <%# join button %>
   <div class="d-grid gap-2">
-    <% unless current_user %>
-      <button type="button" class="btn btn-outline-danger btn-rounded">Join</button>
-    <% end %>
+  <% if @activity.user_id != current_user.id %>
+    <button type="button" class="btn btn-outline-danger btn-rounded">Join</button>
+  <% end %>
   </div>
-  <br>
+  
   <%# description %>
   <div class="card-body">
     <%# small pill %>
@@ -65,17 +65,19 @@
         <% end %>
       </div>
     </div>
-    <br>
+
     <%# description %>
-    <div class="card-body">
-      <p>Description:</p>
-      <p><%= @activity.description %></p>
-    </div>
-    <br>
-    <%# additional info %>
-    <div class="card-body">
-      <p>Additional info:</p>
-      <p><%= @activity.useful_information %></p>
+    <div>
+      <div class="card-body">
+        <strong>Description:</strong>
+        <p><%= @activity.description %></p>
+      </div>
+
+      <%# additional info %>
+      <div class="card-body">
+        <strong>Additional information:</strong>
+        <p><%= @activity.useful_information %></p>
+      </div>
     </div>
   </div>
 

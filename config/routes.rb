@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   end
 
   resources :activity_chatrooms, only: %i[show]
+
+  resources :preferences, only: :index
 end

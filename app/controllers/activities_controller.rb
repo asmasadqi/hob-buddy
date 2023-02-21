@@ -17,10 +17,10 @@ class ActivitiesController < ApplicationController
         @matches_activities << activity
       end
     end
-    
-    # all activities in User's location 
+
+    # all activities in User's location
     @activities_location = []
-    @activities.each do |activity| 
+    @activities.each do |activity|
       @activities_location << activity if activity.location == current_user.location
     end
   end

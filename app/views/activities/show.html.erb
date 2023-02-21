@@ -13,18 +13,20 @@
       <% end %>
     <div class="card-body">
       <span class="badge text-bg-warning text-light"> <%= @activity.preference.category %></span>
-      <div class="hbuddy-card-location d-flex p-2">
+      <div class="hbuddy-card-location d-flex align-items-center">
         <span class="material-symbols-outlined">location_on</span>
-        <p><%= @activity.location.capitalize %></p>
+        <div>
+          <p> <%= @activity.location.capitalize %></p>
+        </div>
       </div>
-      <div class="d-flex p-2">
+      <div class="d-flex align-items-center">
         <span class="material-symbols-outlined">today</span>
-        <p class="card-text"><%= @activity.start_date %> ~ <%= @activity.end_date %></p>
+        <p class="card-text"> <%=@activity.start_date.strftime('%a, %b %e %k:%M') %> ~ <%= @activity.end_date.strftime('%a, %b %e %k:%M') %></p>
       </div>
-      <div class="d-flex p-2">
+      <div class="d-flex align-items-center">
         <span class="material-symbols-outlined">payments</span>
         <% if @activity.total_price == nil || 0 %>
-          <p>FREE</p>
+          <p> free</p>
         <% else %>
           <p class="card-text"><%= @activity.total_price %>€</p>
         <% end %>
@@ -34,28 +36,30 @@
   <br>
   <%# join button %>
   <div class="d-grid gap-2">
-        <button type="button" class="btn btn-outline-danger btn-rounded">Join</button>
+    <% unless current_user %>
+      <button type="button" class="btn btn-outline-danger btn-rounded">Join</button>
+    <% end %>
   </div>
   <br>
   <%# description %>
   <div class="card-body">
-  <%# small pill %>
-    <div class="d-flex justify-content-between">
-      <div>
+    <%# small pill %>
+    <div class="d-flex flex-row mb-3">
+      <div class="p-2">
         <% if @activity.min_persons == nil %>
           <span class="badge text-bg-success text-light">No buddy limit</span>
         <% else %>
           <span class="badge text-bg-success text-light"><%= @activity.min_persons %> ~ <%= @activity.max_persons %> buddies</span>
         <% end %>
       </div>
-      <div>
+      <div class="p-2">
         <% if @activity.gender == "Not specified" %>
           <span class="badge text-bg-success text-light">Mixed group</span>
         <% else %>
           <span class="badge text-bg-success text-light">Group of <%= @activity.gender %></span>
         <% end %>
       </div>
-      <div>
+      <div class="p-2">
         <% if @activity.age_range != nil %>
           <span class="badge text-bg-success text-light"><%= @activity.age_range %> years-old</span>
         <% end %>

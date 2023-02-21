@@ -3,7 +3,13 @@
   <%= simple_form_for @activity do |f| %>
     <%= f.input :photo, as: :file %>
     <%= f.input :title, placeholder: 'ex: Walk in Manhattan' %>
-    <%= f.association :preference, label: 'Category' %>
+
+    <div data-controller="dynamic-select" data-dynamic-select-url-value="<%= preferences_path %>">
+      <%= f.input :category do %>
+        <%= select_tag :category, options_for_select(Preference.categories), include_blank: true, class:"form-select select required", data: { action: "change->dynamic-select#update" } %>
+      <% end %>
+      <%= f.association :preference, collection: [], label: "Sub-category", input_html: { data: { dynamic_select_target: "select" } } %>
+    </div>
     <%= f.input :description, placeholder: 'ex: Try out our best sandwiches in town' %>
     <%= f.input :location, placeholder: 'ex: Manhattan, NYC' %>
     <%= f.input :gender, collection: ["Female", "Male", "Not specified"], :label => "It's group of" %>
@@ -13,8 +19,8 @@
     <%= f.input :max_persons, label: false, placeholder: 'max' %>
     <%= f.input :useful_information, placeholder: 'ex: bring your lunch, come with a car...' %>
     <p>Date</p>
-    <%= f.input :start_date, label: false%>
-    <%= f.input :end_date, label: false %>
+    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :end_date, as: :date, html5: true %>
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
 </div>

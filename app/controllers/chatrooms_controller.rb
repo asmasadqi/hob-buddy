@@ -6,9 +6,9 @@ class ChatroomsController < ApplicationController
     @matches_list = []
     @matches.each do |match|
       if match.user_requester_id == current_user.id
-        @matches_list << match.user_receiver_id
+        @matches_list << User.find(match.user_receiver_id)
       else
-        @matches_list << match.user_requester_id
+        @matches_list << User.find(match.user_requester_id)
       end
     end
 

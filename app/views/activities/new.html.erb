@@ -19,8 +19,8 @@
     <%= f.input :max_persons, label: false, placeholder: 'max' %>
     <%= f.input :useful_information, placeholder: 'ex: bring your lunch, come with a car...' %>
     <p>Date</p>
-    <%= f.input :start_date, label: false%>
-    <%= f.input :end_date, label: false %>
+    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :end_date, as: :date, html5: true %>
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
 </div>

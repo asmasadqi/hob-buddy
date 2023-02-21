@@ -19,8 +19,8 @@ ac1 = Activity.new(
   end_date: Date.today + 4.days
 )
 file = URI.open('https://source.unsplash.com/random/?diving')
+ac1.save!
 ac1.photo.attach(io: file, filename: 'diving.png', content_type: 'image/png')
-ac1.save
 puts "Activity with id #{ac1.id}"
 
 ac2 = Activity.new(
@@ -39,8 +39,8 @@ ac2 = Activity.new(
   end_date: Date.today + 40.days
 )
 file = URI.open('https://source.unsplash.com/random/?fishing')
+ac2.save!
 ac2.photo.attach(io: file, filename: 'fishing.png', content_type: 'image/png')
-ac2.save
 puts "Activity with id #{ac2.id}"
 
 ac3 = Activity.new(
@@ -59,8 +59,8 @@ ac3 = Activity.new(
   end_date: Date.today + 40.days
 )
 file = URI.open('https://source.unsplash.com/random/?gaming')
+ac3.save!
 ac3.photo.attach(io: file, filename: 'gaming.png', content_type: 'image/png')
-ac3.save
 puts "Activity with id #{ac3.id}"
 
 ac4 = Activity.new(
@@ -79,8 +79,8 @@ ac4 = Activity.new(
   end_date: Date.today + 6.days
 )
 file = URI.open('https://source.unsplash.com/random/?tennis')
+ac4.save!
 ac4.photo.attach(io: file, filename: 'tennis.png', content_type: 'image/png')
-ac4.save
 puts "Activity with id #{ac4.id}"
 
 ac5 = Activity.create(
@@ -99,8 +99,8 @@ ac5 = Activity.create(
   end_date: Date.today + 10.days
 )
 file = URI.open('https://source.unsplash.com/random/?seoul')
+ac5.save!
 ac5.photo.attach(io: file, filename: 'seoul.png', content_type: 'image/png')
-ac5.save
 puts "Activity with id #{ac5.id}"
 
 ac6 = Activity.new(
@@ -119,8 +119,8 @@ ac6 = Activity.new(
   end_date: Date.today + 74.days
 )
 file = URI.open('https://source.unsplash.com/random/?water-polo')
+ac6.save!
 ac6.photo.attach(io: file, filename: 'polo.png', content_type: 'image/png')
-ac6.save
 puts "Activity with id #{ac6.id}"
 
 ac7 = Activity.new(
@@ -138,8 +138,8 @@ ac7 = Activity.new(
   start_date: Date.today + 80.days
 )
 file = URI.open('https://source.unsplash.com/random/?yoga')
+ac7.save!
 ac7.photo.attach(io: file, filename: 'yoga.png', content_type: 'image/png')
-ac7.save
 puts "Activity with id #{ac7.id}"
 
 ac8 = Activity.new(
@@ -158,8 +158,8 @@ ac8 = Activity.new(
   end_date: Date.today + 40.days
 )
 file = URI.open('https://source.unsplash.com/random/?surfing')
+ac8.save!
 ac8.photo.attach(io: file, filename: 'surfing.png', content_type: 'image/png')
-ac8.save
 puts "Activity with id #{ac8.id}"
 
 ac9 = Activity.new(
@@ -178,8 +178,8 @@ ac9 = Activity.new(
   end_date: Date.today + 24.days
 )
 file = URI.open('https://source.unsplash.com/random/?fitness')
+ac9.save!
 ac9.photo.attach(io: file, filename: 'fitness.png', content_type: 'image/png')
-ac9.save
 puts "Activity with id #{ac9.id}"
 
 ac10 = Activity.new(
@@ -198,8 +198,8 @@ ac10 = Activity.new(
   end_date: Date.today + 4.days
 )
 file = URI.open('https://source.unsplash.com/random/?asian-food')
+ac10.save!
 ac10.photo.attach(io: file, filename: 'asian-food.png', content_type: 'image/png')
-ac10.save
 puts "Activity with id #{ac10.id}"
 
 ac11 = Activity.new(
@@ -218,8 +218,8 @@ ac11 = Activity.new(
   end_date: Date.today + 78.days
 )
 file = URI.open('https://source.unsplash.com/random/?egypt')
+ac11.save!
 ac11.photo.attach(io: file, filename: 'egypt.png', content_type: 'image/png')
-ac11.save
 puts "Activity with id #{ac11.id}"
 
 ac12 = Activity.new(
@@ -239,6 +239,6 @@ ac12 = Activity.new(
   end_date: Date.today + 30.days
 )
 file = URI.open('https://source.unsplash.com/random/?cycling')
+ac12.save!
 ac12.photo.attach(io: file, filename: 'cycling.png', content_type: 'image/png')
-ac12.save
 puts "Activity with id #{ac12.id}"

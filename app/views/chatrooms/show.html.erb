@@ -5,9 +5,11 @@
 
   <div class="hbuddy-chatroom-header">
     <%= link_to chatrooms_path, class: "d-flex justify-content-start align-items-center" do %>
-      <span class="ico material-symbols-outlined">arrow_back_ios_new</span>    
+      <span class="ico material-symbols-outlined">arrow_back_ios_new</span>
       <% other_user = User.find(@chatroom.other_user(current_user)) %>
-      <%= image_tag other_user.avatar, class: "hbuddy-match-avatar", width:50, height:50 %>
+        <% if other_user.avatar.attached? %>
+          <%= cl_image_tag other_user.avatar.key, class: "hbuddy-match-avatar", width:50, height:50 %>
+        <% end %>
       <p class="mb-0"><%= other_user.first_name %></p>
     <% end %>
   </div>

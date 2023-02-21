@@ -12,8 +12,8 @@
                 <%# La partie du haut de la carte %>
               </div>
 
-              <% if user.avatar %>
-                <%= image_tag user.avatar, class: 'swiper__card__img' %>
+              <% if user.avatar.attached? %>
+                <%= cl_image_tag user.avatar.key, class: 'swiper__card__img' %>
               <% end %>
 
               <div class="swiper__card__content_bottom">
@@ -46,8 +46,8 @@
                 <div class="modal-body">
                   <%= user.about_me %>
                 </div>
-                <div class="modal-footer">
-                  <span class="badge text-bg-warning text-light">Warning</span>
+                <div class="modal-footer" id="modal-<%= user.id %>">
+                  <%= render "shared/badges", user: user, activity: nil %>
                   <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> %>
                   <%# <button type="button" class="btn btn-primary">Save changes</button> %>
                 </div>

@@ -2,6 +2,12 @@ class ActivitiesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    # get activities through search query or all
+    if params[:query].present?
+      @activities = Activity.search_by_title_description_category(params[:query])
+    else
+      @activities = Activity.all
+    end
     # Getting my matches activities
     @matches = Match.where("status = ? AND user_requester_id = ? OR user_receiver_id = ?", 1, current_user.id, current_user.id)
     # Filter the matches to get only the other person matching you
@@ -11,8 +17,10 @@ class ActivitiesController < ApplicationController
         @matches_activities << activity
       end
     end
+
     # all activities unfiltered
     @activities = Activity.all
+
     # all activities in User's location
     @activities_location = []
     @activities.each do |activity|

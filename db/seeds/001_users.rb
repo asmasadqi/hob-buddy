@@ -119,7 +119,7 @@ id8 = User.new(
   about_me: "Here for holidays to meet family and staying for 3 months, would love to meet new buddies to escape dinners with my Grandma! I play football and tennis quite well and would be up to go surfing :man-surfing: ",
   gender: "Male",
   location: "Paris",
-  date_of_birth: "1999-04-04"
+  date_of_birth: "1998-04-04"
 )
 file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676730118/Hobbuddy/avatar_photo/alexis_b.jpg')
 id8.save!

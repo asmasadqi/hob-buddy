@@ -26,3 +26,9 @@ bk4 = Booking.create(
   user_id: User.find_by(email: "britney@leavemealone.com").id
 )
 puts "Created booking with id#{bk4.id}"
+
+bk5 = Booking.create(
+  activity_id: Activity.find_by(title: "Diving").id,
+  user_id: User.find_by(email: "kao_martin@gmail.com").id
+)
+puts "Created booking with id#{bk5.id}"

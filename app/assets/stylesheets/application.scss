@@ -11,3 +11,13 @@
 @import "config/reset";
 @import "components/index";
 @import "pages/index";
+
+body {
+  overscroll-behavior: none;
+}
+
+.scrollable {
+  margin-bottom: 70px;
+  margin-top: 50px;
+  height: 100%; min-height:100%;
+}

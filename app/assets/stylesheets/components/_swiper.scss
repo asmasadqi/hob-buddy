@@ -1,8 +1,9 @@
 $orange: #264653;
 $green: #F4A261;
+
 .swiper {
   position: absolute;
-  top: 0;
+  top: 12px;
   left: 0;
   right: 0;
   padding-top: 5.875rem;
@@ -14,6 +15,7 @@ $green: #F4A261;
     height: 100%;
     width: 100%;
     padding: 0 1rem 2rem 1rem;
+    margin-top: 25px;
   }
 
   &__card-cont {
@@ -28,7 +30,7 @@ $green: #F4A261;
     left: 0;
     top: 0;
     width: 100%;
-    // height: 100%;
+    height: 100%;
     // min-height: 60vh;
     transform-origin: 50% 100%;
     background-color: white;
@@ -36,6 +38,9 @@ $green: #F4A261;
     padding: 1.4rem;
     padding-bottom: 2rem;
     align-content: center;
+    .btn:active {
+      border-color: transparent;
+    }
 
     &.reset {
       transition: transform 0.3s;
@@ -88,7 +93,7 @@ $green: #F4A261;
     &__img {
       overflow: hidden;
       width: 100%;
-      height: 60vh;
+      height: 68vh;
       object-fit: cover;
       border-radius: 0.8rem;
       // margin-left: auto;
@@ -164,4 +169,12 @@ $green: #F4A261;
       cursor: grab;
     }
   }
+}
+
+div.modal.fade.show {
+  display: flex !important;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding-bottom: 4rem;
 }

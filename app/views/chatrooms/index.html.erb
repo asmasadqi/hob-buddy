@@ -29,8 +29,8 @@
         <ul class="hbuddy-message-list">
           <% @chatrooms.each do |chatroom| %>
             <li>
-              <div class="d-flex py-3 align-items-center">
-                <%= link_to chatroom_path(chatroom) do %>
+              <%= link_to chatroom_path(chatroom), class: "text-decoration-none" do %>
+                <div class="d-flex py-3 align-items-center">           
                   <% if chatroom.user1 == @user %>
                     <% if chatroom.user2.avatar.attached? %>
                       <%= cl_image_tag chatroom.user2.avatar.key, class: "hbuddy-match-avatar", width:50, height:50 %>
@@ -39,18 +39,18 @@
                     <% if chatroom.user2.avatar.attached? %>
                       <%= cl_image_tag chatroom.user1.avatar.key, class: "hbuddy-match-avatar", width:50, height:50 %>
                     <% end %>
-                  <% end %>
-                <% end %>
-                <div class="hbuddy-message-preview">
-                  <% last_message = Message.where(chatroom_id: chatroom.id).last %>
-                  <% if last_message != nil %>
-                    <p class="first-name"><%= User.find(last_message.user_id).first_name %></p>
-                    <p class="message"><%= last_message.content %></p>
-                  <% else %>
-                    <p class="my-auto">No messages exchanged</p>
-                  <% end %>
+                  <% end %>                
+                  <div class="hbuddy-message-preview">
+                    <% last_message = Message.where(chatroom_id: chatroom.id).last %>
+                    <p class="first-name"><%= User.find(chatroom.other_user(@user)).first_name %></p>
+                    <% if last_message != nil %>                      
+                      <p class="message"><%= last_message.content %></p>
+                    <% else %>
+                      <p class="my-auto fst-italic text-danger fw-light"><small>No messages exchanged</small></p>
+                    <% end %>
+                  </div>
                 </div>
-              </div>
+              <% end %>
             </li>
           <% end %>
         </ul>

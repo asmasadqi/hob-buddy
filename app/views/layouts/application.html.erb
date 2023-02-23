@@ -27,6 +27,9 @@
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
 
-    <%= yield %>
+    <div class="<%= controller_name != "matches" ? "scrollable" : "" %>">
+      <%= yield %>
+    </div>
+
   </body>
 </html>

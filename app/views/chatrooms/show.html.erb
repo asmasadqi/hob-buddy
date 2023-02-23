@@ -26,7 +26,7 @@
 
   <%= simple_form_for [@chatroom, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex hbuddy-message-input" } do |f| %>
     <%= f.input :content, label: false, placeholder: "Send message", wrapper_html: {class: "flex-grow-1"} %>
-    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+    <%= button_tag(type: 'submit', class: "btn btn-primary d-flex align-items-center") do %>
       <span class="material-symbols-outlined">send</span>
     <% end %>
   <% end %>

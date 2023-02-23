@@ -42,7 +42,7 @@
 .hbuddy-chatroom {
   background: white;
   margin-top: 9px;
-  height: calc(100vh - 75px);
+  height: calc(100vh - 120px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -81,7 +81,8 @@
     .message_content {
       margin-bottom: 0 !important;
     }
-    textarea.form-control {      
+    textarea.form-control {
+      height: 45px;   
       background: transparent;
       border-radius: 10rem 0 0 10rem;
       border: none;

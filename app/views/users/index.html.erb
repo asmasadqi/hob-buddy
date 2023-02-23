@@ -1,3 +1,7 @@
+<div class="d-flex flex-row justify-content-center align-items-center text-center">
+<h1 class="fs-1 text-danger fw-bold">Let's find your</h1>
+<img class="align-self-center" src="https://res.cloudinary.com/dg5wojcq5/image/upload/v1677012013/development/Logo_Texte_Noir_m28xp6.svg" alt="Hob'Buddy logo" width="60px" height="60px">
+</div>
 <div class="swiper" data-controller="swipe">
     <div class="swiper__content">
       <div class="swiper__card-cont">
@@ -18,7 +22,8 @@
 
               <div class="swiper__card__content_bottom">
                 <p class="swiper__card__name">
-                  <strong><%= user.full_name %></strong>, <span class="profile-age"><%= user.age %></span>
+                  <strong><%= user.full_name %></strong> <span class="profile-age"><%= user.age %></span>
+                  <%= render "shared/badges", user: user, activity: nil %>
                 </p>
                 <!-- Button trigger modal -->
                   <i class="fa-light fa-plus"></i>
@@ -37,7 +42,7 @@
 
           <!-- Modal -->
           <div class="modal fade" id="modal-<%= user.id %>" tabindex="-1" aria-labelledby="modal-<%= user.id %>Label" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
                   <h1 class="modal-title fs-5" id="modal-<%= user.id %>Label"><%= user.full_name %></h1>
@@ -48,6 +53,8 @@
                 </div>
                 <div class="modal-footer" id="modal-<%= user.id %>">
                   <%= render "shared/badges", user: user, activity: nil %>
+                  <br>
+                  <p class="modal-title fs-5" id="modal-<%= user.id %>Label"><%= user.gender %></p>
                   <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> %>
                   <%# <button type="button" class="btn btn-primary">Save changes</button> %>
                 </div>

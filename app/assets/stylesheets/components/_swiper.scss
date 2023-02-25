@@ -170,7 +170,7 @@ $green: #F4A261;
     }
   }
 }
-
+///// style the modal
 div.modal.fade.show {
   display: flex !important;
   flex-direction: column;
@@ -183,4 +183,20 @@ div.modal.fade.show {
 div.modal-content.success-modal-content{
   background-color: #F4A261;
   border-style : none;
+}
+
+.aqua{
+  color: #2a9d8f;
+}
+
+.glow {
+text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.4);
+}
+
+.centered{
+text-align: center;
+}
+
+.longer {
+width: 170px
 }

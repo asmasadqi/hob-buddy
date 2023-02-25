@@ -1,10 +1,8 @@
 <div class="success-modal-inner-content">
     <p class="upper-title text-center fs-3">
-      It's a
+      It's a Match!
     </p>
-    <p class="title text-center fs-3">
-      Match!
-    </p>
+
   <div class="d-flex justify-content-around pb-3">
     <% @users.each do |user| %>
       <div class="users">
@@ -14,6 +12,9 @@
       </div>
     <% end %>
   </div>
+  <p class="title text-center fs-3">
+      Get to know your buddy !
+    </p>
     <%= link_to chatrooms_path(@chatroom),
                 class:"btn-chatroom text-center aqua",
                 data: { action: "click->swipe#hideModal" } do %>

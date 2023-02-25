@@ -37,7 +37,9 @@
   <%# join button %>
   <div class="d-grid gap-2">
   <% if @activity.user_id != current_user.id %>
-    <button type="button" class="btn btn-outline-danger btn-rounded">Join</button>
+    <%= link_to activity_chatroom_path(@activity_chatroom), class: "btn btn-danger btn-rounded text-light" do %>
+      Join
+    <% end %>
   <% end %>
   </div>
   

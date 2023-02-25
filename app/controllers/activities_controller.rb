@@ -27,6 +27,7 @@ class ActivitiesController < ApplicationController
 
   def show
     set_activity
+    @activity_chatroom = ActivityChatroom.find_by(activity_id: @activity.id)
     @markers = [{ lat: @activity.latitude, lng: @activity.longitude }]
   end
 

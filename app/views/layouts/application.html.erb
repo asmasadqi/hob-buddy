@@ -25,11 +25,11 @@
 
   <body>
     <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
+    <%#= render "shared/flashes" %>
 
     <div class="<%= controller_name != "matches" ? "scrollable" : "" %>">
       <%= yield %>
     </div>
-    
+
   </body>
 </html>

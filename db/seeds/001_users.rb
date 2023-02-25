@@ -121,7 +121,7 @@ id8 = User.new(
   location: "Paris",
   date_of_birth: "1998-04-04"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732518/development/kt3trui9qsm3ojexpelgnhvkixd1.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1677330976/kira-laktionov-X5amJgtH2NQ-unsplash_r0nt1d.jpg')
 id8.save!
 id8.avatar.attach(io: file, filename: 'alex_b.jpg', content_type: 'image/jpg')
 puts "User with id #{id8.id}"
@@ -136,7 +136,7 @@ id9 = User.new(
   location: "Paris",
   date_of_birth: "1994-01-01"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732522/development/cp57vlxmzab4ab7ppj3lru8ngda7.jpg')
+file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1677331055/oliver-sjostrom-Mc-r-wjnAac-unsplash_gy9q2u.jpg')
 id9.save!
 id9.avatar.attach(io: file, filename: '"kao_m.jpg', content_type: 'image/jpg')
 puts "User with id #{id9.id}"

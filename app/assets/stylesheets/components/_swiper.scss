@@ -1,6 +1,11 @@
 $orange: #264653;
 $green: #F4A261;
 
+
+.swiper_container {
+  height: 80vh;
+}
+
 .swiper {
   position: absolute;
   top: 12px;
@@ -93,7 +98,7 @@ $green: #F4A261;
     &__img {
       overflow: hidden;
       width: 100%;
-      height: 68vh;
+      height: 100%;
       object-fit: cover;
       border-radius: 0.8rem;
       // margin-left: auto;
@@ -170,7 +175,7 @@ $green: #F4A261;
     }
   }
 }
-
+///// style the modal
 div.modal.fade.show {
   display: flex !important;
   flex-direction: column;
@@ -183,4 +188,20 @@ div.modal.fade.show {
 div.modal-content.success-modal-content{
   background-color: #F4A261;
   border-style : none;
+}
+
+.aqua{
+  color: #2a9d8f;
+}
+
+.glow {
+text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.4);
+}
+
+.centered{
+text-align: center;
+}
+
+.longer {
+width: 170px
 }

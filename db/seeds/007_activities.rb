@@ -135,8 +135,8 @@ ac7 = Activity.new(
   min_persons: 1,
   max_persons: 6,
   total_price: 0,
-  start_date: Date.today + 80.days
-  end_date: Date.today + 80.days
+  start_date: Date.today + 80.days,
+  end_date: Date.today + 81.days
 )
 file = URI.open('https://source.unsplash.com/random/?yoga')
 ac7.save!

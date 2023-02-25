@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="swiper2"
 import { Swiper } from "../components/swiper";
 import { Modal } from "bootstrap";
 

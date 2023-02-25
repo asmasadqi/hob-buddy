@@ -5,7 +5,7 @@ puts "Activities cleaned"
 puts "Creating activities"
 ac1 = Activity.new(
   title: "Diving",
-  description: "Join the best of the best in scuba diving and live the dive life with a super motivated buddy who know the spots by heart",
+  description: "Join the best of the best in scuba diving and live the dive life with a super motivated buddy who knows all the spots by heart",
   useful_information: "I can lend you the material if needed",
   age_range: (22..35),
   gender: "Not specified",
@@ -136,6 +136,7 @@ ac7 = Activity.new(
   max_persons: 6,
   total_price: 0,
   start_date: Date.today + 80.days
+  end_date: Date.today + 80.days
 )
 file = URI.open('https://source.unsplash.com/random/?yoga')
 ac7.save!

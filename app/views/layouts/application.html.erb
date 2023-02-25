@@ -23,13 +23,13 @@
     <%= render 'shared/ios_pwa_links' %>
   </head>
 
-  <body>
+  <body class="body-gradient">
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
 
     <div class="<%= controller_name != "matches" ? "scrollable" : "" %>">
       <%= yield %>
     </div>
-    
+
   </body>
 </html>

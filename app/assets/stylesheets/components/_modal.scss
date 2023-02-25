@@ -1,15 +1,35 @@
-.modal-header {
-  padding:9px 15px;
-  border-bottom:1px solid #eee;
-  background-color: #0480be;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-topright: 5px;
-   border-top-left-radius: 5px;
-   border-top-right-radius: 5px;
-}
+// .modal-header {
+//   padding:9px 15px;
+//   border-bottom:1px solid #eee;
+//   background-color: #0480be;
+//   -webkit-border-top-left-radius: 5px;
+//   -webkit-border-top-right-radius: 5px;
+//   -moz-border-radius-topleft: 5px;
+//   -moz-border-radius-topright: 5px;
+//    border-top-left-radius: 5px;
+//    border-top-right-radius: 5px;
+// }
 
 div.modal-content {
-  // background-color: orange;
+  background-color: #F4A261;
+  border-style: none;
+}
+
+.modal-header {
+  border-style: none;
+}
+
+.modal-footer {
+  border-style: none;
+  .badge {
+    font-size: 1rem;
+  }
+}
+
+.modal-body {
+  font-size: 25px;
+}
+
+.general-info {
+  font-size: 20px;
 }

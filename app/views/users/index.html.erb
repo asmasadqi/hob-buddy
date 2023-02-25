@@ -1,75 +1,88 @@
 <div class="d-flex flex-row justify-content-center align-items-center text-center">
-<h1 class="fs-1 text-danger fw-bold">Let's find your</h1>
-<img class="align-self-center" src="https://res.cloudinary.com/dg5wojcq5/image/upload/v1677012013/development/Logo_Texte_Noir_m28xp6.svg" alt="Hob'Buddy logo" width="60px" height="60px">
+  <h1 class="fs-1 text-danger fw-bold">Let's find your</h1>
+  <img class="align-self-center" src="https://res.cloudinary.com/dg5wojcq5/image/upload/v1677012013/development/Logo_Texte_Noir_m28xp6.svg" alt="Hob'Buddy logo" width="60px" height="60px">
 </div>
-<div class="swiper" data-controller="swipe">
+
+<div class="swiper_container">
+  <div class="swiper" data-controller="swipe">
     <div class="swiper__content">
       <div class="swiper__card-cont">
         <% @users.each do |user| %>
           <div class="swiper__card"
-               data-swipe-target="card"
-               data-id="<%= user.id %>">
-            <button type="button" class="btn btn-unstyled w-100" data-bs-toggle="modal" data-bs-target="#modal-<%= user.id %>">
-            <%#= link_to 'Profile', user_path(user), class: 'profile-link hidden' %>
-            <div class="swiper__card__content text-center">
-              <div class="swiper__card__content_top">
-                <%# La partie du haut de la carte %>
+              data-swipe-target="card"
+              data-id="<%= user.id %>">
+            <button type="button" class="btn btn-unstyled h-100 w-100" data-bs-toggle="modal" data-bs-target="#modal-<%= user.id %>">
+              <%#= link_to 'Profile', user_path(user), class: 'profile-link hidden' %>
+              <div class="swiper__card__content text-center">
+                <div class="swiper__card__content_top">
+                  <%# La partie du haut de la carte %>
+                </div>
+
+                <% if user.avatar.attached? %>
+                  <%= cl_image_tag user.avatar.key, class: 'swiper__card__img' %>
+                <% end %>
+
+                <div class="swiper__card__content_bottom">
+                  <p class="swiper__card__name">
+                    <strong><%= user.full_name %></strong> <span class="profile-age"><%= user.age %></span>
+                    <%= render "shared/badges", user: user, activity: nil %>
+                  </p>
+                  <!-- Button trigger modal -->
+                    <i class="fa-light fa-plus"></i>
+
+                  <p class="swiper__card__distance">
+                    <%# <i class="fa-solid fa-location-dot"></i><%= " #{Geocode.haversine_distance(current_user, user).round} km" %>
+                  </p>
+                </div>
               </div>
 
-              <% if user.avatar.attached? %>
-                <%= cl_image_tag user.avatar.key, class: 'swiper__card__img' %>
-              <% end %>
-
-              <div class="swiper__card__content_bottom">
-                <p class="swiper__card__name">
-                  <strong><%= user.full_name %></strong> <span class="profile-age"><%= user.age %></span>
-                  <%= render "shared/badges", user: user, activity: nil %>
-                </p>
-                <!-- Button trigger modal -->
-                  <i class="fa-light fa-plus"></i>
-
-                <p class="swiper__card__distance">
-                  <%# <i class="fa-solid fa-location-dot"></i><%= " #{Geocode.haversine_distance(current_user, user).round} km" %>
-                </p>
-              </div>
+              <div class="swiper__card__choice m--reject"></div>
+              <div class="swiper__card__choice m--like"></div>
+              <div class="swiper__card__drag"></div>
+              </button>
             </div>
 
-            <div class="swiper__card__choice m--reject"></div>
-            <div class="swiper__card__choice m--like"></div>
-            <div class="swiper__card__drag"></div>
-            </button>
-          </div>
-
-          <!-- Modal -->
-          <div class="modal fade" id="modal-<%= user.id %>" tabindex="-1" aria-labelledby="modal-<%= user.id %>Label" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="modal-<%= user.id %>Label"><%= user.full_name %></h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <%= user.about_me %>
-                </div>
-                <div class="modal-footer" id="modal-<%= user.id %>">
-                  <%= render "shared/badges", user: user, activity: nil %>
-                  <br>
-                  <p class="modal-title fs-5" id="modal-<%= user.id %>Label"><%= user.gender %></p>
-                  <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> %>
-                  <%# <button type="button" class="btn btn-primary">Save changes</button> %>
+            <!-- Modal -->
+            <div class="modal fade" id="modal-<%= user.id %>" tabindex="-1" aria-labelledby="modal-<%= user.id %>Label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-1 fw-bold" id="modal-<%= user.id %>Label"><%= user.full_name %>
+                      <% if user.gender.capitalize == "Female" %>
+                      <span class="material-symbols-outlined" style="font-size:30px">female</span>
+                      <% elsif user.gender.capitalize == "Male" %>
+                      <span class="material-symbols-outlined" style="font-size:30px">male</span>
+                      <% else %>
+                      <%= nil %>
+                      <% end %>
+                    </h1>
+                    <%# <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> %>
+                  </div>
+                    <div class="general-info ms-2 p-2 d-flex align-items-center">
+                      <div class="d-flex align-items-center me-3"><span class="material-symbols-outlined me-2" style="font-size:30px">cake</span><span><%= user.age %></span></div>
+                      <div class="d-flex align-items-center"><span class="material-symbols-outlined me-2" style="font-size:30px">location_on</span><span><%= user.location %></span></div>
+                    </div>
+                  <div class="modal-body">
+                    <%= user.about_me %>
+                  </div>
+                  <div class="modal-footer" id="modal-<%= user.id %>">
+                    <%= render "shared/badges", user: user, activity: nil %>
+                    <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> %>
+                    <%# <button type="button" class="btn btn-primary">Save changes</button> %>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         <% end %>
-      </div>
-    </div>
-    <div class="modal fade" data-swipe-target="modal" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="">
-      <div class="modal-dialog success-modal-dialog">
-        <div class="modal-content success-modal-content">
-          <div class="modal-body success-modal-body" data-swipe-target="modalBody"></div>
-        </div>
       </div>
     </div>
   </div>
 </div>
+  <div class="modal fade" data-swipe-target="modal" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="">
+    <div class="modal-dialog success-modal-dialog">
+      <div class="modal-content success-modal-content">
+        <div class="modal-body success-modal-body" data-swipe-target="modalBody">
+        </div>
+      </div>
+    </div>
+  </div>

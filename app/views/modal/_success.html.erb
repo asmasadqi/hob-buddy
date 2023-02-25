@@ -1,38 +1,32 @@
 <div class="success-modal-inner-content">
-    <p class="upper-title text-center fs-3">
-      It's a Match!
-    </p>
+  <p class="upper-title text-center fs-1 fw-bolder glow ">
+    It's a Match!   <span class="material-symbols-outlined">bolt</span>
+  </p>
 
   <div class="d-flex justify-content-around pb-3">
     <% @users.each do |user| %>
       <div class="users">
         <% if user.avatar.attached? %>
-          <%= cl_image_tag user.avatar.key, :class => "bla" %>
+          <%= cl_image_tag user.avatar.key, :class => " bla hbuddy-match-avatar big" %>
         <% end %>
       </div>
     <% end %>
   </div>
-  <p class="title text-center fs-3">
-      Get to know your buddy !
-    </p>
-    <%= link_to chatrooms_path(@chatroom),
-                class:"btn-chatroom text-center aqua",
-                data: { action: "click->swipe#hideModal" } do %>
-      <p><i class="fa-regular fa-comment-dots"></i>Commencer à discuter</P>
-    <% end %>
-    <p class="btn-continue text-center" data-action="click->swipe#hideModal">
-      Continuer d'explorer
-    </p>
+  <p class="upper-title text-center fs-1 fw-bolder glow">
+      Get to know
+  </p>
+  <p class="title text-center fs-1 fw-bolder glow">
+    your buddy !
+  </p>
+    <div class="centered mt-5">
+      <%= link_to chatrooms_path(@chatroom),
+                  class:"btn-chatroom text-center aqua",
+                  data: { action: "click->swipe#hideModal" } do %>
+        <button class="btn btn-primary longer"><i class="fa-regular fa-comment-dots"></i>  Start to chat ! </button>
+      <% end %>
+    <br>
+      <button class="btn-continue text-center btn btn-outline-primary btn-rounded mt-2 longer" data-action="click->swipe#hideModal">
+        Continue to swipe
+      </button>
+    </div>
 </div>
-
-<style>
-  .bla {
-    border-radius: 50%;
-    width: 110px;
-    height: 110px;
-  }
-
-  .aqua{
-    color: #2a9d8f;
-  }
-</style>

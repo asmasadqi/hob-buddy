@@ -1,6 +1,6 @@
 <div class="container-fluid">
 <div class="pt-2">
-  <h1 class="text-danger">New matches</h1>
+  <h1 class="text-danger fw-bold">New matches</h1>
 </div>
   <div class="row">
     <ul class="d-flex justify-content-start align-items-center hbuddy-matches-list position-sticky">
@@ -30,7 +30,7 @@
           <% @chatrooms.each do |chatroom| %>
             <li>
               <%= link_to chatroom_path(chatroom), class: "text-decoration-none" do %>
-                <div class="d-flex py-3 align-items-center">           
+                <div class="d-flex py-3 align-items-center">
                   <% if chatroom.user1 == @user %>
                     <% if chatroom.user2.avatar.attached? %>
                       <%= cl_image_tag chatroom.user2.avatar.key, class: "hbuddy-match-avatar", width:50, height:50 %>
@@ -39,11 +39,11 @@
                     <% if chatroom.user2.avatar.attached? %>
                       <%= cl_image_tag chatroom.user1.avatar.key, class: "hbuddy-match-avatar", width:50, height:50 %>
                     <% end %>
-                  <% end %>                
+                  <% end %>
                   <div class="hbuddy-message-preview">
                     <% last_message = Message.where(chatroom_id: chatroom.id).last %>
                     <p class="first-name"><%= User.find(chatroom.other_user(@user)).first_name %></p>
-                    <% if last_message != nil %>                      
+                    <% if last_message != nil %>
                       <p class="message"><%= last_message.content %></p>
                     <% else %>
                       <p class="my-auto fst-italic text-danger fw-light"><small>No messages exchanged</small></p>
@@ -61,20 +61,20 @@
             <li>
               <%= link_to activity_chatroom_path(activity_chatroom), class: "text-decoration-none" do %>
                 <% activity = Activity.find(activity_chatroom.activity_id) %>
-                <div class="d-flex py-3 align-items-center">           
+                <div class="d-flex py-3 align-items-center">
                   <% if activity.photo.attached? %>
                     <%= cl_image_tag activity.photo.key, class: "hbuddy-match-avatar", width:50, height:50 %>
-                  <% end %>               
+                  <% end %>
                   <div class="hbuddy-message-preview">
                     <% last_message = ActivityMessage.where(activity_chatroom_id: activity_chatroom.id).last %>
                     <p class="first-name"><%= activity.title %></p>
-                    <% if last_message != nil %>                      
+                    <% if last_message != nil %>
                       <p class="message"><%= last_message.content %></p>
                     <% else %>
                       <p class="my-auto fst-italic text-danger fw-light"><small>No messages exchanged</small></p>
                     <% end %>
                   </div>
-                </div>              
+                </div>
               <% end %>
             </li>
           <% end %>

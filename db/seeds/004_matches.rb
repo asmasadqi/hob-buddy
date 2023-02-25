@@ -4,7 +4,7 @@ puts "Matches cleaned"
 
 puts 'Creating 5 fake matches...'
 
-puts "Matching Koari with Alexi"
+puts "Matching Kaori with Alexis"
 match1 = Match.create(
   status: 1,
   user_requester_id: User.find_by(email: "kao_martin@gmail.com").id ,
@@ -12,7 +12,7 @@ match1 = Match.create(
 )
 puts "match created with ID#{match1.id}"
 
-puts "Ayla matched with Koari"
+puts "Ayla matched with Kaori"
 match2 = Match.create(
   status: 1,
   user_requester_id: User.find_by(email: "ayla.moon@gmail.com").id ,
@@ -36,7 +36,7 @@ match4 = Match.create(
 )
 puts "match created with ID#{match4.id}"
 
-puts "Paul requested to match britney"
+puts "Paul requested to match Britney"
 match5 = Match.create(
   status: 0,
   user_requester_id: User.find_by(email: "paul-portier@gmail.com").id ,

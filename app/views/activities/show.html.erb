@@ -1,20 +1,20 @@
 <div class="container">
   <%# welcome with name %>
-  <div>
-    <h1><%= @activity.title.capitalize %> with <%=User.find(@activity.user_id).first_name.capitalize%></h1>
+  <div class="mb-4">
+    <h1 class="text-danger fw-bold"><%= @activity.title.capitalize %> with <%=User.find(@activity.user_id).first_name.capitalize%></h1>
   </div>
   <%# card %>
   <div class="card hbuddy-card">
       <% if @activity.photo.attached? %>
         <%= cl_image_tag @activity.photo.key, class: "card-img-top" %>
       <% end %>
-      <% if current_user.avatar.attached? %>
-        <%= cl_image_tag current_user.avatar.key, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
+      <% if User.find(@activity.user_id).avatar.attached? %>
+        <%= cl_image_tag User.find(@activity.user_id).avatar.key, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
       <% end %>
     <div class="card-body">
       <span class="badge text-bg-warning text-light"> <%= @activity.preference.category %></span>
       <div class="hbuddy-card-location d-flex align-items-center">
-        <span class="material-symbols-outlined">location_on</span>
+        <span class="material-symbols-outlined me-2">location_on</span>
         <div>
           <p> <%= @activity.location.capitalize %></p>
         </div>
@@ -24,9 +24,9 @@
         <p class="card-text"> <%= @activity.start_date.strftime('%a, %b %e %k:%M') if @activity.start_date != nil %> ~ <%= @activity.end_date.strftime('%a, %b %e %k:%M') if @activity.end_date != nil %></p>
       </div>
       <div class="d-flex align-items-center">
-        <span class="material-symbols-outlined">payments</span>
+        <span class="material-symbols-outlined me-2">payments</span>
         <% if @activity.total_price == nil || 0 %>
-          <p> free</p>
+          <p>Free</p>
         <% else %>
           <p class="card-text"><%= @activity.total_price %>€</p>
         <% end %>
@@ -35,35 +35,58 @@
   </div>
   <br>
   <%# join button %>
-  <div class="d-grid gap-2">
+  <div class="d-grid gap-2 mt-1">
   <% if @activity.user_id != current_user.id %>
     <%= link_to activity_chatroom_path(@activity_chatroom), class: "btn btn-danger btn-rounded text-light" do %>
       Join
     <% end %>
   <% end %>
   </div>
-  
+
   <%# description %>
   <div class="card-body">
     <%# small pill %>
-    <div class="d-flex flex-row mb-3">
-      <div class="p-2">
+    <div class="d-flex flex-row my-3 justify-content-between">
+      <div class="py-2">
         <% if @activity.min_persons == nil %>
-          <span class="badge text-bg-success text-light">No buddy limit</span>
+          <div class="badge text-bg-success text-light d-flex align-items-center">
+            <span class="material-symbols-outlined me-1">all-inclusive</span>
+            <span class="material-symbols-outlined me-1">groups</span>
+          </div>
         <% else %>
-          <span class="badge text-bg-success text-light"><%= @activity.min_persons %> ~ <%= @activity.max_persons %> buddies</span>
+          <div class="badge text-bg-success text-light d-flex align-items-center">
+            <span class="material-symbols-outlined me-1">groups</span>
+            <span><%= @activity.min_persons %> - <%= @activity.max_persons %></span>
+          </div>
         <% end %>
       </div>
-      <div class="p-2">
+
+      <div class="py-2">
         <% if @activity.gender == "Not specified" %>
-          <span class="badge text-bg-success text-light">Mixed group</span>
-        <% else %>
-          <span class="badge text-bg-success text-light">Group of <%= @activity.gender %></span>
+        <div class=" badge text-bg-success text-light d-flex align-items-center">
+          <span>Group of </span>
+          <span class="material-symbols-outlined">male</span>
+          <span class="material-symbols-outlined">female</span>
+        </div>
+        <% elsif @activity.gender == "Male" %>
+          <div class="badge text-bg-success text-light d-flex align-items-center">
+            <span>Group of </span>
+            <span class="material-symbols-outlined">male</span>
+          </div>
+        <% elsif @activity.gender == "Female" %>
+          <div class="badge text-bg-success text-light d-flex align-items-center">
+            <span>Group of </span>
+            <span class="material-symbols-outlined">female</span>
+          </div>
         <% end %>
       </div>
-      <div class="p-2">
+
+      <div class="py-2 mx-2">
         <% if @activity.age_range != nil %>
-          <span class="badge text-bg-success text-light"><%= @activity.age_range %> years-old</span>
+          <div class="badge text-bg-success text-light d-flex align-items-center">
+            <span class="material-symbols-outlined me-1">cake</span>
+            <span><%= @activity.age_range.first %> - <%= @activity.age_range.last %></span>
+          </div>
         <% end %>
       </div>
     </div>
@@ -76,7 +99,7 @@
       </div>
 
       <%# additional info %>
-      <div class="card-body">
+      <div class="card-body mb-2">
         <strong>Additional information:</strong>
         <p><%= @activity.useful_information %></p>
       </div>

@@ -183,7 +183,7 @@ ac9.photo.attach(io: file, filename: 'fitness.png', content_type: 'image/png')
 puts "Activity with id #{ac9.id}"
 
 ac10 = Activity.new(
-  title: "Cooking asian food",
+  title: "Cooking Asian food",
   description: "Hi there I'm Werner and i come back from 3 years abroad (Cambodia, China and Thailand) I've learn many recipes that I would like to share. If you are available for a cooking class and eat together what we have cooked afterwards, this group is made for you! If you join, let me know what you can't eat so i adapt the menu",
   useful_information: "I provide all the ingredients and material, the lesson takes place in my kitchen",
   age_range: (25..45),
@@ -203,7 +203,7 @@ ac10.photo.attach(io: file, filename: 'asian-food.png', content_type: 'image/png
 puts "Activity with id #{ac10.id}"
 
 ac11 = Activity.new(
-  title: "Travel with me in Egypt",
+  title: "Travel to Egypt",
   description: "Hi everyone., I'm 45 and have just booked my very first solo trip, to Egypt at the beginning of May.. as I hit the pay now button on the booking screen, I went into a panic. What the heck am I going to do alone in Egypt for 10 whole days? I don't even go for coffee on my own in my own country! Do you wanna join?",
   useful_information: "from 1st to 18th of may, landing in Cairo no hotel booked yet",
   age_range: (25..55),
@@ -223,7 +223,7 @@ ac11.photo.attach(io: file, filename: 'egypt.png', content_type: 'image/png')
 puts "Activity with id #{ac11.id}"
 
 ac12 = Activity.new(
-  title: "Cycling with Tommy",
+  title: "Cycling",
   description: "Hi all ! I'm Tom, passionate about cycling! I'm organizing a group training on March 4th around the woods in Fontainebleau.I'm thinking about a 4h session starting at Bois-Le-Roi station.
     Looking forward to seeing you all !!",
   useful_information: "Bring your training bicycle. No Velib! Bring your lunch as there will be no restaurants or shops around",

@@ -19,7 +19,7 @@
                 </div>
 
                 <% if user.avatar.attached? %>
-                  <%= cl_image_tag user.avatar.key, class: 'swiper__card__img' %>
+                  <%= cl_image_tag user.avatar.key, height: 750, crop: :fill, class: 'swiper__card__img' %>
                 <% end %>
 
                 <div class="swiper__card__content_bottom">
@@ -49,11 +49,11 @@
                   <div class="modal-header">
                     <h1 class="modal-title fs-1 fw-bold" id="modal-<%= user.id %>Label"><%= user.full_name %>
                       <% if user.gender.capitalize == "Female" %>
-                      <span class="material-symbols-outlined" style="font-size:30px">female</span>
+                        <span class="material-symbols-outlined" style="font-size:30px">female</span>
                       <% elsif user.gender.capitalize == "Male" %>
-                      <span class="material-symbols-outlined" style="font-size:30px">male</span>
+                        <span class="material-symbols-outlined" style="font-size:30px">male</span>
                       <% else %>
-                      <%= nil %>
+                        <%= nil %>
                       <% end %>
                     </h1>
                     <%# <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> %>
@@ -65,7 +65,7 @@
                   <div class="modal-body">
                     <%= user.about_me %>
                   </div>
-                  <div class="modal-footer" id="modal-<%= user.id %>">
+                  <div class="modal-footer justify-content-start" id="modal-<%= user.id %>">
                     <%= render "shared/badges", user: user, activity: nil %>
                     <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> %>
                     <%# <button type="button" class="btn btn-primary">Save changes</button> %>
@@ -76,13 +76,13 @@
         <% end %>
       </div>
     </div>
-  </div>
-</div>
-  <div class="modal fade" data-swipe-target="modal" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="">
-    <div class="modal-dialog success-modal-dialog">
-      <div class="modal-content success-modal-content">
-        <div class="modal-body success-modal-body" data-swipe-target="modalBody">
+    <div class="modal fade" data-swipe-target="modal" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="">
+      <div class="modal-dialog success-modal-dialog">
+        <div class="modal-content success-modal-content">
+          <div class="modal-body success-modal-body" data-swipe-target="modalBody">
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>

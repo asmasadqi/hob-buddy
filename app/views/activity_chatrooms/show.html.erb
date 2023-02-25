@@ -1,0 +1,33 @@
+<div class="container-fluid hbuddy-chatroom"
+  data-controller="chatroom-subscription"
+  data-chatroom-subscription-chatroom-id-value="<%= @activity_chatroom.id %>"
+  data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+
+  <div class="hbuddy-chatroom-header">
+    <%= link_to chatrooms_path, class: "d-flex justify-content-start align-items-center" do %>
+      <span class="ico material-symbols-outlined">arrow_back_ios_new</span>
+        <% if @activity.photo.attached? %>
+          <%= cl_image_tag @activity.photo.key, class: "hbuddy-match-avatar", width:50, height:50 %>
+        <% end %>
+      <p class="mb-0"><%= @activity.title %></p>
+    <% end %>
+  </div>
+
+  <div class="hbuddy-messages" data-chatroom-subscription-target="messages">
+    <% @activity_chatroom.activity_messages.each do |message| %>
+      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+          <%= render "messages/message", message: message %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  
+  <%= simple_form_for [@activity_chatroom, @activity_message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex hbuddy-message-input" } do |f| %>
+    <%= f.input :content, label: false, placeholder: "Send message", wrapper_html: {class: "flex-grow-1"} %>
+    <%= button_tag(type: 'submit', class: "btn btn-primary d-flex align-items-center") do %>
+      <span class="material-symbols-outlined">send</span>
+    <% end %>
+  <% end %>
+
+</div>

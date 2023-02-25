@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'activity_chatrooms/show'
   devise_for :users, controllers: {
     sessions: "users/sessions"
   }
@@ -20,7 +21,9 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
 
-  resources :activity_chatrooms, only: %i[show]
+  resources :activity_chatrooms, only: %i[show] do
+    resources :activity_messages, only: :create
+  end
 
   resources :preferences, only: :index
 end

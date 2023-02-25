@@ -13,6 +13,13 @@ class ChatroomsController < ApplicationController
     end
 
     @chatrooms = Chatroom.where("user1_id = ? OR user2_id = ?", @user.id, @user.id)
+
+    # Find the group chatrooms where the current user is a member
+    bookings = Booking.where(user_id: @user.id)
+    @activity_chatrooms = []
+    bookings.each do |booking|
+      @activity_chatrooms << ActivityChatroom.find(booking.activity_id)
+    end
   end
 
   def show

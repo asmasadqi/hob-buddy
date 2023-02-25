@@ -39,7 +39,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params) #create a new activity from the filled form
     @activity.user = @user #associate the created activity to the current user
     if @activity.save
-      redirect_to activity_path(@activity)
+      create_chatroom
     else
       render :new, status: :unprocessable_entity
     end
@@ -61,10 +61,15 @@ class ActivitiesController < ApplicationController
     redirect_to activities_path
   end
 
-  # def all_activities
-  #   @user = current_user
-  #   @activities = @user.activities
-  # end
+  def create_chatroom
+    activity_chatroom = ActivityChatroom.new
+    activity_chatroom.activity = @activity
+    if activity_chatroom.save
+      redirect_to activity_path(@activity)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   private
 

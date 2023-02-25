@@ -56,7 +56,7 @@
                         <%= nil %>
                       <% end %>
                     </h1>
-                    <%# <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> %>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                     <div class="general-info ms-2 p-2 d-flex align-items-center">
                       <div class="d-flex align-items-center me-3"><span class="material-symbols-outlined me-2" style="font-size:30px">cake</span><span><%= user.age %></span></div>
@@ -67,7 +67,6 @@
                   </div>
                   <div class="modal-footer justify-content-start" id="modal-<%= user.id %>">
                     <%= render "shared/badges", user: user, activity: nil %>
-                    <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> %>
                     <%# <button type="button" class="btn btn-primary">Save changes</button> %>
                   </div>
                 </div>

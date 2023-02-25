@@ -1,7 +1,6 @@
 require 'open-uri'
 
 puts "Cleaning up Users..."
-User.destroy_all
 puts "Users cleaned"
 
 puts 'Creating 12 fake users...'

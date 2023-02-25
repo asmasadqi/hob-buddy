@@ -1,5 +1,4 @@
 puts "Cleaning up activity messages..."
-ActivityMessage.destroy_all
 puts "Activity messages cleaned"
 
 puts "creating conversation feed for the Diving group activity"

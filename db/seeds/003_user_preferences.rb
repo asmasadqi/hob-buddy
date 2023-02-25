@@ -1,5 +1,4 @@
 puts "Cleaning up Users preferences..."
-UserPreference.destroy_all
 puts "Users preferences cleaned"
 
 up1 = UserPreference.create(

@@ -6,9 +6,11 @@
     <ul class="d-flex justify-content-start align-items-center hbuddy-matches-list position-sticky">
       <% @matches_list.each do |match| %>
         <li>
-          <%= link_to chatroom_path(Chatroom.find_by("user1_id = ? OR user2_id = ?", match, match).id) do %>
-            <% if match.avatar.attached? %>
-              <%= cl_image_tag match.avatar.key, class: "hbuddy-match-avatar", width:50, height:50 %>
+          <% if Chatroom.find_by("user1_id = ? OR user2_id = ?", match, match) != nil %>
+            <%= link_to chatroom_path(Chatroom.find_by("user1_id = ? OR user2_id = ?", match, match).id) do %>
+              <% if match.avatar.attached? %>
+                <%= cl_image_tag match.avatar.key, class: "hbuddy-match-avatar", width:50, height:50 %>
+              <% end %>
             <% end %>
           <% end %>
         </li>

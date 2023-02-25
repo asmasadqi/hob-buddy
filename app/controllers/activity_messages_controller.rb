@@ -1,7 +1,6 @@
 class ActivityMessagesController < ApplicationController
 
-  def create
-    
+  def create    
     @activity_chatroom = ActivityChatroom.find(params[:activity_chatroom_id])    
     @activity_message = ActivityMessage.new(message_params)
     @activity_message.activity_chatroom = @activity_chatroom

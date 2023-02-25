@@ -27,6 +27,7 @@ class ActivitiesController < ApplicationController
 
   def show
     set_activity
+    @activity_chatroom = ActivityChatroom.find_by(activity_id: @activity.id)
     @markers = [{ lat: @activity.latitude, lng: @activity.longitude }]
   end
 
@@ -39,7 +40,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params) #create a new activity from the filled form
     @activity.user = @user #associate the created activity to the current user
     if @activity.save
-      redirect_to activity_path(@activity)
+      create_booking_chatroom
     else
       render :new, status: :unprocessable_entity
     end
@@ -61,10 +62,18 @@ class ActivitiesController < ApplicationController
     redirect_to activities_path
   end
 
-  # def all_activities
-  #   @user = current_user
-  #   @activities = @user.activities
-  # end
+  def create_booking_chatroom
+    activity_chatroom = ActivityChatroom.new
+    activity_chatroom.activity = @activity
+    booking = Booking.new
+    booking.activity = @activity #associate the activity to the created booking
+    booking.user = current_user # associate user to the created booking
+    if activity_chatroom.save && booking.save
+      redirect_to activity_path(@activity)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   private
 

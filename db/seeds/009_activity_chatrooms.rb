@@ -64,20 +64,20 @@ ch10 = ActivityChatroom.create!(
 )
 puts "activity chatroom created #{ch10.id}"
 
-puts "Creating chatroom for Cooking asian food activity"
+puts "Creating chatroom for Cooking Asian food activity"
 ch11 = ActivityChatroom.create!(
-  activity_id: Activity.find_by(title: "Cooking asian food").id
+  activity_id: Activity.find_by(title: "Cooking Asian food").id
 )
 puts "activity chatroom created #{ch11.id}"
 
 puts "Creating chatroom for Travel with me in Egypt activity"
 ch12 = ActivityChatroom.create!(
-  activity_id: Activity.find_by(title: "Travel with me in Egypt").id
+  activity_id: Activity.find_by(title: "Travel to Egypt").id
 )
 puts "activity chatroom created #{ch12.id}"
 
 puts "Creating chatroom for Cycling with Tommy activity"
 ch13 = ActivityChatroom.create!(
-  activity_id: Activity.find_by(title: "Cycling with Tommy").id
+  activity_id: Activity.find_by(title: "Cycling").id
 )
 puts "activity chatroom created #{ch13.id}"

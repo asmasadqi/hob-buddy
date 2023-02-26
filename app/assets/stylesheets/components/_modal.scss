@@ -11,13 +11,15 @@
 // }
 
 div.modal-content {
-  background-color: #F4A261;
-  background-color: transparent;
+  background-color: rgba(244, 162, 97, 0.9);
   border-style: none;
+  background-color: transparent;
 }
 
 .modal-header {
   border-style: none;
+  background-color: rgba(244, 162, 97, 0.9);
+  background-color: transparent;
 }
 
 .modal-footer {
@@ -34,4 +36,3 @@ div.modal-content {
 .general-info {
   font-size: 20px;
 }
-

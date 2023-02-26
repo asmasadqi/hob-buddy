@@ -182,16 +182,13 @@ div.modal.fade.show {
   height: 100%;
   justify-content: center;
   padding-bottom: 4rem;
-  background-color: rgba(244, 162, 97, 0.95); /* 75% opaque, i.e. 25% transparent */
+  background-color: rgba(244, 162, 97, 0.9);
 }
 
 div.modal-content.success-modal-content{
   border-style : none;
-  background-color: rgba(244, 162, 97, 0.95); /* 75% opaque, i.e. 25% transparent */
-}
+  // background-color: rgba(244, 162, 97, 0.9);
 
-.aqua{
-  color: #2a9d8f;
 }
 
 .glow {

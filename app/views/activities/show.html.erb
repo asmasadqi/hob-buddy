@@ -21,40 +21,39 @@
       </div>
       <div class="d-flex align-items-center">
         <span class="material-symbols-outlined me-2">today</span>
-        <p class="card-text"> <%=@activity.start_date.strftime('%a, %b %e') %> ~ <%= @activity.end_date.strftime('%a, %b %e') if @activity.end_date != nil %></p>
+        <p class="card-text fw-bold"> <%=@activity.start_date.strftime('%a, %b %e') %> ~ <%= @activity.end_date.strftime('%a, %b %e') if @activity.end_date != nil %></p>
       </div>
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center fw-bold">
         <span class="material-symbols-outlined me-2">payments</span>
         <% if @activity.total_price == nil || 0 %>
           <p>Free</p>
         <% else %>
-          <p class="card-text"><%= @activity.total_price %>€</p>
+          <p class="card-text fw-bold"><%= @activity.total_price %>€</p>
         <% end %>
       </div>
     </div>
   </div>
   <br>
   <%# join button %>
-  <div class="d-grid gap-2 mt-1">
+  <div class="d-grid gap-2 my-1">
   <% if @activity.user_id != current_user.id %>
     <%= link_to activity_chatroom_path(@activity_chatroom), class: "btn btn-danger btn-rounded text-light" do %>
       Join
     <% end %>
   <% end %>
   </div>
-
   <%# description %>
   <div class="card-body">
     <%# small pill %>
-    <div class="d-flex flex-row my-3 justify-content-between">
+    <div class="d-flex flex-row justify-content-between">
       <div class="py-2">
         <% if @activity.min_persons == nil %>
-          <div class="badge text-bg-success text-light d-flex align-items-center">
+          <div class="badge text-bg-success text-light d-flex align-items-center px-3">
             <span class="material-symbols-outlined me-1">groups</span>
             <span class="material-symbols-outlined me-1">all_inclusive</span>
           </div>
         <% else %>
-          <div class="badge text-bg-success text-light d-flex align-items-center">
+          <div class="badge text-bg-success text-light d-flex align-items-center px-3">
             <span class="material-symbols-outlined me-1">groups</span>
             <span><%= @activity.min_persons %> - <%= @activity.max_persons %></span>
           </div>
@@ -63,27 +62,27 @@
 
       <div class="py-2">
         <% if @activity.gender == "Not specified" %>
-        <div class=" badge text-bg-success text-light d-flex align-items-center">
+        <div class=" badge text-bg-success text-light d-flex align-items-center px-3">
           <span>Group of </span>
           <span class="material-symbols-outlined">male</span>
           <span class="material-symbols-outlined">female</span>
         </div>
         <% elsif @activity.gender == "Male" %>
-          <div class="badge text-bg-success text-light d-flex align-items-center">
+          <div class="badge text-bg-success text-light d-flex align-items-center px-3">
             <span>Group of </span>
             <span class="material-symbols-outlined">male</span>
           </div>
         <% elsif @activity.gender == "Female" %>
-          <div class="badge text-bg-success text-light d-flex align-items-center">
+          <div class="badge text-bg-success text-light d-flex align-items-center px-3">
             <span>Group of </span>
             <span class="material-symbols-outlined">female</span>
           </div>
         <% end %>
       </div>
 
-      <div class="py-2 mx-2">
+      <div class="py-2">
         <% if @activity.age_range != nil %>
-          <div class="badge text-bg-success text-light d-flex align-items-center">
+          <div class="badge text-bg-success text-light d-flex align-items-center px-3">
             <span class="material-symbols-outlined me-1">cake</span>
             <span><%= @activity.age_range.first %> - <%= @activity.age_range.last %></span>
           </div>
@@ -92,14 +91,14 @@
     </div>
 
     <%# description %>
-    <div>
+    <div class="my-2">
       <div class="card-body">
         <strong>Description:</strong>
         <p><%= @activity.description %></p>
       </div>
 
       <%# additional info %>
-      <div class="card-body mb-2">
+      <div class="card-body">
         <strong>Additional information:</strong>
         <p><%= @activity.useful_information %></p>
       </div>

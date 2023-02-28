@@ -1,5 +1,4 @@
 puts "Cleaning up chatrooms..."
-Chatroom.destroy_all
 puts "Chatrooms cleaned"
 
 puts "Creating a chatroom for Kaori and Alexis"

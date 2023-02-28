@@ -1,5 +1,4 @@
 puts "Cleaning up one to one messages..."
-Message.destroy_all
 puts "messages cleaned"
 
 puts "creating conversation feed for Koari"

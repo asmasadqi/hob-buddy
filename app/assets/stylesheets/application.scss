@@ -18,6 +18,8 @@ body {
 
 .scrollable {
   margin-bottom: 70px;
-  margin-top: 50px;
-  height: 100%; min-height:100%;
+  margin-top: 25px;
+  height: 100%; 
+  min-height:100%;
+  touch-action: pan-y;
 }

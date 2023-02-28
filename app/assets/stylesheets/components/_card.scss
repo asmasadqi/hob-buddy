@@ -48,6 +48,9 @@
 }
 
 #hbuddyCardCarousel {
+  .carousel-item {
+    padding: 10px 0;
+  }
   .carousel-indicators {
     margin-bottom: 0;
     bottom: -30px;
@@ -65,13 +68,18 @@
 
 .hbuddy-card-container {
   margin: 0;
-  padding: 0;
+  padding: 10px 0;
   text-indent: 0;
   list-style-type: none;
   touch-action: pan-x;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
   li{
     margin-right: 15px;
     &:last-child {

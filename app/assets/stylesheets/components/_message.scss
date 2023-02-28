@@ -1,15 +1,24 @@
 // To style the wrapping div
 .message-row {
-  padding: 8px;
+  padding: 4px;
 }
 
 // To style the message itself
 .sender-style, .receiver-style {
   width: 70%;
   max-width: 400px;
-  border-radius: 4px;
-  padding: 8px;
+  border-radius: 1.15rem;
+  margin: 0 0 1rem;
+  padding: 0.5rem 0.875rem;
   color: #fff;
+  word-wrap: break-word;
+  position: relative;
+  &::before, &::after {
+  bottom: -0.1rem;
+  content: "";
+  height: 1rem;
+  position: absolute;
+  }
   p{
     margin-bottom: 0.625rem;
   }
@@ -21,12 +30,46 @@
 }
 
 .sender-style {
+  align-self: flex-end;
   background-color: $jungle-green;
-  + .sender-style {
-    border-radius: 0 0 0 12px;
+  &::before {
+    border-bottom-left-radius: 0.8rem 0.7rem;
+    border-right: 1rem solid $jungle-green;
+    right: -0.35rem;
+    transform: translate(0, -0.1rem);
+  }
+  &::after {
+    background-color: #fff;
+    border-bottom-left-radius: 0.5rem;
+    right: -40px;
+    transform:translate(-30px, -2px);
+    width: 10px;
   }
 }
 
 .receiver-style {
+  align-items: flex-start;
   background-color: $japanese-indigo;
+  &::before {
+    border-bottom-right-radius: 0.8rem 0.7rem;
+    border-left: 1rem solid $japanese-indigo;
+    left: -0.35rem;
+    transform: translate(0, -0.1rem);
+  }  
+  &::after {
+    background-color: #fff;
+    border-bottom-right-radius: 0.5rem;
+    left: 20px;
+    transform: translate(-30px, -2px);
+    width: 10px;
+  }
 }
+
+
+.no-tail {
+  margin: 0 0 0.25rem;
+  &::before {
+    display: none;
+  }
+}
+

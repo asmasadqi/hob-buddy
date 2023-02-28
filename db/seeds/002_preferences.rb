@@ -1,5 +1,4 @@
 puts "Cleaning up Users..."
-Preference.destroy_all
 puts "Users cleaned"
 
 puts "Creating 5 categories: Culture, Entertainment, Food, Sports, Wellness, Sightseeing, Outdoors and associated activities"

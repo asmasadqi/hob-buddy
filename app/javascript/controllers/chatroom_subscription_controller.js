@@ -12,6 +12,8 @@ export default class extends Controller {
       { received: data => this.#insertMessageAndScrollDown(data) }
     )
     console.log(`Subscribed to the chatroom with the id ${this.chatroomIdValue}.`)
+    // scroll to the last message in chatroom
+    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
   }
 
   resetForm(event) {
@@ -24,11 +26,13 @@ export default class extends Controller {
   }
 
   #buildMessageElement(currentUserIsSender, message) {
+    // if the previous message is from the same user remove the bubble tail style
+    if (this.messagesTarget.lastElementChild.className.trimEnd() === this.#userStyleClass(currentUserIsSender)) {
+      this.messagesTarget.lastElementChild.classList.add("no-tail")
+    }    
     return `
-      <div class="message-row d-flex ${this.#justifyClass(currentUserIsSender)}">
-        <div class="${this.#userStyleClass(currentUserIsSender)}">
-          ${message}
-        </div>
+      <div class="${this.#userStyleClass(currentUserIsSender)}">
+        ${message}
       </div>
     `
   }

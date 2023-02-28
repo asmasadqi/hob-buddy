@@ -1,5 +1,4 @@
 puts "Cleaning up bookings..."
-Booking.destroy_all
 puts "Bookings cleaned"
 
 puts "create 4 participants for Diving activity"

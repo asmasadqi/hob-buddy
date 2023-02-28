@@ -18,7 +18,7 @@ class ChatroomsController < ApplicationController
     bookings = Booking.where(user_id: @user.id)
     @activity_chatrooms = []
     bookings.each do |booking|
-      @activity_chatrooms << ActivityChatroom.find(booking.activity_id)
+      @activity_chatrooms << ActivityChatroom.find_by(activity_id: booking.activity_id)
     end
   end
 

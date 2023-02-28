@@ -1,7 +1,7 @@
 <div class="container-fluid hbuddy-chatroom"
   data-controller="activity-chatroom-subscription"
   data-activity-chatroom-subscription-chatroom-id-value="<%= @activity_chatroom.id %>"
-  data-acitivity-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+  data-activity-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
 
   <div class="hbuddy-chatroom-header">
     <%= link_to chatrooms_path, class: "d-flex justify-content-start align-items-center" do %>
@@ -9,17 +9,20 @@
         <% if @activity.photo.attached? %>
           <%= cl_image_tag @activity.photo.key, class: "hbuddy-match-avatar", width:50, height:50 %>
         <% end %>
-      <p class="mb-0"><%= @activity.title %></p>
+      <p class="mb-0"><%= @activity.title %> activity chatroom</p>
     <% end %>
   </div>
 
   <div class="hbuddy-messages" data-activity-chatroom-subscription-target="messages">
-    <% @activity_chatroom.activity_messages.each do |message| %>
-      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
-        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
-          <%= render "activity_messages/message", message: message %>
-        </div>
-      </div>
+    <% @activity_chatroom.activity_messages.each_with_index do |message, i| %>
+      <% next_style = "" %>
+      <% if @activity_chatroom.activity_messages.length != i+1 %>
+        <% next_style = @activity_chatroom.activity_messages[i+1].sender?(current_user) ? 'sender-style' : 'receiver-style' %>
+      <% end %>
+      <% current_style = message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>
+      <div class="<%= current_style %> <%= 'no-tail' if current_style == next_style %>">
+        <%= render "activity_messages/message", message: message %>
+      </div>      
     <% end %>
   </div>
   

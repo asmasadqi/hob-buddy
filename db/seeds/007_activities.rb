@@ -1,5 +1,4 @@
 puts "Cleaning up Activities..."
-Activity.destroy_all
 puts "Activities cleaned"
 
 puts "Creating activities"

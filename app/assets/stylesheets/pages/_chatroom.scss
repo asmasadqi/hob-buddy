@@ -3,7 +3,7 @@
   text-indent: 0;
   list-style-type: none;
   height: 100px;
-  background-color: rgba(231,111,81,0.5);
+  background: linear-gradient(90deg, rgba(231,111,81,1) 0%, rgba(231,111,81,1) 55%, rgba(244,162,97,1) 100%);
   touch-action: pan-x;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -40,9 +40,8 @@
 }
 
 .hbuddy-chatroom {
-  background: white;
   margin-top: 9px;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 95px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -54,7 +53,7 @@
     padding: 1rem 0;
     .ico {
       display: flex;
-      align-items: center;      
+      align-items: center;
       width: 40px;
       height: 50px;
     }
@@ -70,19 +69,29 @@
   }
 
   .hbuddy-messages {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
     height: 100%;
-    overflow: scroll;
+    touch-action: pan-y;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    &::-webkit-scrollbar {
+      display: none; /* for Chrome, Safari, and Opera */
+    }
   }
 
   .hbuddy-message-input {
-    margin-top: 20px;
+    margin-top: 10px;
     border-radius: 10rem;
     background: #D9D9D9;
     .message_content, .activity_message_content {
       margin-bottom: 0 !important;
     }
     textarea.form-control {
-      height: 45px;   
+      height: 45px;
       background: transparent;
       border-radius: 10rem 0 0 10rem;
       border: none;

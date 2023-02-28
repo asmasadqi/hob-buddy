@@ -15,11 +15,14 @@
   </div>
 
   <div class="hbuddy-messages" data-chatroom-subscription-target="messages">
-    <% @chatroom.messages.each do |message| %>
-      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
-        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
-          <%= render "messages/message", message: message %>
-        </div>
+    <% @chatroom.messages.each_with_index do |message, i| %>
+      <% next_style = "" %>
+      <% if @chatroom.messages.length != i+1 %>
+        <% next_style = @chatroom.messages[i+1].sender?(current_user) ? 'sender-style' : 'receiver-style' %>
+      <% end %>
+      <% current_style = message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>
+      <div class="<%= current_style %> <%= 'no-tail' if current_style == next_style %>">
+        <%= render "messages/message", message: message %>
       </div>
     <% end %>
   </div>

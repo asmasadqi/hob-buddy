@@ -1,5 +1,4 @@
 puts "Cleaning up activity chatrooms..."
-ActivityChatroom.destroy_all
 puts "Activity chatrooms cleaned"
 
 

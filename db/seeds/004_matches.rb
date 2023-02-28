@@ -1,5 +1,4 @@
 puts "Cleaning up Matches..."
-Match.destroy_all
 puts "Matches cleaned"
 
 puts 'Creating 5 fake matches...'

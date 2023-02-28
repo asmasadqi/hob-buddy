@@ -2,3 +2,12 @@
 @import "home";
 @import "chatroom";
 @import "preference";
+
+.hbuddy-index-card {
+  background-color: white;
+}
+
+.hbuddy-index-bg {
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(244,162,97,1) 100%);
+  height: 100%;
+}

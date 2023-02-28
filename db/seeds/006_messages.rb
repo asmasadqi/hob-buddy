@@ -1,7 +1,7 @@
 puts "Cleaning up one to one messages..."
 puts "messages cleaned"
 
-puts "creating conversation feed for Koari"
+puts "creating conversation feed for Kaori"
 
 kao = User.find_by(email: "kao_martin@gmail.com")
 ayla = User.find_by(email: "ayla.moon@gmail.com")

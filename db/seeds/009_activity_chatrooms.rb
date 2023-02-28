@@ -35,19 +35,19 @@ puts "Diving activity chatroom created #{ch5.id}"
 
 puts "Creating chatroom for City tour activity"
 ch6 = ActivityChatroom.create!(
-  activity_id: Activity.find_by(title: "City tour").id
+  activity_id: Activity.find_by(title: "City Tour").id
 )
 puts "activity chatroom created #{ch6.id}"
 
 puts "Creating chatroom for Water polo activity"
 ch7 = ActivityChatroom.create!(
-  activity_id: Activity.find_by(title: "Water polo").id
+  activity_id: Activity.find_by(title: "Water Polo").id
 )
 puts "activity chatroom created #{ch7.id}"
 
 puts "Creating chatroom for Ashtanga yoga zen activity"
 ch8 = ActivityChatroom.create!(
-  activity_id: Activity.find_by(title: "Ashtanga yoga zen").id
+  activity_id: Activity.find_by(title: "Ashtanga Yoga Zen").id
 )
 puts "activity chatroom created #{ch8.id}"
 
@@ -69,13 +69,13 @@ ch11 = ActivityChatroom.create!(
 )
 puts "activity chatroom created #{ch11.id}"
 
-puts "Creating chatroom for Travel with me in Egypt activity"
+puts "Creating chatroom for Travel to Egypt activity"
 ch12 = ActivityChatroom.create!(
   activity_id: Activity.find_by(title: "Travel to Egypt").id
 )
 puts "activity chatroom created #{ch12.id}"
 
-puts "Creating chatroom for Cycling with Tommy activity"
+puts "Creating chatroom for Cycling activity"
 ch13 = ActivityChatroom.create!(
   activity_id: Activity.find_by(title: "Cycling").id
 )

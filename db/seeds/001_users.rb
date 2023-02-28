@@ -12,7 +12,7 @@ id1 = User.new(
   password: "123456",
   about_me: "I love water sport and being on a boat and fishing in beautiful locations I have spotted. Always up to be in the ocean and looking for buddies with the same passion",
   gender: "Female",
-  location: "Biarritz",
+  location: "Paris",
   date_of_birth: "1988-09-17"
 )
 file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732483/development/k6auef021ox5dc3nboa6u6h69sds.jpg')
@@ -57,7 +57,7 @@ id4 = User.new(
   password: "123456",
   about_me: "Helloooo it's me Vic! I'm fond of sports and actually any sports, mastering Surf and Tennis but also up for wakeboard and climbing! My english is not the best but I'm learning, looking for buddies to practice on weekends and I have a van :van-front: ",
   gender: "Female",
-  location: "Sydney",
+  location: "Paris",
   date_of_birth: "1989-07-21"
 )
 file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732503/development/7sfqh2v9mixvfqj7ad4o5cxhrhrb.jpg')
@@ -70,9 +70,9 @@ id5 = User.new(
   last_name: "Moon",
   email: "ayla.moon@gmail.com",
   password: "123456",
-  about_me: "I love travelling and learning new languages, I have been learning Korean for a year and I came to Korea because the culture and the music. I am game to try anything new at least once. I would love to meet new friends here and go to K-Pop Concerts together!",
+  about_me: "I love travelling and learning new languages, especially learning Korean is my new hobby! I visited Korea many times because I love their culture and music. I would love to meet new friends here and go to K-Pop concerts together!",
   gender: "Female",
-  location: "Seoul",
+  location: "Paris",
   date_of_birth: "1985-07-30"
 )
 file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732499/development/n0ywj0e708zjgms77fg3bzluzjxu.jpg')
@@ -85,9 +85,9 @@ id6 = User.new(
   last_name: "Frances",
   email: "mathildefrances@hiphip.com",
   password: "123456",
-  about_me: ":woman_in_lotus_position: Yoga is my fav hobby, i practice Ashtanga only and I'm training to be a Yogi! Will be interested to teach you if you want to try :smiley: ",
+  about_me: "Yoga is my fav hobby, i practice Ashtanga only and I'm training to be a Yogi! Will be interested to teach you if you want to try ",
   gender: "Female",
-  location: "Sydney",
+  location: "Paris",
   date_of_birth: "1990-07-21"
 )
 file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732511/development/xalt2vyhema8hua0lr4a8c4nvxse.jpg')
@@ -100,9 +100,9 @@ id7 = User.new(
   last_name: "Volle",
   email: "paulvolle@gmail.com",
   password: "123456",
-  about_me: "I'm a frenchie :baguette: living in NewYork and working as a full stack dev, I collect Pokemon cards and would be up to meet new buddies to go for a drink, discover the city, improve my english or play racket sport :tennis: (mastering Squash) looking forward to meeting youu",
+  about_me: "I'm a frenchie living in NewYork and working as a full stack dev, I'm back to Paris for holidays ! I collect Pokemon cards and would be up to meet new buddies to go for a drink, discover the city, improve my english or play racket sport :tennis: (mastering Squash) looking forward to meeting youu",
   gender: "Male",
-  location: "New York",
+  location: "Paris",
   date_of_birth: "1996-01-22"
 )
 file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732515/development/uvsj28bcc02bcut36c57b31rjo2a.jpg')
@@ -145,9 +145,9 @@ id10 = User.new(
   last_name: "Portier",
   email: "paul-portier@gmail.com",
   password: "123456",
-  about_me: "let's be honest my favorite kind of sport is partying, don't bring me to a museum or a fitness room please!! If you wish to meet around a beer or a cocktail I'm totally up for that! Guys, girls or other, everybody's welcome",
+  about_me: "Let's be honest my favorite kind of sport is partying, don't bring me to a museum or a fitness room please!! If you wish to meet around a beer or a cocktail I'm totally up for that! Guys, girls or other, everybody's welcome",
   gender: "Male",
-  location: "Berlin",
+  location: "Paris",
   date_of_birth: "1990-03-04"
 )
 file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732526/development/xrg30vgz4r5zng8mbn56qghb7zw6.jpg')
@@ -160,9 +160,9 @@ id11 = User.new(
   last_name: "Spears",
   email: "britney@leavemealone.com",
   password: "123456",
-  about_me: "love dancing and singing half naked and would be happy to go out with buddies (female only) who shares the same passion I have for lap dancing! Don't leave me alone this time, match me!",
+  about_me: "Love dancing and singing half naked and would be happy to go out with buddies (female only) who shares the same passion I have for lap dancing! Don't leave me alone this time, match with me!",
   gender: "Female",
-  location: "Los Angeles",
+  location: "Paris",
   date_of_birth: "1978-10-19"
 )
 file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732530/development/0hutf424lq1fslmcbua4uheq0hpy.jpg')
@@ -192,7 +192,7 @@ id13 = User.new(
   password: "123456",
   about_me: "I love traveling and cooking and I frequently plan trips where i can do both. I love cooking for other people and making new friends wherever I go",
   gender: "Male",
-  location: "Berlin",
+  location: "Paris",
   date_of_birth: "1990-03-04"
 )
 file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732533/development/i1t5ypwsj5yv2smpkfch5vn56fl6.jpg')
@@ -205,7 +205,7 @@ id14 = User.new(
   last_name: "Reece",
   email: "tommy.reece@gmail.com",
   password: "123456",
-  about_me: "I'm a professional volleyball player, fashion model and actor",
+  about_me: "I'm a professional volleyball player, fashion model and actor. Anyone down ",
   gender: "Male",
   location: "Paris",
   date_of_birth: "1985-03-04"

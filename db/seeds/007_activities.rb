@@ -6,11 +6,11 @@ ac1 = Activity.new(
   title: "Diving",
   description: "Join the best of the best in scuba diving and live the dive life with a super motivated buddy who knows all the spots by heart",
   useful_information: "I can lend you the material if needed",
-  age_range: (22..35),
+  age_range: (20..35),
   gender: "Not specified",
-  preference_id: Preference.find_by(name: "Water sports").id,
+  preference_id: Preference.find_by(name: "Water Sports").id,
   user_id: User.find_by(email: "victoria.semblat@gmail.com").id,
-  location: "Sydney",
+  location: "Cassis",
   min_persons: 3,
   max_persons: 6,
   total_price: 10,
@@ -28,9 +28,9 @@ ac2 = Activity.new(
   useful_information: "Bring your fishing net with you",
   age_range: (30..35),
   gender: "Not specified",
-  preference_id: Preference.find_by(name: "Fishing - Hunting").id,
+  preference_id: Preference.find_by(name: "Fishing").id,
   user_id: User.find_by(email: "julia.thierry@gmail.com").id,
-  location: "Biarritz",
+  location: "Marseille",
   min_persons: 5,
   max_persons: 6,
   total_price: 20,
@@ -44,13 +44,13 @@ puts "Activity with id #{ac2.id}"
 
 ac3 = Activity.new(
   title: "Fortnite",
-  description: "I am a Fortnite expert player looking for a duo, trio, squad or clan to play with. Available at night from 9pm to 4pm (extra possible if passionate). Looking forward to meeting you. My gamer name is 'Kraken'",
-  useful_information: "",
+  description: "I am a Fortnite expert player looking for a duo, trio, squad or clan to play with. Available at night from 9pm to 4pm (extra possible if passionate). Looking forward to meeting you. My gamer username is 'Kraken'",
+  useful_information: "Bring your own device to play duo",
   age_range: (30..35),
   gender: "Not specified",
-  preference_id: Preference.find_by(name: "Video Games").id,
+  preference_id: Preference.find_by(name: "Video Game").id,
   user_id: User.find_by(email: "antoine.ramon@gmail.com").id,
-  location: "Berlin",
+  location: "Clignancourt",
   min_persons: 1,
   max_persons: 4,
   total_price: 0,
@@ -65,10 +65,10 @@ puts "Activity with id #{ac3.id}"
 ac4 = Activity.new(
   title: "Tennis",
   description: "Meet new friends and competitors over the net!, my group is all about meeting other players, improving our skills and technique and having fun and enjoying good games!",
-  useful_information: "",
+  useful_information: "Bring your rackets and outfits",
   age_range: (25..35),
   gender: "Not specified",
-  preference_id: Preference.find_by(name: "Ball sports").id,
+  preference_id: Preference.find_by(name: "Ball Sports").id,
   user_id: User.find_by(email: "victoria.semblat@gmail.com").id,
   location: "Paris",
   min_persons: 1,
@@ -83,34 +83,34 @@ ac4.photo.attach(io: file, filename: 'tennis.png', content_type: 'image/png')
 puts "Activity with id #{ac4.id}"
 
 ac5 = Activity.create(
-  title: "City tour",
-  description: "You've planned to travel to South Korea and your heart is already racing, ready to go sightseeing. I can make your trip to Seoul the best possible one. It'll show you the finest shopping destinations, bring you in a nice restaurant and share the story of the city with you!",
-  useful_information: "I have no car we will walk around",
+  title: "City Tour",
+  description: "Want to know secret spots in Paris? I can make you rediscover all the charms that the city has. I will show you the cutest shop, bring you to a nice hidden restaurant and share the story of the city with you!",
+  useful_information: "We will walk around, no need for a car!",
   age_range: (25..35),
   gender: "Female",
-  preference_id: Preference.find_by(name: "City walks").id,
+  preference_id: Preference.find_by(name: "City Walk").id,
   user_id: User.find_by(email: "ayla.moon@gmail.com").id,
-  location: "Seoul",
+  location: "Odéon",
   min_persons: 1,
   max_persons: 3,
   total_price: 30,
   start_date: Date.today + 8.days,
   end_date: Date.today + 10.days
 )
-file = URI.open('https://source.unsplash.com/random/?seoul')
+file = URI.open('https://source.unsplash.com/random/?paris')
 ac5.save!
-ac5.photo.attach(io: file, filename: 'seoul.png', content_type: 'image/png')
+ac5.photo.attach(io: file, filename: 'paris.png', content_type: 'image/png')
 puts "Activity with id #{ac5.id}"
 
 ac6 = Activity.new(
-  title: "Water polo",
+  title: "Water Polo",
   description: "Let's build a water polo team and train twice a week, I have been practicing for 10 years and I am looking for motivated buddies",
   useful_information: "only for good players (pro league)",
   age_range: (25..35),
   gender: "Male",
-  preference_id: Preference.find_by(name: "Water sports").id,
+  preference_id: Preference.find_by(name: "Water Sports").id,
   user_id: User.find_by(email: "victoria.semblat@gmail.com").id,
-  location: "Sydney",
+  location: "Neuilly",
   min_persons: 1,
   max_persons: 6,
   total_price: 0,
@@ -123,14 +123,14 @@ ac6.photo.attach(io: file, filename: 'polo.png', content_type: 'image/png')
 puts "Activity with id #{ac6.id}"
 
 ac7 = Activity.new(
-  title: "Ashtanga yoga zen",
+  title: "Ashtanga Yoga Zen",
   description: "Hey zen yogis! I am looking for buddies who would like to learn and practice with me the ancient art of traditional Yoga. It has changed my life (I am an former banker from Manhattan) and I swear it will change yours. Available on Saturdays in Buttes Chaumont to teach you",
   useful_information: "bring your mat",
   age_range: (25..45),
   gender: "Female",
-  preference_id: Preference.find_by(name: "Yoga - pilates").id,
+  preference_id: Preference.find_by(name: "Yoga - Pilates").id,
   user_id: User.find_by(email: "ayla.moon@gmail.com").id,
-  location: "Paris",
+  location: "Rambouillet",
   min_persons: 1,
   max_persons: 6,
   total_price: 0,
@@ -144,15 +144,15 @@ puts "Activity with id #{ac7.id}"
 
 ac8 = Activity.new(
   title: "Surfing",
-  description: "¡Hola! my name is Sam and I'm currently in Costa Rica practicing my surfing skills in March I'm traveling up north to Mexico, a real surfer's paradise and I would love for you to join me! This town filled with good vibes is therefore perfect to practice our surfing. After our daily surf classes, we can either relax by the beach/pool or we can try one of the many other activities that the region offers. Do not hesitate, join for great fun!",
+  description: "¡Hola! my name is Kaori and I'm back from Costa Rica where I've been practicing my surfing skills. I'm back to Paris but if you're up to go for a surf trip in the South West, (a real surfer's paradise!) join me! This town filled with good vibes is therefore perfect to practice our surfing. After our daily surf classes, we can either relax by the beach/pool or we can try one of the many other activities that the region offers. Do not hesitate, join for great fun!",
   useful_information: "I take real waves, beginners abstain",
   age_range: (25..45),
   gender: "Female",
-  preference_id: Preference.find_by(name: "Water sports").id,
+  preference_id: Preference.find_by(name: "Water Sports").id,
   user_id: User.find_by(email: "kao_martin@gmail.com").id,
-  location: "Mexico",
+  location: "Biarritz",
   min_persons: 1,
-  max_persons: 3,
+  max_persons: 2,
   total_price: 0,
   start_date: Date.today + 30.days,
   end_date: Date.today + 40.days
@@ -164,7 +164,7 @@ puts "Activity with id #{ac8.id}"
 
 ac9 = Activity.new(
   title: "Fitness / Dynamo",
-  description: "Hello I'm Dyno and I have founded the Dynamo circle, a cycling studio in Paris that may just be the coolest way to workout. I'd like to invite 4 to 5 buddies to test the new fitness room that just opened on the Perchoir rooftop",
+  description: "Hello I'm Manu and I have founded the Dynamo circle, a cycling studio in Paris that may just be the coolest way to workout. I'd like to invite 4 to 5 buddies to test the new fitness room that just opened on the Perchoir rooftop",
   useful_information: "Limited free entrance to 5 buddies so be quick, first booked first served",
   age_range: (25..45),
   gender: "Not specified",
@@ -184,13 +184,13 @@ puts "Activity with id #{ac9.id}"
 
 ac10 = Activity.new(
   title: "Cooking Asian food",
-  description: "Hi there I'm Werner and i come back from 3 years abroad (Cambodia, China and Thailand) I've learn many recipes that I would like to share. If you are available for a cooking class and eat together what we have cooked afterwards, this group is made for you! If you join, let me know what you can't eat so i adapt the menu",
+  description: "Hi there I'm Werner and I come back from 3 years abroad (Cambodia, China and Thailand) I've learn many recipes that I would like to share. If you are available for a cooking class and eat together what we have cooked afterwards, this group is made for you! If you join, let me know what you can't eat so i adapt the menu",
   useful_information: "I provide all the ingredients and material, the lesson takes place in my kitchen",
   age_range: (25..45),
   gender: "Not specified",
-  preference_id: Preference.find_by(name: "Cooking classes").id,
+  preference_id: Preference.find_by(name: "Cooking Class").id,
   user_id: User.find_by(email: "werner.schmidt@gmail.com").id,
-  location: "Berlin",
+  location: "Paris",
   min_persons: 1,
   max_persons: 6,
   total_price: 5,
@@ -208,7 +208,7 @@ ac11 = Activity.new(
   useful_information: "from 1st to 18th of may, landing in Cairo no hotel booked yet",
   age_range: (25..55),
   gender: "Not specified",
-  preference_id: Preference.find_by(name: "Travel along").id,
+  preference_id: Preference.find_by(name: "Travel Along").id,
   user_id: User.find_by(email: "manu.macron@elysee.fr").id,
   location: "Cairo",
   min_persons: 1,
@@ -229,7 +229,7 @@ ac12 = Activity.new(
   useful_information: "Bring your training bicycle. No Velib! Bring your lunch as there will be no restaurants or shops around",
   age_range: (25..55),
   gender: "Not specified",
-  preference_id: Preference.find_by(name: "Ball sports").id,
+  preference_id: Preference.find_by(name: "Extreme Sports").id,
   user_id: User.find_by(email: "tommy.reece@gmail.com").id,
   location: "Fontainebleau",
   min_persons: 1,

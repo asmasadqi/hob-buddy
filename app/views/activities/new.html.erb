@@ -1,7 +1,7 @@
 <h1 class="p-3 text-danger fw-bold">What's your activity ?</h1>
 <div class="d-flex p-3 bd-highlight">
   <%= simple_form_for @activity do |f| %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photo, label: 'Picture', as: :file %>
     <%= f.input :title, placeholder: 'ex: Walk in Paris' %>
 
     <div data-controller="dynamic-select" data-dynamic-select-url-value="<%= preferences_path %>">

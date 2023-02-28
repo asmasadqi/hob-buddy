@@ -21,7 +21,7 @@
       </div>
       <div class="d-flex align-items-center">
         <span class="material-symbols-outlined me-2">today</span>
-        <p class="card-text fw-bold"> <%=@activity.start_date.strftime('%a, %b %e') %> ~ <%= @activity.end_date.strftime('%a, %b %e') if @activity.end_date != nil %></p>
+        <p class="card-text fw-bold"> <%=@activity.start_date.strftime('%a, %b %e') if @activity.start_date != nil%> ~ <%= @activity.end_date.strftime('%a, %b %e') if @activity.end_date != nil %></p>
       </div>
       <div class="d-flex align-items-center fw-bold">
         <span class="material-symbols-outlined me-2">payments</span>

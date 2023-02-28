@@ -2,7 +2,9 @@
     <ul class="nav nav-pills m-auto" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
         <%= link_to "/activities", class: "navbar-brand mx-2" do %>
-          <button class="material-symbols-outlined nav-link <%= current_page?("/activities") ? "active" : "" %>" id="pills-home-tab">home</button>
+           <% active = current_page?("/activities") %>
+           <% active = current_page?(activity_path(@activity)) if @activity&.persisted?  %>
+          <button class="material-symbols-outlined nav-link <%= active ? "active" : "" %>" id="pills-home-tab">home</button>
         <% end %>
       </li>
       <li class="nav-item" role="presentation">

@@ -51,3 +51,11 @@ match6 = Match.create(
   user_receiver_id: User.find_by(email: "paul-portier@gmail.com").id
 )
 puts "match created with ID#{match6.id}"
+
+puts "Emmanuel requested to match Kaori"
+match7 = Match.create(
+  status: 0,
+  user_requester_id: User.find_by(email: "manu.macron@elysee.fr").id ,
+  user_receiver_id: User.find_by(email: "kao_martin@gmail.com").id
+)
+puts "match created with ID#{match7.id}"

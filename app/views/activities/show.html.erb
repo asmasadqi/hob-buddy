@@ -21,7 +21,7 @@
       </div>
       <div class="d-flex align-items-center">
         <span class="material-symbols-outlined me-2">today</span>
-        <p class="card-text"> <%=@activity.start_date.strftime('%a, %b %e %k:%M') %> ~ <%= @activity.end_date.strftime('%a, %b %e %k:%M') %></p>
+        <p class="card-text"> <%=@activity.start_date.strftime('%a, %b %e') %> ~ <%= @activity.end_date.strftime('%a, %b %e') if @activity.end_date != nil %></p>
       </div>
       <div class="d-flex align-items-center">
         <span class="material-symbols-outlined me-2">payments</span>
@@ -37,7 +37,9 @@
   <%# join button %>
   <div class="d-grid gap-2 mt-1">
   <% if @activity.user_id != current_user.id %>
-    <button type="button" class="btn btn-danger btn-rounded">Join</button>
+    <%= link_to activity_chatroom_path(@activity_chatroom), class: "btn btn-danger btn-rounded text-light" do %>
+      Join
+    <% end %>
   <% end %>
   </div>
 
@@ -48,8 +50,8 @@
       <div class="py-2">
         <% if @activity.min_persons == nil %>
           <div class="badge text-bg-success text-light d-flex align-items-center">
-            <span class="material-symbols-outlined me-1">all-inclusive</span>
             <span class="material-symbols-outlined me-1">groups</span>
+            <span class="material-symbols-outlined me-1">all_inclusive</span>
           </div>
         <% else %>
           <div class="badge text-bg-success text-light d-flex align-items-center">

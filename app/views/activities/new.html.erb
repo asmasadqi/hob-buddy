@@ -1,7 +1,7 @@
-<h1 class="p-3 text-danger fw-bold">Create a new activity</h1>
+<h1 class="p-3 text-danger fw-bold">What's your activity ?</h1>
 <div class="d-flex p-3 bd-highlight">
   <%= simple_form_for @activity do |f| %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photo, label: 'Picture', as: :file %>
     <%= f.input :title, placeholder: 'ex: Walk in Manhattan' %>
 
     <div data-controller="dynamic-select" data-dynamic-select-url-value="<%= preferences_path %>">
@@ -12,15 +12,15 @@
     </div>
     <%= f.input :description, placeholder: 'ex: Try out our best sandwiches in town' %>
     <%= f.input :location, placeholder: 'ex: Manhattan, NYC' %>
-    <%= f.input :gender, collection: ["Female", "Male", "Not specified"], :label => "It's group of" %>
+    <%= f.input :gender, collection: ["Female", "Male", "Not spacified"], :label => "It's a group of" %>
     <%= f.input :total_price, label: 'How much will it cost?', placeholder: 'ex: 10€' %>
     <p>How many people can join?</p>
     <%= f.input :min_persons, label: false, placeholder: 'min' %>
     <%= f.input :max_persons, label: false, placeholder: 'max' %>
     <%= f.input :useful_information, placeholder: 'ex: bring your lunch, come with a car...' %>
     <p>Date</p>
-    <%= f.input :start_date, as: :date, html5: true %>
-    <%= f.input :end_date, as: :date, html5: true %>
-    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= f.input :start_date, label: 'Start', as: :date, html5: true %>
+    <%= f.input :end_date, label: 'End', as: :date, html5: true %>
+    <%= f.button :submit, 'Submit', class: "btn btn-primary" %>
   <% end %>
 </div>

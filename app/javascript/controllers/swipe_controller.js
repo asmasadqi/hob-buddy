@@ -52,7 +52,6 @@ export default class extends Controller {
 
   responseHandler(data) {
     if (data.content) {
-      console.log(data.content)
       this.modalBodyTarget.innerHTML = data.content
       this.modal.show()
     }

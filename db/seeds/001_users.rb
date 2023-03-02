@@ -55,7 +55,7 @@ id4 = User.new(
   last_name: "Semblat",
   email: "victoria.semblat@gmail.com",
   password: "123456",
-  about_me: "Helloooo it's me Vic! I'm fond of sports and actually any sports, mastering Surf and Tennis but also up for wakeboard and climbing! My english is not the best but I'm learning, looking for buddies to practice on weekends and I have a van :van-front: ",
+  about_me: "Helloooo it's me Vic! I'm fond of sports and actually any sports, mastering Surf and Tennis but also up for wakeboard and climbing! My english is not the best but I'm learning, looking for buddies to practice on weekends and I have a van",
   gender: "Female",
   location: "Paris",
   date_of_birth: "1989-07-21"
@@ -85,7 +85,7 @@ id6 = User.new(
   last_name: "Frances",
   email: "mathildefrances@hiphip.com",
   password: "123456",
-  about_me: "Yoga is my fav hobby, i practice Ashtanga only and I'm training to be a Yogi! Will be interested to teach you if you want to try ",
+  about_me: "Yoga is my fav hobby, I practice Ashtanga only and I'm training to be a Yogi! Will be interested to teach you if you want to try",
   gender: "Female",
   location: "Paris",
   date_of_birth: "1990-07-21"
@@ -100,7 +100,7 @@ id7 = User.new(
   last_name: "Volle",
   email: "paulvolle@gmail.com",
   password: "123456",
-  about_me: "I'm a frenchie living in NewYork and working as a full stack dev, I'm back to Paris for holidays ! I collect Pokemon cards and would be up to meet new buddies to go for a drink, discover the city, improve my english or play racket sport :tennis: (mastering Squash) looking forward to meeting youu",
+  about_me: "I'm a frenchie living in NewYork and working as a full stack dev, I'm back to Paris for holidays! I collect Pokemon cards and would be up to meet new buddies to go for a drink, discover the city, improve my english or play racket sport (mastering Squash) looking forward to meeting youu",
   gender: "Male",
   location: "Paris",
   date_of_birth: "1996-01-22"
@@ -115,7 +115,7 @@ id8 = User.new(
   last_name: "Brun",
   email: "alex_brun@hotmail.com",
   password: "123456",
-  about_me: "Here for holidays to meet family and staying for 3 months, would love to meet new buddies to escape dinners with my Grandma! I play football and tennis quite well and would be up to go surfing :man-surfing: ",
+  about_me: "Here for holidays to meet family and staying for 3 months, would love to meet new buddies to escape dinners with my Grandma! I play football and tennis quite well and would be up to go surfing",
   gender: "Male",
   location: "Paris",
   date_of_birth: "1998-04-04"
@@ -130,10 +130,10 @@ id9 = User.new(
   last_name: "Martin",
   email: "kao_martin@gmail.com",
   password: "123456",
-  about_me: "I speak English :gb:, Japanese :jp:, Spanish :es: and French :flag-mf:, I am here for holidays, would be super happy to meet new people for activities of all kind, I love surfing :woman-surfing: and climbing :woman_climbing: and i am trying to improve my tennis skills, ready for a match?",
+  about_me: "I speak English, Japanese, Spanish and French, I am here for holidays, would be super happy to meet new people for activities of all kind, I love surfing :woman-surfing: and climbing and i am trying to improve my tennis skills, ready for a match?",
   gender: "Female",
   location: "Paris",
-  date_of_birth: "1994-01-01"
+  date_of_birth: "1994-12-21"
 )
 file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1677331055/oliver-sjostrom-Mc-r-wjnAac-unsplash_gy9q2u.jpg')
 id9.save!
@@ -205,7 +205,7 @@ id14 = User.new(
   last_name: "Reece",
   email: "tommy.reece@gmail.com",
   password: "123456",
-  about_me: "I'm a professional volleyball player, fashion model and actor. Anyone down ",
+  about_me: "I'm a professional volleyball player, fashion model and actor. Anyone down",
   gender: "Male",
   location: "Paris",
   date_of_birth: "1985-03-04"

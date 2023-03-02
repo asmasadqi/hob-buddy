@@ -5,7 +5,7 @@ puts 'Creating 5 fake matches...'
 
 puts "Matching Kaori with Alexis"
 match1 = Match.create(
-  status: 1,
+  status: 0,
   user_requester_id: User.find_by(email: "kao_martin@gmail.com").id ,
   user_receiver_id: User.find_by(email: "alex_brun@hotmail.com").id
 )

@@ -51,9 +51,9 @@ ch8 = ActivityChatroom.create!(
 )
 puts "activity chatroom created #{ch8.id}"
 
-puts "Creating chatroom for Surfing activity"
+puts "Creating chatroom for Surf activity"
 ch9 = ActivityChatroom.create!(
-  activity_id: Activity.find_by(title: "Surfing").id
+  activity_id: Activity.find_by(title: "Surf").id
 )
 puts "activity chatroom created #{ch9.id}"
 
@@ -80,3 +80,9 @@ ch13 = ActivityChatroom.create!(
   activity_id: Activity.find_by(title: "Cycling").id
 )
 puts "activity chatroom created #{ch13.id}"
+
+puts "Creating chatroom for Bouldering activity"
+ch14 = ActivityChatroom.create!(
+  activity_id: Activity.find_by(title: "Bouldering").id
+)
+puts "activity chatroom created #{ch14.id}"

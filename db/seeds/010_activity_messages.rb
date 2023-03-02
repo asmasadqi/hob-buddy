@@ -64,7 +64,7 @@ m8 = ActivityMessage.create(
 puts "message created with id#{m8.id}"
 
 
-puts "creating conversation feed for the Bouledering group activity"
+puts "creating conversation feed for the Bouldering group activity"
 bouldering_id = Activity.find_by(title: "Bouldering").id
 m9 = ActivityMessage.create(
   content: "Heyy I was gonna go around 4pm so it'll be less crowded. Anyone can join?",
@@ -75,7 +75,7 @@ puts "message created with id#{m9.id}"
 
 m10 = ActivityMessage.create(
   content: "Hey! Yes, sounds good to me :)",
-  user_id: User.find_by(email: "kao_martin@gmail.co").id,
+  user_id: User.find_by(email: "kao_martin@gmail.com").id,
   activity_chatroom_id: ActivityChatroom.find_by(activity_id: bouldering_id).id
 )
 puts "message created with id#{m10.id}"

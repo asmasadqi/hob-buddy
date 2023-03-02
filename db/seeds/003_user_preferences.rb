@@ -95,7 +95,7 @@ puts "Created preference for mathilde.f with id#{up16.id}"
 
 up17 = UserPreference.create(
   user_id: User.find_by(email: "mathildefrances@hiphip.com").id,
-  preference_id: Preference.find_by(name: "Mindfulness Workshop").id
+  preference_id: Preference.find_by(name: "Mindfulness").id
 )
 puts "Created preference for mathilde.f with id#{up17.id}"
 

@@ -142,7 +142,7 @@ puts "Preference id #{p22.id}"
 
 p23 = Preference.create(
   category: "Wellness",
-  name: "Mindfulness Workshop"
+  name: "Mindfulness"
 )
 puts "Preference id #{p23.id}"
 

@@ -21,3 +21,10 @@ ch3 = Chatroom.create!(
   user2_id: User.find_by(email: "kao_martin@gmail.com").id
 )
 puts "Created chatroom for Kaori and Ayla with id#{ch3.id}"
+
+puts "Creating a chatroom for Roxanne and Kaori"
+ch4 = Chatroom.create!(
+  user1_id: User.find_by(email: "roxane.deloche@hotmail.com").id,
+  user2_id: User.find_by(email: "kao_martin@gmail.com").id
+)
+puts "Created chatroom for Kaori and Ayla with id#{ch4.id}"

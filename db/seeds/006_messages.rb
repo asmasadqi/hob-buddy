@@ -24,3 +24,17 @@ m2 = Message.create(
   chatroom_id: chatroom_id
 )
 puts "message created with id#{m2.id} in chatroom #{chatroom_id}"
+
+m3 = Message.create(
+  content: "Hello, I'm Victoria! You can call me Vic :) How are you doing?",
+  user_id: User.find_by(email: "victoria.semblat@gmail.com").id,
+  chatroom_id: chatroom_id
+)
+puts "message created with id#{m3.id} in chatroom #{chatroom_id}"
+
+m4 = Message.create(
+  content: "Hey! I'm doing good :) Are you free next week?",
+  user_id: User.find_by(email: "kao_martin@gmail.com").id,
+  chatroom_id: chatroom_id
+)
+puts "message created with id#{m4.id} in chatroom #{chatroom_id}"

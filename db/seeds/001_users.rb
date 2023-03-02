@@ -190,7 +190,7 @@ id13 = User.new(
   last_name: "Schmidt",
   email: "werner.schmidt@gmail.com",
   password: "123456",
-  about_me: "I love traveling and cooking and I frequently plan trips where i can do both. I love cooking for other people and making new friends wherever I go",
+  about_me: "I love traveling and cooking and I frequently plan trips where I can do both. I love cooking for other people and making new friends wherever I go",
   gender: "Male",
   location: "Paris",
   date_of_birth: "1990-03-04"
@@ -205,7 +205,7 @@ id14 = User.new(
   last_name: "Reece",
   email: "tommy.reece@gmail.com",
   password: "123456",
-  about_me: "I'm a professional volleyball player, fashion model and actor. Anyone down",
+  about_me: "I'm a professional volleyball player, fashion model and actor. Anyone down?",
   gender: "Male",
   location: "Paris",
   date_of_birth: "1985-03-04"

@@ -247,18 +247,18 @@ ac13 = Activity.new(
   title: "Bouldering",
   description: "Hello hello :) I'm practicing bouldering since few months now and would like to train with someone to skill up!",
   useful_information: "I'm still begginner-intermediate, I'm looking for someone who has similar level to be able to help each other",
-  age_range: (25..55),
+  age_range: (25..40),
   gender: "Not specified",
   preference_id: Preference.find_by(name: "Extreme Sports").id,
   user_id: User.find_by(email: "mathildefrances@hiphip.com").id,
   location: "Didot",
   min_persons: 1,
-  max_persons: 3,
+  max_persons: 4,
   total_price: 0,
   start_date: Date.today + 25.days,
   end_date: Date.today + 26.days
 )
 file = URI.open('https://source.unsplash.com/random/?bouldering')
-ac12.save!
-ac12.photo.attach(io: file, filename: 'bouldering.png', content_type: 'image/png')
+ac13.save!
+ac13.photo.attach(io: file, filename: 'bouldering.png', content_type: 'image/png')
 puts "Activity with id #{ac13.id}"

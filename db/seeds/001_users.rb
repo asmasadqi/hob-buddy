@@ -28,7 +28,7 @@ id2 = User.new(
   about_me: "I'm a UI designer but my passion is cooking and video games, I do my own pasta and love Japanese food, you want to cook together or meet virtually, match me!",
   gender: "Male",
   location: "Paris",
-  date_of_birth: "1986-02-11"
+  date_of_birth: "1989-02-11"
 )
 file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732487/development/rnh2vr3hr2lov33ruybeqettspsm.jpg')
 id2.save!
@@ -88,7 +88,7 @@ id6 = User.new(
   about_me: "Yoga is my fav hobby, I practice Ashtanga only and I'm training to be a Yogi! Will be interested to teach you if you want to try",
   gender: "Female",
   location: "Paris",
-  date_of_birth: "1990-07-21"
+  date_of_birth: "1993-07-21"
 )
 file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732511/development/xalt2vyhema8hua0lr4a8c4nvxse.jpg')
 id6.save!
@@ -163,9 +163,9 @@ id11 = User.new(
   about_me: "Love dancing and singing half naked and would be happy to go out with buddies (female only) who shares the same passion I have for lap dancing! Don't leave me alone this time, match with me!",
   gender: "Female",
   location: "Paris",
-  date_of_birth: "1978-10-19"
+  date_of_birth: "1990-10-19"
 )
-file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732530/development/0hutf424lq1fslmcbua4uheq0hpy.jpg')
+file = URI.open('https://images.unsplash.com/photo-1504439904031-93ded9f93e4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80')
 id11.save!
 id11.avatar.attach(io: file, filename: 'britney.jpg', content_type: 'image/jpg')
 puts "User with id #{id11.id}"
@@ -190,10 +190,10 @@ id13 = User.new(
   last_name: "Schmidt",
   email: "werner.schmidt@gmail.com",
   password: "123456",
-  about_me: "I love traveling and cooking and I frequently plan trips where i can do both. I love cooking for other people and making new friends wherever I go",
+  about_me: "I love traveling and cooking and I frequently plan trips where I can do both. I love cooking for other people and making new friends wherever I go",
   gender: "Male",
   location: "Paris",
-  date_of_birth: "1990-03-04"
+  date_of_birth: "1994-03-04"
 )
 file = URI.open('https://res.cloudinary.com/dg5wojcq5/image/upload/v1676732533/development/i1t5ypwsj5yv2smpkfch5vn56fl6.jpg')
 id13.save!
@@ -205,7 +205,7 @@ id14 = User.new(
   last_name: "Reece",
   email: "tommy.reece@gmail.com",
   password: "123456",
-  about_me: "I'm a professional volleyball player, fashion model and actor. Anyone down",
+  about_me: "I'm a professional volleyball player, fashion model and actor. Anyone down?",
   gender: "Male",
   location: "Paris",
   date_of_birth: "1985-03-04"

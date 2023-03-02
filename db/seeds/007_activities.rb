@@ -143,7 +143,7 @@ ac7.photo.attach(io: file, filename: 'yoga.png', content_type: 'image/png')
 puts "Activity with id #{ac7.id}"
 
 ac8 = Activity.new(
-  title: "Surfing",
+  title: "Surf",
   description: "¡Hola! my name is Kaori and I'm back from Costa Rica where I've been practicing my surfing skills. I'm back to Paris but if you're up to go for a surf trip in the South West, (a real surfer's paradise!) join me! This town filled with good vibes is therefore perfect to practice our surfing. After our daily surf classes, we can either relax by the beach/pool or we can try one of the many other activities that the region offers. Do not hesitate, join for great fun!",
   useful_information: "I take real waves, beginners abstain",
   age_range: (25..45),
@@ -242,3 +242,23 @@ file = URI.open('https://source.unsplash.com/random/?cycling')
 ac12.save!
 ac12.photo.attach(io: file, filename: 'cycling.png', content_type: 'image/png')
 puts "Activity with id #{ac12.id}"
+
+ac13 = Activity.new(
+  title: "Bouldering",
+  description: "Hello hello :) I'm practicing bouldering since few months now and would like to train with someone to skill up!",
+  useful_information: "I'm still begginner-intermediate, I'm looking for someone who has similar level to be able to help each other",
+  age_range: (25..55),
+  gender: "Not specified",
+  preference_id: Preference.find_by(name: "Extreme Sports").id,
+  user_id: User.find_by(email: "mathildefrances@hiphip.com").id,
+  location: "Didot",
+  min_persons: 1,
+  max_persons: 3,
+  total_price: 0,
+  start_date: Date.today + 25.days,
+  end_date: Date.today + 26.days
+)
+file = URI.open('https://source.unsplash.com/random/?bouldering')
+ac12.save!
+ac12.photo.attach(io: file, filename: 'bouldering.png', content_type: 'image/png')
+puts "Activity with id #{ac13.id}"

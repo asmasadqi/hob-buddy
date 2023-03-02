@@ -22,6 +22,7 @@ up4 = UserPreference.create(
   preference_id: Preference.find_by(name: "Water Sports").id
 )
 puts "Created preference for julia.t with id#{up4.id}"
+
 up5 = UserPreference.create(
   user_id: User.find_by(email: "julia.thierry@gmail.com").id,
   preference_id: Preference.find_by(name: "Water Sports").id
@@ -235,3 +236,27 @@ up40 = UserPreference.create(
   preference_id: Preference.find_by(name: "Guided Tour").id
 )
 puts "Created preference for paul.v with id#{up40.id}"
+
+up41 = UserPreference.create(
+  user_id: User.find_by(email: "kao_martin@gmail.com").id,
+  preference_id: Preference.find_by(name: "Cooking Class").id
+)
+puts "Created preference for kaori.m with id#{up41.id}"
+
+up42 = UserPreference.create(
+  user_id: User.find_by(email: "kao_martin@gmail.com").id,
+  preference_id: Preference.find_by(name: "Food Tour").id
+)
+puts "Created preference for kaori.m with id#{up42.id}"
+
+up43 = UserPreference.create(
+  user_id: User.find_by(email: "kao_martin@gmail.com").id,
+  preference_id: Preference.find_by(name: "Yoga - Pilates").id
+)
+puts "Created preference for kaori.m with id#{up43.id}"
+
+up44 = UserPreference.create(
+  user_id: User.find_by(email: "kao_martin@gmail.com").id,
+  preference_id: Preference.find_by(name: "Extreme Sports").id
+)
+puts "Created preference for kaori.m with id#{up44.id}"

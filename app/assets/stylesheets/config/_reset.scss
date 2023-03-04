@@ -2,3 +2,15 @@
 a {
   text-decoration: none;
 }
+
+.main-container {
+  min-height: calc(100vh - 60px);
+}
+
+body {
+  background: $gradient-gray;
+}
+
+.overscroll-none {
+  overscroll-behavior: none;
+}

@@ -55,4 +55,32 @@ class User < ApplicationRecord
   def age
     Time.zone.now.year - date_of_birth.year
   end
+
+  def matches
+    Match.where("user_requester_id = :id OR user_receiver_id = :id", id: id)
+  end
+
+  def confirmed_and_denied_users
+    User.where(id: matches.confirmed_or_denied.pluck(:user_requester_id, :user_receiver_id).flatten - [self.id])
+  end
+
+  def denied_users
+    User.where(id: matches.denied.pluck(:user_requester_id, :user_receiver_id).flatten - [self.id])
+  end
+
+  def confirmed_users
+    User.where(id: matches.confirmed.pluck(:user_requester_id, :user_receiver_id).flatten - [self.id])
+  end
+
+  def users_i_have_asked_pending
+    User.where(id: requests_as_requestor.pending.pluck(:user_receiver_id))
+  end
+
+  def users_i_dont_want_in_swiper
+    confirmed_and_denied_users + users_i_have_asked_pending
+  end
+
+  def user_i_can_match
+    User.where.not(id: [users_i_dont_want_in_swiper, id].flatten)
+  end
 end

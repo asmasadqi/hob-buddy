@@ -90,7 +90,7 @@ ac5 = Activity.create(
   gender: "Female",
   preference_id: Preference.find_by(name: "City Walk").id,
   user_id: User.find_by(email: "ayla.moon@gmail.com").id,
-  location: "Odéon",
+  location: "Paris",
   min_persons: 1,
   max_persons: 3,
   total_price: 30,

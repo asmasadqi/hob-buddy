@@ -3,7 +3,8 @@ $green: #F4A261;
 
 
 .swiper_container {
-  height: 80vh;
+  // height: 80vh;
+  overscroll-behavior: none;
 }
 
 .swiper {

@@ -24,13 +24,15 @@
     <%= render 'shared/ios_pwa_links' %>
   </head>
 
-  <body class="body-gradient">
+  <body class="body-gradient <%= 'overscroll-none' if params[:action] == 'index' && params[:controller] == 'users' %>">
+    <div class="main-container">
+      <div class="<%= controller_name != "matches" ? "scrollable" : "" %>">
+        <%= yield %>
+      </div>
+    </div>
     <%= render "shared/navbar" %>
     <%#= render "shared/flashes" %>
 
-    <div class="<%= controller_name != "matches" ? "scrollable" : "" %>">
-      <%= yield %>
-    </div>
 
   </body>
 </html>

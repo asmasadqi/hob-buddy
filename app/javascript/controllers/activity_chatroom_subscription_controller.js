@@ -13,7 +13,7 @@ export default class extends Controller {
     )
     console.log(`Subscribed to the chatroom with the id ${this.chatroomIdValue}.`)
     // scroll to the last message in chatroom
-    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight+100)
   }
 
   resetForm(event) {

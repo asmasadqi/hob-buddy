@@ -21,14 +21,19 @@
     your buddy !
   </p>
     <div class="centered mt-5">
-      <%= link_to chatrooms_path(@chatroom),
+      <%= link_to chatroom_path(Chatroom.find_by("user1_id = ? OR user2_id = ?", @user_receiver, @user_receiver).id),
                   class:"btn-chatroom text-center aqua",
                   data: { action: "click->swipe#hideModal" } do %>
-        <button class="btn btn-primary longer"><i class="fa-regular fa-comment-dots"></i>  Start to chat ! </button>
+        <%# <button class="btn btn-primary longer"><i class="fa-regular fa-comment-dots"></i>  Start to chat ! </button>
       <% end %>
-    <br>
-      <button class="btn-continue text-center btn btn-outline-primary btn-rounded mt-2 longer" data-action="click->swipe#hideModal">
-        Continue to swipe
-      </button>
+    <%# <br> %>
+      <%# <button class="btn-continue text-center btn btn-outline-primary btn-rounded mt-2 longer" data-action="click->swipe#hideModal"> %>
+        <%# Continue to swipe %>
+      <%# </button> %>
+      <div class="d-flex flex-column mb-3">
+        <div><button class="btn btn-primary longer"><i class="fa-regular fa-comment-dots"></i>  Start to chat ! </button></div>
+        <% end %>
+        <div><button class="btn-continue text-center btn btn-outline-primary btn-rounded mt-2 longer" data-action="click->swipe#hideModal">Continue to swipe</button></div>
+      </div>
     </div>
 </div>

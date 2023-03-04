@@ -200,6 +200,12 @@ text-align: center;
 .longer {
 width: 170px
 }
+.users + .users{
+  margin-left: -100px;
+}
+.body{
+  overscroll-behavior: none;
+}
 
 .users + .users{
   margin-left: -100px;

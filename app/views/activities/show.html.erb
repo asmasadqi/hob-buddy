@@ -12,7 +12,7 @@
         <%= cl_image_tag User.find(@activity.user_id).avatar.key, class: "hbuddy-match-avatar bordered", width:50, height:50 %>
       <% end %>
     <div class="card-body">
-      <span class="badge text-bg-warning text-light"> <%= @activity.preference.category %></span>
+      <%= render "shared/badges", activity: @activity %>
       <div class="hbuddy-card-location d-flex align-items-center">
         <span class="material-symbols-outlined me-2">location_on</span>
         <div>

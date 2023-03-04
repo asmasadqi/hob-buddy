@@ -35,7 +35,7 @@ puts "match created with ID#{match3.id}"
 puts "Tommy R requested to match Kaori"
 match4 = Match.create(
   status: 0,
-  user_requester_id: User.find_by(email: "paul-portier@gmail.com").id ,
+  user_requester_id: User.find_by(email: "tommy.reece@gmail.com").id ,
   user_receiver_id: User.find_by(email: "kao_martin@gmail.com").id
 )
 puts "match created with ID#{match4.id}"

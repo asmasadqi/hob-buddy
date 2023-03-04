@@ -160,7 +160,7 @@ id11 = User.new(
   last_name: "Spears",
   email: "britney@leavemealone.com",
   password: "123456",
-  about_me: "Love dancing and singing half naked and would be happy to go out with buddies (female only) who shares the same passion I have for lap dancing! Don't leave me alone this time, match with me!",
+  about_me: "Love dancing and singing half naked and would be happy to go out with buddies (female only) who shares the same passion I have for pole dancing! Don't leave me alone this time, match with me!",
   gender: "Female",
   location: "Paris",
   date_of_birth: "1990-10-19"

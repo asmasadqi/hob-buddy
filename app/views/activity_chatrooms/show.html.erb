@@ -3,7 +3,7 @@
   data-activity-chatroom-subscription-chatroom-id-value="<%= @activity_chatroom.id %>"
   data-activity-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
 
-  <div class="hbuddy-chatroom-header">
+  <div class="hbuddy-chatroom-header sticky-top">
     <%= link_to chatrooms_path, class: "d-flex justify-content-start align-items-center" do %>
       <span class="ico material-symbols-outlined">arrow_back_ios_new</span>
         <% if @activity.photo.attached? %>

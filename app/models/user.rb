@@ -43,7 +43,8 @@ class User < ApplicationRecord
   validates :location, presence: true
   validates :date_of_birth, presence: true
 
-  scope :not_matched_with, ->(user) { where.not(id: [user.user_requester_ids, user.id].flatten) }
+  scope :not_matched_with, ->(user) { where.not(id: [user.user_receiver_ids, user.id].flatten) }
+  scope :already_swiped, ->(user) { user.user_requesters.select{ |requester| requester.requests_as_requestor & user.requests_as_receiver.where(status: [1, 2]) != [] } }
 
   # Create full name to display
   def full_name

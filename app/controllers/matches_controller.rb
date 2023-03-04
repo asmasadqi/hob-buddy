@@ -8,7 +8,7 @@ class MatchesController < ApplicationController
       if @liked
         @match.update(status: :confirmed)
         @chatroom = Chatroom.where(user1: current_user, user2: @user_receiver)
-        if @chatroom.nil?
+        if @chatroom.empty?
           @chatroom = Chatroom.create!(user1: current_user, user2: @user_receiver)
         end
       else
